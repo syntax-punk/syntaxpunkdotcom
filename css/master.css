@@ -46,6 +46,21 @@
   background-color: rgba(210, 210, 210, 0.5);
 }
 
+.info-container {
+  position: fixed;
+  width: 800px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  margin-top: -280px;
+  margin-left: -400px;
+  background-color: white;
+}
+
+.round-shaped-container, .info-container {
+  border-radius: 5px;
+}
+
 .sup {
   height: 2000px;
   width: 50px;
