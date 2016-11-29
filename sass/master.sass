@@ -1,9 +1,14 @@
+body
+  background-color: rgba(#d2d2d2, 0.5)
+
 .header
   background: rgba(#666666, 0.41)
   position: fixed
   top: 0
   left: 0
   width: 100%
+  z-index: 2
+
 
 .navbar
   list-style-type: none
@@ -37,23 +42,32 @@
       color: white
 
 .body-container
-  background-color: rgba(#d2d2d2, 0.5)
+  ul
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-top: -280px
+    margin-left: -400px
+    list-style: none
 
-.info-container
-  @extend .round-shaped-container
-  position: fixed
+    li
+      margin-bottom: 40px
+
+.about-container
+  @extend .info-box
+
+.edu-container, .work-container, .ach-container, .cont-container
+  @extend .info-box
+
+
+.info-box
   width: 800px
   height: 600px
-  top: 50%
-  left: 50%
-  margin-top: -280px
-  margin-left: -400px
   background-color: white
+  border: 1px solid rgba(0,0,0,0.1)
+  border-radius: 6px
+  box-shadow: 0 1px 16px 1px #a1a1a1
+  z-index: 1
 
-.round-shaped-container
-  border-radius: 5px
 
-.sup
-  height: 2000px
-  width: 50px
-  background-color: pink
+.footer

@@ -1,9 +1,14 @@
+body {
+  background-color: rgba(210, 210, 210, 0.5);
+}
+
 .header {
   background: rgba(102, 102, 102, 0.41);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 2;
 }
 
 .navbar {
@@ -42,27 +47,25 @@
   color: white;
 }
 
-.body-container {
-  background-color: rgba(210, 210, 210, 0.5);
-}
-
-.info-container {
-  position: fixed;
-  width: 800px;
-  height: 600px;
+.body-container ul {
+  position: absolute;
   top: 50%;
   left: 50%;
   margin-top: -280px;
   margin-left: -400px;
+  list-style: none;
+}
+
+.body-container ul li {
+  margin-bottom: 40px;
+}
+
+.info-box, .about-container, .edu-container, .work-container, .ach-container, .cont-container {
+  width: 800px;
+  height: 600px;
   background-color: white;
-}
-
-.round-shaped-container, .info-container {
-  border-radius: 5px;
-}
-
-.sup {
-  height: 2000px;
-  width: 50px;
-  background-color: pink;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 1px 16px 1px #a1a1a1;
+  z-index: 1;
 }
