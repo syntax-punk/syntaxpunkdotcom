@@ -27,7 +27,7 @@ body {
 .navbar li a {
   display: block;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.2em;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   padding: 6% 4%;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
@@ -48,29 +48,26 @@ body {
 }
 
 .body-container {
-  height: auto;
-  width: auto;
+  margin-top: 10%;
+  position: relative;
 }
 
-.body-container ul {
+.data-container {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -280px;
-  margin-left: -400px;
-  list-style: none;
-}
-
-.body-container ul li {
-  margin-bottom: 40px;
 }
 
 .info-box, .about-container, .edu-container, .work-container, .ach-container, .cont-container {
-  width: 800px;
-  height: 600px;
+  width: 80%;
+  height: 80%;
+  margin: 0 auto 5%;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   box-shadow: 0 1px 16px 1px #a1a1a1;
   z-index: 1;
+}
+
+.whole_page, html, body, .body-container, .data-container {
+  height: 100%;
+  width: 100%;
 }
