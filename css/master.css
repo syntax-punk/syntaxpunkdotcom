@@ -3,7 +3,6 @@ body {
 }
 
 .header {
-  background: rgba(102, 102, 102, 0.41);
   position: fixed;
   top: 0;
   left: 0;
@@ -30,7 +29,7 @@ body {
   font-size: 1.2em;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   padding: 6% 4%;
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(215, 215, 215, 0.5);
   text-align: center;
   color: #666;
   font-weight: 300;
@@ -47,19 +46,35 @@ body {
   color: white;
 }
 
-.body-container {
-  margin-top: 10%;
-  position: relative;
+.about-container {
+  height: 600px;
+  background-color: pink;
 }
 
-.data-container {
-  position: absolute;
+.edu-container {
+  height: 600px;
+  background-color: lime;
 }
 
-.info-box, .about-container, .edu-container, .work-container, .ach-container, .cont-container {
-  width: 80%;
-  height: 80%;
-  margin: 0 auto 5%;
+.work-container {
+  height: 600px;
+  background-color: purple;
+}
+
+.ach-container {
+  height: 600px;
+  background-color: lavender;
+}
+
+.cont-container {
+  height: 600px;
+  background-color: yellow;
+}
+
+.info-box, .body-container {
+  width: 62%;
+  height: auto;
+  margin: 8% auto;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
@@ -67,7 +82,7 @@ body {
   z-index: 1;
 }
 
-.whole_page, html, body, .body-container, .data-container {
+.whole_page, html, body {
   height: 100%;
   width: 100%;
 }
