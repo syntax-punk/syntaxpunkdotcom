@@ -58,27 +58,27 @@ img, embed, object, video {
   }
 }
 
-.edu-container {
-  height: 600px;
+#about {
+  background-color: pink;
+}
+
+#edu {
   background-color: lime;
 }
 
-.work-container {
-  height: 600px;
+#work {
   background-color: purple;
 }
 
-.ach-container {
-  height: 600px;
+#ach {
   background-color: lavender;
 }
 
-.cont-container {
-  height: 600px;
+#cont {
   background-color: yellow;
 }
 
-.info-box, .body-container {
+.info-box {
   width: 60%;
   height: auto;
   margin: 6% auto;
@@ -89,11 +89,12 @@ img, embed, object, video {
   z-index: 1;
 }
 
-.data-set, .about-container {
+.data-container {
   height: 600px;
+  max-height: 60%;
 }
 
-.data-set p, .about-container p {
+.data-container p {
   padding: 20%;
 }
 
