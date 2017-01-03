@@ -6,12 +6,12 @@ img, embed, object, video {
   max-width: 100%;
 }
 
-.header {
-  position: fixed;
+header {
   top: 0;
   left: 0;
-  height: 100%;
-  z-index: 2;
+  margin-top: 12px;
+  height: auto;
+  transition: top 0.2s ease-in-out;
 }
 
 .navbar {
@@ -49,10 +49,6 @@ img, embed, object, video {
   margin-top: 32px;
 }
 
-#edu {
-  background-color: lime;
-}
-
 #work {
   background-color: purple;
 }
@@ -73,7 +69,6 @@ img, embed, object, video {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   box-shadow: 0 1px 16px 1px #a1a1a1;
-  z-index: 1;
 }
 
 .data-container {
@@ -87,7 +82,7 @@ img, embed, object, video {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   font-size: 2.2em;
-  padding: 64px 100px;
+  padding: 64px 20%;
   float: left;
 }
 
@@ -101,7 +96,7 @@ img, embed, object, video {
 }
 
 .half-space-l, .half-space-r {
-  width: 49%;
+  width: 35%;
   height: auto;
   float: left;
 }
@@ -116,6 +111,7 @@ img, embed, object, video {
 }
 
 .half-space-r {
+  width: 60%;
   float: right;
 }
 
@@ -128,7 +124,7 @@ img, embed, object, video {
   position: absolute;
   width: 1px;
   height: 100%;
-  margin: 18% 50%;
+  margin: 18% 39%;
   background-color: #E0E0E0;
 }
 
@@ -138,7 +134,7 @@ img, embed, object, video {
 }
 
 @media (min-width: 648px) {
-  .whole_page .header, html .header, body .header {
+  .whole_page header, html header, body header {
     width: 100%;
   }
   .whole_page .navbar li, html .navbar li, body .navbar li {

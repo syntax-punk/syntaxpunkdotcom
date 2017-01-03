@@ -7,12 +7,12 @@ body
 img, embed, object, video
   max-width: 100%
 
-.header
-  position: fixed
+header
   top: 0
   left: 0
-  height: 100%
-  z-index: 2
+  margin-top: 12px
+  height: auto
+  transition: top 0.2s ease-in-out
 
 .navbar
   list-style-type: none
@@ -48,7 +48,6 @@ img, embed, object, video
     margin-top: 32px
 
 #edu
-  background-color: lime
 
 #work
   background-color: purple
@@ -67,7 +66,6 @@ img, embed, object, video
   border: 1px solid rgba(0,0,0,0.1)
   border-radius: 6px
   box-shadow: 0 1px 16px 1px #a1a1a1
-  z-index: 1
 
 .data-container
   width: 100%
@@ -79,7 +77,7 @@ img, embed, object, video
     font-family: 'Source Sans Pro', sans-serif
     font-weight: 300
     font-size: 2.2em
-    padding: 64px 100px
+    padding: 64px 20%
     float: left
 
   img
@@ -91,7 +89,7 @@ img, embed, object, video
     padding: 64px
 
 .half-space-l, .half-space-r
-  width: 49%
+  width: 35%
   height: auto
   float: left
 
@@ -104,6 +102,7 @@ img, embed, object, video
     padding-right: 10%
 
 .half-space-r
+  width: 60%
   float: right
 
   p
@@ -114,16 +113,15 @@ img, embed, object, video
   position: absolute
   width: 1px
   height: 100%
-  margin: 18% 50%
+  margin: 18% 39%
   background-color: #E0E0E0
 
 .whole_page
   height: 100%
   width: 100%
 
-
   @media(min-width: 648px)
-    .header
+    header
       width: 100%
 
     .navbar li
