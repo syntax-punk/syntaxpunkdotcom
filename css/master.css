@@ -49,14 +49,6 @@ header {
   margin-top: 32px;
 }
 
-#work {
-  background-color: purple;
-}
-
-#ach {
-  background-color: lavender;
-}
-
 #cont {
   background-color: yellow;
 }
@@ -86,6 +78,15 @@ header {
   float: left;
 }
 
+.data-container h3 {
+  width: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+  padding: 0 10% 4% 10%;
+  float: left;
+}
+
 .data-container img {
   width: 122px;
   height: 122px;
@@ -95,15 +96,15 @@ header {
   padding: 64px;
 }
 
-.half-space-l, .half-space-r {
+.half-space-l {
   width: 35%;
   height: auto;
   float: left;
 }
 
-.half-space-l p, .half-space-r p {
+.half-space-l .lbl {
   font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 600;
   font-style: oblique;
   text-align: right;
   font-size: 1em;
@@ -112,20 +113,17 @@ header {
 
 .half-space-r {
   width: 60%;
+  height: auto;
   float: right;
 }
 
 .half-space-r p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-style: oblique;
   text-align: left;
+  font-size: 1em;
   padding-left: 10%;
-}
-
-.div-line {
-  position: absolute;
-  width: 1px;
-  height: 100%;
-  margin: 18% 39%;
-  background-color: #E0E0E0;
 }
 
 .whole_page, html, body {
