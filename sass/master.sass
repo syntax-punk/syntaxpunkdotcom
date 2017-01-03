@@ -26,7 +26,7 @@ img, embed, object, video
     text-decoration: none
     font-size: 1em
     font-family: "Helvetica Neue", Helvetica, sans-serif
-    padding: 6% 4%
+    padding: 6%
     border-left: 1px solid rgba(#d7d7d7, 0.4)
     text-align: center
     color: #666
@@ -41,22 +41,11 @@ img, embed, object, video
     background-color: black
     color: white
 
-@media(min-width: 640px)
-  .header
-    width: 100%
-
-  .navbar li
-    float: left
-    width: 20%
-
-    a
-      font-size: 1.2em
-
-
 #main
 
 #about
-  background-color: pink
+  section
+    margin-top: 32px
 
 #edu
   background-color: lime
@@ -71,7 +60,7 @@ img, embed, object, video
   background-color: yellow
 
 .info-box
-  width: 60%
+  width: 90%
   height: auto
   margin: 6% auto
   background-color: white
@@ -81,22 +70,68 @@ img, embed, object, video
   z-index: 1
 
 .data-container
+  width: 100%
+  position: relative
   height: 600px
-  max-height: 60%
+
+  h2
+    width: 100%
+    font-family: 'Source Sans Pro', sans-serif
+    font-weight: 300
+    font-size: 2.2em
+    padding: 64px 100px
+    float: left
+
+  img
+    width: 122px
+    height: 122px
+    border-radius: 50%
+    position: absolute
+    right: 0
+    padding: 64px
+
+.half-space-l, .half-space-r
+  width: 49%
+  height: auto
+  float: left
 
   p
-    padding: 20%
+    font-family: 'Open Sans', sans-serif
+    font-weight: 300
+    font-style: oblique
+    text-align: right
+    font-size: 1em
+    padding-right: 10%
 
-.span60
-  width: 60%
+.half-space-r
+  float: right
+
+  p
+    text-align: left
+    padding-left: 10%
+
+.div-line
+  position: absolute
+  width: 1px
   height: 100%
-  background-color: darkblue
-
-.span40
-  width: 40%
-  height: inherit
-  background-color: magenta
+  margin: 18% 50%
+  background-color: #E0E0E0
 
 .whole_page
   height: 100%
   width: 100%
+
+
+  @media(min-width: 648px)
+    .header
+      width: 100%
+
+    .navbar li
+      float: left
+      width: 20%
+
+      a
+        font-size: 1.2em
+
+    .info-box
+      width: 60%

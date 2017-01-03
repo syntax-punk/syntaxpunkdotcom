@@ -27,7 +27,7 @@ img, embed, object, video {
   text-decoration: none;
   font-size: 1em;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
-  padding: 6% 4%;
+  padding: 6%;
   border-left: 1px solid rgba(215, 215, 215, 0.4);
   text-align: center;
   color: #666;
@@ -45,21 +45,8 @@ img, embed, object, video {
   color: white;
 }
 
-@media (min-width: 640px) {
-  .header {
-    width: 100%;
-  }
-  .navbar li {
-    float: left;
-    width: 20%;
-  }
-  .navbar li a {
-    font-size: 1.2em;
-  }
-}
-
-#about {
-  background-color: pink;
+#about section {
+  margin-top: 32px;
 }
 
 #edu {
@@ -79,7 +66,7 @@ img, embed, object, video {
 }
 
 .info-box {
-  width: 60%;
+  width: 90%;
   height: auto;
   margin: 6% auto;
   background-color: white;
@@ -90,27 +77,78 @@ img, embed, object, video {
 }
 
 .data-container {
+  width: 100%;
+  position: relative;
   height: 600px;
-  max-height: 60%;
 }
 
-.data-container p {
-  padding: 20%;
+.data-container h2 {
+  width: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-size: 2.2em;
+  padding: 64px 100px;
+  float: left;
 }
 
-.span60 {
-  width: 60%;
+.data-container img {
+  width: 122px;
+  height: 122px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  padding: 64px;
+}
+
+.half-space-l, .half-space-r {
+  width: 49%;
+  height: auto;
+  float: left;
+}
+
+.half-space-l p, .half-space-r p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-style: oblique;
+  text-align: right;
+  font-size: 1em;
+  padding-right: 10%;
+}
+
+.half-space-r {
+  float: right;
+}
+
+.half-space-r p {
+  text-align: left;
+  padding-left: 10%;
+}
+
+.div-line {
+  position: absolute;
+  width: 1px;
   height: 100%;
-  background-color: darkblue;
-}
-
-.span40 {
-  width: 40%;
-  height: inherit;
-  background-color: magenta;
+  margin: 18% 50%;
+  background-color: #E0E0E0;
 }
 
 .whole_page, html, body {
   height: 100%;
   width: 100%;
+}
+
+@media (min-width: 648px) {
+  .whole_page .header, html .header, body .header {
+    width: 100%;
+  }
+  .whole_page .navbar li, html .navbar li, body .navbar li {
+    float: left;
+    width: 20%;
+  }
+  .whole_page .navbar li a, html .navbar li a, body .navbar li a {
+    font-size: 1.2em;
+  }
+  .whole_page .info-box, html .info-box, body .info-box {
+    width: 60%;
+  }
 }
