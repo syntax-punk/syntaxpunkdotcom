@@ -36,3 +36,5 @@ function hasScrolled() {
 
     lastScrollTop = st;
 }
+
+function* doIt() {

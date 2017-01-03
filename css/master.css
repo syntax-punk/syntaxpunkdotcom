@@ -55,21 +55,16 @@ header {
 
 .info-box {
   width: 90%;
-  height: auto;
+  height: 2000px;
   margin: 6% auto;
+  position: relative;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   box-shadow: 0 1px 16px 1px #a1a1a1;
 }
 
-.data-container {
-  width: 100%;
-  position: relative;
-  height: 600px;
-}
-
-.data-container h2 {
+.info-box h2 {
   width: 100%;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
@@ -78,7 +73,7 @@ header {
   float: left;
 }
 
-.data-container h3 {
+.info-box h3 {
   width: 100%;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
@@ -87,13 +82,14 @@ header {
   float: left;
 }
 
-.data-container img {
+.info-box #photo {
   width: 122px;
   height: 122px;
   border-radius: 50%;
   position: absolute;
   right: 0;
   padding: 64px;
+  visibility: hidden;
 }
 
 .half-space-l {
@@ -126,6 +122,10 @@ header {
   padding-left: 10%;
 }
 
+.joblogo {
+  display: inline-block;
+}
+
 .whole_page, html, body {
   height: 100%;
   width: 100%;
@@ -144,5 +144,8 @@ header {
   }
   .whole_page .info-box, html .info-box, body .info-box {
     width: 60%;
+  }
+  .whole_page .info-box #photo, html .info-box #photo, body .info-box #photo {
+    visibility: visible;
   }
 }

@@ -41,34 +41,25 @@ header
     background-color: black
     color: white
 
-#main
-
 #about
   section
     margin-top: 32px
 
-#edu
-
 #work
 
-#ach
 
 #cont
   background-color: yellow
 
 .info-box
   width: 90%
-  height: auto
+  height: 2000px
   margin: 6% auto
+  position: relative
   background-color: white
   border: 1px solid rgba(0,0,0,0.1)
   border-radius: 6px
   box-shadow: 0 1px 16px 1px #a1a1a1
-
-.data-container
-  width: 100%
-  position: relative
-  height: 600px
 
   h2
     width: 100%
@@ -86,13 +77,14 @@ header
     padding: 0 10% 4% 10%
     float: left
 
-  img
+  #photo
     width: 122px
     height: 122px
     border-radius: 50%
     position: absolute
     right: 0
     padding: 64px
+    visibility: hidden
 
 .half-space-l
   width: 35%
@@ -120,6 +112,9 @@ header
     font-size: 1em
     padding-left: 10%
 
+.joblogo
+  display: inline-block
+
 .whole_page
   height: 100%
   width: 100%
@@ -137,3 +132,6 @@ header
 
     .info-box
       width: 60%
+
+      #photo
+        visibility: visible
