@@ -1,7 +1,6 @@
 
-# Created by https://www.gitignore.io/api/maco,macos,sass
-
-#!! ERROR: maco is undefined. Use list command to see defined gitignore types !!#
+node_modules/
+src/
 
 ### macOS ###
 *.DS_Store
