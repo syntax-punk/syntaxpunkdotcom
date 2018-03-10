@@ -11,8 +11,15 @@ const envify = require('envify');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
 
-
 const supportedBrowsers = ['last 2 versions', 'IE 9'];
+
+function swallowError (error) {
+
+    // If you want details of the error in the console
+    console.log(error.toString())
+  
+    this.emit('end')
+}
 
 // add custom browserify options here
 const customOpts = {
@@ -50,7 +57,9 @@ function bundle() {
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', () => {
     return gulp.src("./src/sass/**/*.sass")
-        .pipe(sass())
+        .pipe(sass(
+            { outputStyle: 'compressed'}
+        ).on('error', sass.logError))
         .pipe(gulp.dest("./static/css"))
         .pipe(browserSync.stream());
 });
@@ -76,9 +85,14 @@ gulp.task('serve', ['sass', 'img:copy'], () => {
         
     });
 
-    gulp.watch('./src/scss/**/*.scss', ['sass', 'img:copy']);
+    gulp
+        .watch('./src/sass/**/*.sass', ['sass', 'img:copy'])
+        .on('error', swallowError);;
 
-    gulp.watch("./*.html").on('change', browserSync.reload);
+    gulp
+        .watch("./*.html")
+        .on('error', swallowError)
+        .on('change', browserSync.reload);
 });
 
 gulp.task('default', ['js', 'serve']);
