@@ -55,7 +55,14 @@ gulp.task('sass', () => {
         .pipe(browserSync.stream());
 });
 
-gulp.task('serve', ['sass'], () => {
+// Copy and compress images 
+gulp.task('img:copy', () => {
+    return gulp.src("./src/img/**/*")   
+        .pipe(gulp.dest("./static/img"))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('serve', ['sass', 'img:copy'], () => {
     browserSync.init({
         server: {
             baseDir: '.'
@@ -69,7 +76,7 @@ gulp.task('serve', ['sass'], () => {
         
     });
 
-    gulp.watch('./src/scss/**/*.scss', ['sass']);
+    gulp.watch('./src/scss/**/*.scss', ['sass', 'img:copy']);
 
     gulp.watch("./*.html").on('change', browserSync.reload);
 });
