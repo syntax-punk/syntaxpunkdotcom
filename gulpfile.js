@@ -32,7 +32,7 @@ b.transform(envify);
 
 gulp.task('js', bundle); // so you can run `gulp js` to build the file
 b.on('update', bundle); // on any dep update, runs the bundler
-b.on('log', gutil.log); // output build logs to terminal
+b.on('log', gutil.log); // outpust build logs to terminal
 
 function bundle() {
     process.env.NODE_ENV = 'development';
@@ -43,22 +43,22 @@ function bundle() {
     // optional, remove if you don't need to buffer file contents
     .pipe(buffer())
        .on('error', gutil.log)
-    .pipe(gulp.dest('./public/static/js'))
+    .pipe(gulp.dest('./static/js'))
     .pipe(browserSync.stream());
 }
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', () => {
-    return gulp.src("./src/scss/**/*.scss")
+    return gulp.src("./src/sass/**/*.sass")
         .pipe(sass())
-        .pipe(gulp.dest("./public/static/css"))
+        .pipe(gulp.dest("./static/css"))
         .pipe(browserSync.stream());
 });
 
 gulp.task('serve', ['sass'], () => {
     browserSync.init({
         server: {
-            baseDir: './public'
+            baseDir: '.'
         },
         open: false,
         reqHeaders: function(config) {
@@ -71,7 +71,7 @@ gulp.task('serve', ['sass'], () => {
 
     gulp.watch('./src/scss/**/*.scss', ['sass']);
 
-    gulp.watch("public/*.html").on('change', browserSync.reload);
+    gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
 gulp.task('default', ['js', 'serve']);
