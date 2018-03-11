@@ -7,20 +7,10 @@
     <title>About Me</title>
   </head>
   <body>
-    <header class="nav-down">
-      <ul class="navbar">
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#ach">Achievements</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#edu">Education</a></li>
-        <li><a href="#cont">Contact Me</a></li>
-      </ul>
-    </header>
-      
     <div id="main" class="info-box">
-        <section>
+        <section class="hero hero-logo">
           <div id="stripes"></div>
-          <div class="hero hero-name">
+          <div class="hero-name">
               <img src="./static/img/vugar.svg" alt="">
               <img src="./static/img/abzd.svg" alt="">
           </div>
@@ -28,40 +18,76 @@
             <img id="photo" src="./static/img/voogs.png" alt="Voogie's image">
           </div>
         </section>
-        <section>
-          <div class="half-space-l">
-            <section>
-              <p>Full Name</p>
-              <p>Address</p>
-              <p>Telephone</p>
-              <p>E-mail</p>
-              <p>LinkedIn</p>
-              <p>Citizenship</p>
-              <p>Date of Birth</p>
-              <p>Martial Status</p>
-            </section>
-          </div>
 
-          <div class="half-space-r">
-            <section>
-              <p>Vugar Abdulzada</p>
-              <p>Kjell Arnholmsgate 34, H0110, 4036 Stavanger, Norway</p>
-              <p>(+47) 93 976 119</p>
-              <a href="mailto:vugar.abdulzada@gmail.com">
-                <p>vugar.abdulzada@gmail.com</p>
-              </a>
-              <a href="https://www.linkedin.com/in/vugar-abdulzada-74970558">
-                <p>LinkedIn</p>
-              </a>
-              <p>Azerbaijani</p>
-              <p>26/Jan/1986</p>
-              <p>Married</p>
-            </section>
+        <section class="panel info-panel">
+          <div class="label">
+            <img src="./static/img/info.svg" alt="">
           </div>
+          <table>
+            <tbody>
+              <tr>
+                <td>Full Name</td>
+                <td>Vugar Abdulzada</td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td>Kjell Arnholmsgate 34, H0110, 4036 Stavanger, Norway</td>
+              </tr>
+              <tr>
+                <td>Telephone</td>
+                <td>(+47) 93 976 119</td>
+              </tr>
+              <tr>
+                <td>E-mail</td>
+                <td>
+                    <a href="mailto:vugar.abdulzada@gmail.com">
+                      vugar.abdulzada@gmail.com
+                    </a>
+                </td>
+              </tr>
+              <tr>
+                <td>LinkedIn</td>
+                <td>
+                  <a href="https://www.linkedin.com/in/vugar-abdulzada-74970558">
+                    LinkedIn
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>Citizenship</td>
+                <td>Azerbaijani</td>
+              </tr>
+              <tr>
+                <td>Date of Birth</td>
+                <td>26/Jan/1986</td>
+              </tr>
+              <tr>
+                <td>Martial Status</td>
+                <td>Married</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
-      <div id="ach">
-        <h3>Achievements</h3>
+      <section class="panel edu-panel">
+        <div class="label edu-label">
+          <img src="./static/img/education.svg" alt="">
+        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td>MSc in Computer Science</td>
+              <td>University of Stavanger (2016-2018)</td>
+            </tr>
+            <tr>
+              <td>BSc in Computer Science</td>
+              <td>Azerbaijan Technical University (2004-2008)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- <div id="ach">
         <div class="half-space-l">
             <p>MS 70-483</p>
             <p>MCPS</p>
@@ -82,17 +108,7 @@
           <p>MS SQL Server 2008 Queries Writing. Sep/2009</p>
           <p>Microsoft Certified Professional. Sep/2008</p>
           <p>Mobile Software Development Conference. Feb/2013</p>
-        </div>
-      </div>
-      
-      <div id="edu">
-      </div>
-      <div id="cont">
-      
-      </div>
-    </div>
-    <div class="footer">
-    </div>
+        </div> -->
     <script src="./static/js/bundle.js"></script>
   </body>
 </html>
