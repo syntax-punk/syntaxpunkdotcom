@@ -6,6 +6,7 @@ const gulp = require('gulp');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const gutil = require('gulp-util');
+const uglify = require('gulp-uglify');
 const babelify = require('babelify');
 const envify = require('envify');
 const sass = require('gulp-sass');
@@ -50,16 +51,24 @@ function bundle() {
     // optional, remove if you don't need to buffer file contents
     .pipe(buffer())
        .on('error', gutil.log)
+    .pipe(uglify())
     .pipe(gulp.dest('./static/js'))
     .pipe(browserSync.stream());
 }
 
 // Compile sass into CSS & auto-inject into browsers
-gulp.task('sass', () => {
+gulp.task('sass', ['css:copy'], () => {
     return gulp.src("./src/sass/**/*.sass")
         .pipe(sass(
             { outputStyle: 'compressed'}
         ).on('error', sass.logError))
+        .pipe(gulp.dest("./static/css"))
+        .pipe(browserSync.stream());
+});
+
+// Compile sass into CSS & auto-inject into browsers
+gulp.task('css:copy', () => {
+    return gulp.src("./src/sass/**/*.css")
         .pipe(gulp.dest("./static/css"))
         .pipe(browserSync.stream());
 });
