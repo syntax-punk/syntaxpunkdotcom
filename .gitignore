@@ -1,4 +1,6 @@
 
+
+.babelrc
 node_modules/
 src/
 package.json
