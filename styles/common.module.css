@@ -1,0 +1,25 @@
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 2rem;
+  max-width: 40rem;
+  min-width: 20rem;
+  border: 1px solid red;
+  text-align: center;
+  margin: auto;
+  font-size: 1rem;
+}
+
+.navBar li {
+  display: inline;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  color: #0000005d;
+}
