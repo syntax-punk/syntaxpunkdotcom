@@ -20,5 +20,5 @@ jobs:
     - name: Build the project  
       run: npm run build
     - name: Export the project  
-      run: npm run build
+      run: npm run export:docs
       
