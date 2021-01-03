@@ -25,6 +25,9 @@ const Home = () => {
                 <a href="https://twitter.com/theVoogie">
                   <img src="/images/twitter.svg" alt="Twitter logo"/>
                 </a>
+                <a href="https://github.com/theVoogie">
+                  <img src="/images/github.svg" alt="Github logo"/>
+                </a>
               </div>
           </article>
         </div>
@@ -89,7 +92,7 @@ const Home = () => {
         .icons-row {
           display: grid;
           grid-template-columns: 1.6rem 1.6rem 1.6rem 1.6rem;
-          grid-gap: 0.4rem;
+          grid-gap: 1rem;
           justify-content: canter;
           align-items: center;
           margin-top: 0.5rem;
