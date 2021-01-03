@@ -11,7 +11,6 @@
   height: 2rem;
   max-width: 40rem;
   min-width: 20rem;
-  border: 1px solid red;
   text-align: center;
   margin: auto;
   font-size: 1rem;
@@ -22,4 +21,10 @@
   font-family: 'Roboto Mono', monospace;
   font-weight: 300;
   color: #0000005d;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.navBar li:hover {
+  box-shadow: 0px -1.6rem 0px 0px #86e8ff inset;
 }

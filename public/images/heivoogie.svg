@@ -1,0 +1,9 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="445px" height="237px">
+<rect  x="40" y="20" width="405" height="216" fill="white" fill-opacity="0.0" />
+<image  x="0px" y="0px" width="0px" height="0px"  xlink:href="data:img/png;base64," />
+<text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" font-size="116px" x="101px" y="120.312px"><tspan font-size="116px" font-family="Atmosphere" fill="#00C9F9">hey&#33;</tspan></text>
+<text kerning="auto" font-family="Myriad Pro" fill="rgb(0, 0, 0)" font-size="116px" x="41px" y="216.359px"><tspan font-size="116px" font-family="Atmosphere" fill="#00C9F9">it&#39;s&#32;Voogie</tspan></text>
+</svg>
