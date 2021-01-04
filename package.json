@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prestart": "npm run build",
     "start": "next start -p $PORT",
     "export": "next export",
     "export:docs": "next export -o docs"
