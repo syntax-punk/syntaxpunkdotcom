@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "prestart": "npm run build",
+    "start": "next start -p 8080",
     "export": "next export",
     "export:docs": "next export -o docs"
   },
