@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "prestart": "npm run build",
-    "start": "next start -p 8080",
+    "start": "next start -p 5000",
     "export": "next export",
     "export:docs": "next export -o docs"
   },
