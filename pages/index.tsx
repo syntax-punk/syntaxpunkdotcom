@@ -9,10 +9,10 @@ const Home = () => {
       <Head>
         <title>{name}</title>
       </Head>
-      <section className="container">
+      <section className="container fade-in three">
         <div className="frame">
           <div className="banner">
-            <img src="/images/heivoogie.svg" alt="Hello logo"/>
+            <img loading="lazy" src="/images/heivoogie.svg" alt="Hello logo"/>
             <p>maker / observer / thinker</p>
           </div>
           <img className="photo" src="/images/me_am.png" alt="Photo of me"/>
@@ -23,10 +23,10 @@ const Home = () => {
               </span>
               <div className="icons-row">
                 <a href="https://twitter.com/theVoogie">
-                  <img src="/images/twitter.svg" alt="Twitter logo"/>
+                  <img loading="eager" src="/images/twitter.svg" alt="Twitter logo"/>
                 </a>
                 <a href="https://github.com/theVoogie">
-                  <img src="/images/github.svg" alt="Github logo"/>
+                  <img loading="eager" src="/images/github.svg" alt="Github logo"/>
                 </a>
               </div>
           </article>
