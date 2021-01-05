@@ -12,10 +12,10 @@ const Home = () => {
       <section className="container fade-in three">
         <div className="frame">
           <div className="banner">
-            <img loading="lazy" src="/images/heivoogie.svg" alt="Hello logo"/>
+            <img src="/images/heivoogie.svg" alt="Hello logo"/>
             <p>maker / observer / thinker</p>
           </div>
-          <img className="photo" src="/images/me_am.png" alt="Photo of me"/>
+          <img loading="lazy" className="photo" src="/images/me_am.png" alt="Photo of me"/>
           <article>
               <span>
                 I develop awesome solutions @Capgemini and 
