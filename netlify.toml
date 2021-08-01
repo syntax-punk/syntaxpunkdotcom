@@ -1,0 +1,4 @@
+[build]
+  command = ""
+  publish = "public"
+  functions = "functions"

@@ -18,7 +18,7 @@ const Home = () => {
           <img loading="lazy" className="photo" src="/images/me_am.png" alt="Photo of me"/>
           <article>
               <span>
-                I develop awesome solutions @Capgemini and 
+                I develop awesome solutions @WEBSTEP and 
                 try to learn and share cool stuff every day
               </span>
               <div className="icons-row">
