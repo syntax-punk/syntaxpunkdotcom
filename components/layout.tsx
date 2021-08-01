@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Header from './header'
 
-export const name = 'Voogie dot dev'
-export const siteTitle = 'Welcome to Voogie dot dev'
+export const name = 'voogie.me'
+export const siteTitle = 'Welcome to voogie.me'
 
 export default function Layout({ children }: {
   children: React.ReactNode,
