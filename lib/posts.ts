@@ -21,10 +21,18 @@ export function getSortedPostsData() {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
 
+    //  Get hashtags list
+    const hashtags = matterResult
+      .data
+      .hashtags
+      .split(',')
+      .map((item: string) => `#${item.trim()}`);
+
     // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as { date: string; title: string, short: string })
+      ...(matterResult.data as { date: string; title: string, short: string }),
+      hashtags
     }
   })
   // Sort posts by date
