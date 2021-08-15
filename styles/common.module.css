@@ -25,6 +25,11 @@
   transition: 200ms;
 }
 
+.navBar li a {
+  color: #0000005d;
+}
+
+
 .navBar li:hover {
   box-shadow: 0px -1.6rem 0px 0px #86e8ff inset;
 }

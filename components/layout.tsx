@@ -18,6 +18,18 @@ export default function Layout({ children }: {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ53E48VRG"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-SZ53E48VRG');
+            `,
+          }}
+        >
+        </script>
       </Head>
       <main>
         <Header />

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import commonStyles from '../styles/common.module.css'
 
 const Header = () => {
@@ -5,10 +6,10 @@ const Header = () => {
   return (
     <header>
       <ul className={commonStyles.navBar}>
-        <li>/about</li>
-        <li>/blog</li>
-        <li>/projects</li>
-        <li>/more</li>
+        <li><Link href="/">/about</Link></li>
+        <li><Link href="/blog">/blog</Link></li>
+        <li><Link href="/projects">/projects</Link></li>
+        <li><Link href="/more">/more</Link></li>
       </ul>
     </header>
   )
