@@ -23,14 +23,14 @@ const Home = () => {
           </div>
           <article>
               <span>
-                I&apos;m building awesome solutions <a href="https://www.webstep.no/" className='slug'>@WEBSTEP</a> and 
+                I&apos;m building awesome solutions <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">@WEBSTEP</a> and 
                 trying to learn and share cool stuff every day
               </span>
               <div className="icons-row">
-                <a href="https://twitter.com/theVoogie">
+                <a href="https://twitter.com/theVoogie" target="_blank" rel="noreferrer">
                   <Image loading="eager" src="/images/twitter.svg" alt="Twitter logo" width="64px" height="64px"/>
                 </a>
-                <a href="https://github.com/theVoogie">
+                <a href="https://github.com/theVoogie" target="_blank" rel="noreferrer">
                   <Image loading="eager" src="/images/github.svg" alt="Github logo" width="64px" height="64px"/>
                 </a>
               </div>
@@ -57,8 +57,8 @@ const Container = styled.section`
 
   .photo {
     position: absolute;
-    left: 4rem;
-    top: 4rem;
+    left: 6rem;
+    top: 6rem;
   }
 
   .banner-hey {
@@ -150,17 +150,20 @@ const Container = styled.section`
       height: 80%;
     }
 
-    
     .photo {
       position: absolute;
       left: 4rem;
-      top: 4rem;
+      top: 6rem;
     }
 
     .banner-hey {
       position: absolute;
-      left: 8rem;
-      top: -2rem;
+      left: 12rem;
+      top: 0;
+    }
+
+    article {
+      bottom: 4rem;
     }
 
     .banner-voogie {

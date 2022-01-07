@@ -29,6 +29,7 @@ const Container = styled.section`
   justify-content: center;
   padding: 2rem;
   row-gap: 1.2rem;
+  overflow-y: scroll;
 `
 
 const Item = styled.article`

@@ -1,3 +1,7 @@
+.header {
+  height: 2.8rem;
+}
+
 .centered {
   display: flex;
   align-items: center;

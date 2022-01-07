@@ -4,7 +4,7 @@ import commonStyles from '../styles/common.module.css'
 const Header = () => {
   
   return (
-    <header>
+    <header className={commonStyles.header}>
       <ul className={commonStyles.navBar}>
         <li><Link href="/">/about</Link></li>
         <li><Link href="/blog">/blog</Link></li>
