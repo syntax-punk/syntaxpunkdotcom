@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Header from './header'
-
 export const name = 'voogie.me'
 export const siteTitle = 'Welcome to voogie.me'
 
@@ -11,10 +10,11 @@ export default function Layout({ children }: {
   return (
     <>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/images/favicon.ico" />
         <meta
           name="description"
-          content="Voogie's personal web page"
+          content="Voogie's page"
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
