@@ -7,9 +7,12 @@ const Header = () => {
     <header className={commonStyles.header}>
       <ul className={commonStyles.navBar}>
         <li><Link href="/">/about</Link></li>
-        <li><Link href="/blog">/blog</Link></li>
+        <li><Link href="/">/blog</Link></li>
+        <li><Link href="/">/projects</Link></li>
+        <li><Link href="/">/more</Link></li>
+        {/* <li><Link href="/blog">/blog</Link></li>
         <li><Link href="/projects">/projects</Link></li>
-        <li><Link href="/more">/more</Link></li>
+        <li><Link href="/more">/more</Link></li> */}
       </ul>
     </header>
   )
