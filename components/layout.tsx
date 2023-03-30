@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Header from './header'
-export const name = 'voogie.me'
-export const siteTitle = 'Welcome to voogie.me'
+export const name = 'syntaxpunk.com'
+export const siteTitle = 'Howdy!'
 
 export default function Layout({ children }: {
   children: React.ReactNode,
@@ -14,7 +14,7 @@ export default function Layout({ children }: {
         <link rel="icon" href="/images/favicon.ico" />
         <meta
           name="description"
-          content="Voogie's page"
+          content="Welcome to syntaxpunk.com."
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />

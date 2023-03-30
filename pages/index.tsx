@@ -11,30 +11,31 @@ const Home = () => {
       </Head>
       <Container className="fade-in three">
         <div className="frame">
-          <div className="photo">
-            <Image loading="lazy" src="/images/voogie.png" alt="Photo of me" width="115px" height="115px" />
-          </div> 
-          <div className="banner-hey">
-            <Image src="/images/hey-logo.png" className="hey-logo" alt="Hello logo" width="158px" height="108px" />
-          </div>
-          <div className="banner-voogie">
-            <Image src="/images/voogie-logo.png" className="voogie-logo" alt="Its Voogie logo" width="375px" height="110px" />
-            <p>maker / observer / thinker</p>
-          </div>
           <article>
               <span>
-                I&apos;m building awesome solutions <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">@WEBSTEP</a> and 
-                trying to learn and share cool stuff every day
+                <span role="img" aria-label="wave">👋</span> I&apos;m David! I&apos;m a software developer from Stavanger, Norway.
+                I&apos;m passionate about building awesome products and I&apos;m always looking for new challenges. Go check out my latest projects, blog posts and other
+                stuff I&apos;ve been working on.
+                <br/>
+                <br/>
+                I&apos;m currently working at <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">WEBSTEP</a> and 
+                you can reach out to me by one of the means below!
               </span>
               <div className="icons-row">
-                <a href="https://twitter.com/theVoogie" target="_blank" rel="noreferrer">
-                  <Image loading="eager" src="/images/twitter.svg" alt="Twitter logo" width="64px" height="64px"/>
+                <a href="mailto:david.jaeren@gmail.com" target="_blank" rel="noreferrer">
+                  <Image loading="eager" src="/images/email.svg" alt="Github logo" width="64" height="64px"/>
                 </a>
-                <a href="https://github.com/theVoogie" target="_blank" rel="noreferrer">
+                <a href="https://github.com/syntax-punk" target="_blank" rel="noreferrer">
                   <Image loading="eager" src="/images/github.svg" alt="Github logo" width="64px" height="64px"/>
+                </a>
+                <a href="https://twitter.com/syntax_punk" target="_blank" rel="noreferrer">
+                  <Image loading="eager" src="/images/twitter.svg" alt="Twitter logo" width="64px" height="64px"/>
                 </a>
               </div>
           </article>
+          <div className="photo">
+            <Image loading="lazy" style={{ borderRadius: "8px" }} src="/images/david.jpg" alt="Photo of me" width="320px" height="320px" />
+          </div>
         </div>
       </Container>
     </Layout>
@@ -50,61 +51,32 @@ const Container = styled.section`
 
   .frame {
     position: relative;
-    width: 60%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-content: center;
+    align-items: stretch;
+    grid-gap: 1.6rem;
+    padding: 1rem;
+    width: 80%;
     height: 60%;
-    min-height: 512px;
+    min-height: 512px; 
+    border-radius: 4px;
   }
-
-  .photo {
-    position: absolute;
-    left: 6rem;
-    top: 6rem;
-  }
-
-  .banner-hey {
-    position: absolute;
-    left: 8rem;
-    top: -2rem;
-
-    &:hover {
-      filter: hue-rotate(76deg);
-    } 
-  }
-
-  .banner-voogie {
-    position: absolute;
-    left: 16rem;
-    top: 4rem;
-    
-    > p {
-      position: absolute;
-      bottom: -1.2rem;
-      right: 0;
-      color: #0000005d;
-      font-weight: 300;
-      font-size: 0.6rem;
-      text-transform: uppercase;
-    }
-  }
-
+  
   article {
-    position: absolute;
-    width: 12rem;
-    bottom: 1rem;
-    left: 4rem;
-
-     > span {
+    width: 100%;
+    > span {
+       background-color: #1c1b1baa;
+      font-size: 1.5em;
       color: #f7f7f7e0;
-      background-color: #333333aa;
-      box-shadow: .5rem 0 0 #333333aa, -.5rem 0 0 #333333aa;
-      line-height: 2rem;
+      line-height: 2.2rem;
       font-weight: 300;
       letter-spacing: 0.05rem;
     }
 
     .icons-row {
       display: grid;
-      grid-template-columns: 1.6rem 1.6rem 1.6rem 1.6rem;
+      grid-template-columns: 2.2rem 2rem 2rem 2rem;
       grid-gap: 1rem;
       justify-content: canter;
       align-items: center;
