@@ -39,9 +39,10 @@ body {
 main {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  border: 20px solid #F7F7F7;
+  border: 20px solid #fbfbfb;
   border-radius: 4px;
   max-width: 1280px;
+  background-color: #F7F7F7;
 }
 
 header{
