@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image';
 import Layout, { name } from '../components/layout'
 import  styled from "styled-components";
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -18,15 +19,14 @@ const Home = () => {
             <div className="flipcard-back">
               <article>
                 <span>
-                  <span role="img" aria-label="wave">👋</span> I&apos;m David! 
-                  <br/>
-                  I&apos;m a software developer from Stavanger, Norway.
-                  I&apos;m passionate about building awesome products and I&apos;m always looking for new challenges. Go check out my latest projects, blog posts and other
-                  stuff I&apos;ve been working on.
+                  <span role="img" aria-label="wave">👋</span> I&apos;m David, a software developer based in Norway. I have a strong passion for building great solutions and love to take on new challenges that can help me grow my skillset. 
                   <br/>
                   <br/>
-                  I&apos;m currently working at <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">WEBSTEP</a> and 
-                  you can reach out to me by one of the means below!
+                  Currently, I work as a software developer at <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">WEBSTEP</a> and during my free time, I enjoy tinkering with latest technology.                 
+                  <br />
+                  <br />
+                  If you&apos;re interested in my work, please feel free to check out my projects and get in touch with via means listed below.
+                  <br/>
                 </span>
                 <div className="icons-row">
                   <a href="mailto:david.jaeren@gmail.com" target="_blank" rel="noreferrer">
@@ -97,13 +97,13 @@ const Container = styled.section`
   
   article {
     display: grid;
-    padding: 2rem;
+    padding: 2rem 1.8rem;
     grid-template-rows: 80% 20%;
     grid-row-gap: 2rem;
     height: 100%;
     width: 100%;
     color: #F1E9FB;
-    text-align: right;
+    text-align: left;
     
     > span {
       padding: 2rem;
@@ -141,7 +141,9 @@ const Container = styled.section`
     .slug {
       text-decoration: none;
       color: #f7f7f7;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
+      font-family: 'Roboto Mono', monospace;
+      font-weight: 400;
       transition: color 250ms ease-in-out;
 
       &:hover {
