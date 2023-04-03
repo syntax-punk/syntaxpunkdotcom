@@ -1,9 +1,12 @@
-import React, { SyntheticEvent, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import Image from 'next/image';
+import Image from 'next/image'; 
+import { useIsMobile } from "../hooks/useIsMobile";
+export { useIsMobile } from '../hooks/useIsMobile';
 
 const FlipCard = () => {
   const [cardSize, setCardSize] = useState<[number, number]>([0, 0]);
+  const isMobile = useIsMobile()
   const containerref = useRef<HTMLDivElement>(null);
   const flipcardref = useRef<HTMLDivElement>(null);
   
@@ -15,6 +18,8 @@ const FlipCard = () => {
 
   useEffect(function setCardListenersOnMount() {
     if (!flipcardref.current) return;
+
+    const [eventStart, eventEnd] = isMobile ? ['touchstart', 'touchend'] : ['mouseenter', 'mouseleave'];
 
     const mouseEnterEvent = (e: MouseEvent) => {
       e.stopPropagation()
@@ -29,14 +34,14 @@ const FlipCard = () => {
     }
 
 
-    flipcardref.current.addEventListener('mouseenter', mouseEnterEvent);
-    flipcardref.current.addEventListener('mouseleave', mouseLeaveEvent);
+    flipcardref.current.addEventListener(eventStart, mouseEnterEvent);
+    flipcardref.current.addEventListener(eventEnd, mouseLeaveEvent);
 
     return () => {
-      flipcardref.current?.removeEventListener('mouseenter', mouseEnterEvent);
-      flipcardref.current?.removeEventListener('mouseleave', mouseLeaveEvent);
+      flipcardref.current?.removeEventListener(eventStart, mouseEnterEvent);
+      flipcardref.current?.removeEventListener(eventEnd, mouseLeaveEvent);
     }
-  }, [])
+  }, [isMobile])
 
 
   const [width, height] = cardSize;
