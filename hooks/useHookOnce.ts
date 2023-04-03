@@ -1,5 +1,5 @@
 
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /**
  * Hook for running the callback once on mount.
@@ -8,7 +8,7 @@ import { useLayoutEffect, useState } from 'react';
 export function useHookOnce(callback: (() => void) | (() => Promise<void>)): void {
     const [mounted, setMounted] = useState(false);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (!mounted) {
             callback();
             setMounted(true);

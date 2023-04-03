@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Image from 'next/image'; 
 import { useIsMobile } from "../hooks/useIsMobile";
-export { useIsMobile } from '../hooks/useIsMobile';
 
 const FlipCard = () => {
   const [cardSize, setCardSize] = useState<[number, number]>([0, 0]);
@@ -19,8 +18,6 @@ const FlipCard = () => {
   useEffect(function setCardListenersOnMount() {
     if (!flipcardref.current) return;
 
-    const [eventStart, eventEnd] = isMobile ? ['touchstart', 'touchend'] : ['mouseenter', 'mouseleave'];
-
     const mouseEnterEvent = (e: MouseEvent) => {
       e.stopPropagation()
       e.preventDefault();
@@ -33,13 +30,24 @@ const FlipCard = () => {
       flipcardref.current?.classList.remove('hover');
     }
 
+    const touchEvent = (e: TouchEvent) => {
+      flipcardref.current?.classList.toggle('hover');
+    }
 
-    flipcardref.current.addEventListener(eventStart, mouseEnterEvent);
-    flipcardref.current.addEventListener(eventEnd, mouseLeaveEvent);
+    if (!isMobile) {
+      flipcardref.current.addEventListener('mouseenter', mouseEnterEvent);
+      flipcardref.current.addEventListener('mouseleave', mouseLeaveEvent);
+    } else {
+      flipcardref.current.addEventListener('click', touchEvent);
+    }
 
     return () => {
-      flipcardref.current?.removeEventListener(eventStart, mouseEnterEvent);
-      flipcardref.current?.removeEventListener(eventEnd, mouseLeaveEvent);
+      if (!isMobile) {
+        flipcardref.current?.removeEventListener('mouseenter', mouseEnterEvent);
+        flipcardref.current?.removeEventListener('mouseleave', mouseLeaveEvent);
+      } else {
+        flipcardref.current?.removeEventListener('click', touchEvent);
+      }
     }
   }, [isMobile])
 
