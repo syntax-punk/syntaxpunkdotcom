@@ -1,22 +1,49 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { SyntheticEvent, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Image from 'next/image';
 
 const FlipCard = () => {
   const [cardSize, setCardSize] = useState<[number, number]>([0, 0]);
   const containerref = useRef<HTMLDivElement>(null);
+  const flipcardref = useRef<HTMLDivElement>(null);
   
-  useEffect(() => {
+  useEffect(function setCardSizeOnMount() {
     if (!containerref.current) return;
     const bbox = containerref.current.getBoundingClientRect();
     setCardSize([bbox.height * 0.8, bbox.height]);
   }, [])
 
+  useEffect(function setCardListenersOnMount() {
+    if (!flipcardref.current) return;
+
+    const mouseEnterEvent = (e: MouseEvent) => {
+      e.stopPropagation()
+      e.preventDefault();
+      flipcardref.current?.classList.add('hover');
+    }
+
+    const mouseLeaveEvent = (e: MouseEvent) => {
+      e.stopPropagation()
+      e.preventDefault();
+      flipcardref.current?.classList.remove('hover');
+    }
+
+
+    flipcardref.current.addEventListener('mouseenter', mouseEnterEvent);
+    flipcardref.current.addEventListener('mouseleave', mouseLeaveEvent);
+
+    return () => {
+      flipcardref.current?.removeEventListener('mouseenter', mouseEnterEvent);
+      flipcardref.current?.removeEventListener('mouseleave', mouseLeaveEvent);
+    }
+  }, [])
+
+
   const [width, height] = cardSize;
 
   return (
     <Container ref={containerref} className="fade-in three">
-      <div className="flipcard" style={{ width: `${width}px`, height: `${height}px`}}>
+      <div ref={flipcardref} className="flipcard" style={{ width: `${width}px`, height: `${height}px`}}>
         <div className="flipcard-content">
           <figure className="flipcard-face">
             <Image loading='lazy' className="mephoto" src="/images/syntaxpnk.png" alt="Photo of me" layout="fill"/>
@@ -31,7 +58,6 @@ const FlipCard = () => {
                 <br />
                 <br />
                 If you&apos;re interested in my work, please feel free to check out my projects and get in touch with via means listed below.
-                <br/>
               </span>
               <div className="icons-row">
                 <a href="mailto:david.jaeren@gmail.com" target="_blank" rel="noreferrer">
@@ -84,7 +110,7 @@ const Container = styled.section`
 	  animation: gradient 15s ease-in-out infinite;
   }
 
-  .flipcard:hover .flipcard-content {
+  .flipcard.hover .flipcard-content {
     height: 100%;
     width: 100%;
     transform: rotateX(180deg);
@@ -126,7 +152,7 @@ const Container = styled.section`
       letter-spacing: 0.05rem;
       text-shadow: 0 0 12px #000;
       background-color: #13072261;
-      overflow: scroll;
+      overflow-y: auto;
     }
 
     .icons-row {
