@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { FlipCard } from '../components/flipcard';
+import { FlipCard } from '../components/flipcard/flipcard';
 import Layout, { name } from '../components/layout'
 
 const Home = () => {

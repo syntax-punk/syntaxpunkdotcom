@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import Image from 'next/image'; 
-import { useIsMobile } from "../hooks/useIsMobile";
+import { useIsMobile } from "../../hooks/useIsMobile";
+import { FlipCardBodyMobile } from "./cardBodyMobile";
+import { FlipCardBodyDesktop } from "./cardBodyDesktop";
 
 const FlipCard = () => {
   const [cardSize, setCardSize] = useState<[number, number]>([0, 0]);
@@ -12,79 +13,17 @@ const FlipCard = () => {
   useEffect(function setCardSizeOnMount() {
     if (!containerref.current) return;
     const bbox = containerref.current.getBoundingClientRect();
-    setCardSize([bbox.height * 0.8, bbox.height]);
+    setCardSize([bbox.width, bbox.width * 1.25]);
   }, [])
 
-  useEffect(function setCardListenersOnMount() {
-    if (!flipcardref.current) return;
-
-    const mouseEnterEvent = (e: MouseEvent) => {
-      e.stopPropagation()
-      e.preventDefault();
-      flipcardref.current?.classList.add('hover');
-    }
-
-    const mouseLeaveEvent = (e: MouseEvent) => {
-      e.stopPropagation()
-      e.preventDefault();
-      flipcardref.current?.classList.remove('hover');
-    }
-
-    const touchEvent = (e: TouchEvent) => {
-      flipcardref.current?.classList.toggle('hover');
-    }
-
-    if (!isMobile) {
-      flipcardref.current.addEventListener('mouseenter', mouseEnterEvent);
-      flipcardref.current.addEventListener('mouseleave', mouseLeaveEvent);
-    } else {
-      flipcardref.current.addEventListener('click', touchEvent);
-    }
-
-    return () => {
-      if (!isMobile) {
-        flipcardref.current?.removeEventListener('mouseenter', mouseEnterEvent);
-        flipcardref.current?.removeEventListener('mouseleave', mouseLeaveEvent);
-      } else {
-        flipcardref.current?.removeEventListener('click', touchEvent);
-      }
-    }
-  }, [isMobile])
-
-
   const [width, height] = cardSize;
+  const extraClassName = isMobile ? "mobile" : "desktop";
 
   return (
     <Container ref={containerref} className="fade-in three">
-      <div ref={flipcardref} className="flipcard" style={{ width: `${width}px`, height: `${height}px`}}>
-        <div className="flipcard-content">
-          <figure className="flipcard-face">
-            <Image loading='lazy' className="mephoto" src="/images/syntaxpnk.png" alt="Photo of me" layout="fill"/>
-          </figure>
-          <div className="flipcard-back">
-            <article>
-              <span>
-                <span role="img" aria-label="wave">👋</span> I&apos;m David, a software developer based in Norway. I have a strong passion for building great solutions and love to take on new challenges that can help me grow my skillset. 
-                <br/>
-                <br/>
-                Currently, I work as a software developer at <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">WEBSTEP</a> and during my free time, I enjoy tinkering with latest technology.                 
-                <br />
-                <br />
-                If you&apos;re interested in my work, please feel free to check out my projects and get in touch with via means listed below.
-              </span>
-              <div className="icons-row">
-                <a href="mailto:david.jaeren@gmail.com" target="_blank" rel="noreferrer">
-                  <Image loading="eager" src="/images/email.svg" alt="Email logo" width="64" height="64px"/>
-                </a>
-                <a href="https://github.com/syntax-punk" target="_blank" rel="noreferrer">
-                  <Image loading="eager" src="/images/github.svg" alt="Github logo" width="64px" height="64px"/>
-                </a>
-                <a href="https://twitter.com/syntax_punk" target="_blank" rel="noreferrer">
-                  <Image loading="eager" src="/images/twitter.svg" alt="Twitter logo" width="64px" height="64px"/>
-                </a>
-              </div>
-          </article>
-          </div>
+      <div ref={flipcardref} className={`flipcard ${extraClassName}`} style={{ width: `${width}px`, height: `${height}px`}}>
+        <div className={`flipcard-content ${extraClassName}`}>
+          { isMobile ? <FlipCardBodyMobile /> : <FlipCardBodyDesktop />}
         </div>
       </div>
     </Container>
@@ -123,7 +62,7 @@ const Container = styled.section`
 	  animation: gradient 15s ease-in-out infinite;
   }
 
-  .flipcard.hover .flipcard-content {
+  .flipcard.desktop:hover .flipcard-content.desktop {
     height: 100%;
     width: 100%;
     transform: rotateX(180deg);
@@ -144,6 +83,21 @@ const Container = styled.section`
     transform: rotateX(180deg);
   }
 
+  .flipcard-content.mobile .photo-badge{
+    position: absolute;
+    top: -40px;
+    right: -16px;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    background-color: hotpink;
+    background-image: url('/images/syntaxpnk.png');
+    background-size:480px 600px;
+    background-position: -280px -300px;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 4px 4px rgba(35, 6, 141, 0.2);
+  }
+
   article {
     display: grid;
     padding: 2rem 1.8rem;
@@ -154,7 +108,7 @@ const Container = styled.section`
     color: #F1E9FB;
     text-align: left;
     
-    > span {
+    .info-body {
       padding: 2rem;
       width: 100%;
       height: 100%;
