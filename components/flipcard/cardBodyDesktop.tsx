@@ -1,7 +1,6 @@
 import React from "react";
 import Image from 'next/image'; 
 import { CardArticle } from "./cardArticle";
-import { Loader } from "../loader/loader";
 
 const FlipCardBodyDesktop: React.FC = () => {
   return (
