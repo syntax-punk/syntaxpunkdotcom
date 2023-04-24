@@ -21,7 +21,11 @@ const FlipCard = () => {
 
   return (
     <Container ref={containerref} className="fade-in three">
-      <div ref={flipcardref} className={`flipcard ${extraClassName}`} style={{ width: `${width}px`, height: `${height}px`}}>
+      <div 
+        ref={flipcardref} 
+        className={`flipcard ${extraClassName}`}
+        style={{ width: `${width}px`, height: `${height}px`}}
+      >
         <div className={`flipcard-content ${extraClassName}`}>
           { isMobile ? <FlipCardBodyMobile /> : <FlipCardBodyDesktop />}
         </div>
