@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import Header from './header'
+import { initAnalytics } from '../utils/analytics'
+import { isSupported } from 'firebase/analytics'
+import { useEffect } from 'react'
 export const name = 'syntaxpunk.com'
 export const siteTitle = 'Howdy!'
 
@@ -7,6 +10,13 @@ export default function Layout({ children }: {
   children: React.ReactNode,
   home?: boolean
 }) {
+
+  useEffect(function initAnalyticsOnMount() {
+    isSupported().then(yes => {
+      if (yes) initAnalytics();
+    });
+  }, []);
+
   return (
     <>
       <Head>
@@ -18,18 +28,6 @@ export default function Layout({ children }: {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-88JW7RRSQ8"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-88JW7RRSQ8');
-            `,
-          }}
-        >
-        </script>
       </Head>
       <main>
         <Header />
