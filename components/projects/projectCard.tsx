@@ -10,7 +10,12 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
       <Title>{title}</Title>
       <Sub>
         {logos.map((logo, index) => (
-          <Image key={index} width="32px" height="32px" src={`/images/projects/logos/${logo}`} alt={logo} />
+          <Image 
+            key={index} 
+            width="32px" 
+            height="32px" 
+            src={`/images/projects/logos/${logo}`} 
+            alt={`${logo} image`} />
         ))}
       </Sub>
     </Container>

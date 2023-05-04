@@ -13,5 +13,12 @@ export const cardsList: CardListItem[] = [
     altText: "Todo app image",
     title: "Yet another Todo app",
     logos: ["react.png", "netlify.png", "firebase.png"]
+  },
+  {
+    imageUrl: "urlzipr.png",
+    gotoUrl: "https://urlzipr.com",
+    altText: "URL zipper app image",
+    title: "URL Zipper",
+    logos: ["svelte.png", "netlify.png", "firebase.png"]
   }
 ]
