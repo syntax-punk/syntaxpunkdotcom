@@ -6,7 +6,7 @@ import { CardListItem } from "./cardsList";
 const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title, logos }) => {
   return (
     <Container href={gotoUrl}>
-      <Image width="200px" height="200px" src={`/images/projects/${imageUrl}`} alt={altText} priority="" />
+      <Image width="200px" height="200px" src={`/images/projects/${imageUrl}`} alt={altText} />
       <Title>{title}</Title>
       <Sub>
         {logos.map((logo, index) => (

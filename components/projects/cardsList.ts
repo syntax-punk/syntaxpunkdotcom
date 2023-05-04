@@ -12,6 +12,6 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://todoapp.syntaxpunk.com",
     altText: "Todo app image",
     title: "Yet another Todo app",
-    logos: ["react.png", "firebase.png"]
+    logos: ["react.png", "netlify.png", "firebase.png"]
   }
 ]
