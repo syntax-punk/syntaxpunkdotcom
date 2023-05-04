@@ -1,6 +1,16 @@
-const Index = (props) => {
-  console.log('propsr ', props)
+import Head from "next/head";
+import Layout from "../../components/layout";
+import { ProjectsView } from "../../components/projects/projectsView";
 
-  return <h1>Heisann World!</h1>
+const Index = (props) => {
+  return (
+    <Layout>
+      <Head>
+        <title>projects</title>
+      </Head>
+      <ProjectsView />
+    </Layout>
+  )
 }
+
 export default Index;
