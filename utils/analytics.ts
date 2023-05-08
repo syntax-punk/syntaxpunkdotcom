@@ -14,8 +14,8 @@ const firebaseConfig = {
   projectId: "syntaxpunkdotcom",
   storageBucket: "syntaxpunkdotcom.appspot.com",
   messagingSenderId: "1026037541383",
-  appId: "1:1026037541383:web:bab19facc56b7dec1b18a2",
-  measurementId: "G-GJNXH3T6N1"
+  appId: "1:1026037541383:web:0d0758e17e0116431b18a2",
+  measurementId: "G-VKPVFMVSZK"
 };
 
 const initAnalytics = (): { app: any, analytics: any} => {
