@@ -1,8 +1,11 @@
+/* eslint-disable @next/next/inline-script-id */
 import React, { useEffect, useRef } from 'react'
 import { AppProps } from 'next/app'
 import '../styles/global.css'
 import { isSupported, logEvent } from 'firebase/analytics';
 import { initAnalytics } from '../utils/analytics';
+import Script from 'next/script';
+
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -20,5 +23,21 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
 
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Script strategy='afterInteractive' src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+      <Script strategy='afterInteractive'>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config','${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
+      
+      <Component {...pageProps} />
+    </>
+  )
 }
