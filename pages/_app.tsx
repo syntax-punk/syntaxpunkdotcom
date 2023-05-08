@@ -1,26 +1,23 @@
 /* eslint-disable @next/next/inline-script-id */
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import { AppProps } from 'next/app'
 import '../styles/global.css'
-import { isSupported, logEvent } from 'firebase/analytics';
-import { initAnalytics } from '../utils/analytics';
 import Script from 'next/script';
 
 
 export default function App({ Component, pageProps }: AppProps) {
 
-  const pageViewRef = useRef<boolean>(false);
-  useEffect(function initAnalyticsOnMount() {
-    isSupported().then(yes => {
-      if (yes){ 
-        const { analytics } =  initAnalytics();
-        if (pageViewRef.current === false) {
-          pageViewRef.current = true;
-          // logEvent(analytics, 'page_view');
-      }}
-    });
-  }, []);
-
+  // const pageViewRef = useRef<boolean>(false);
+  // useEffect(function initAnalyticsOnMount() {
+  //   isSupported().then(yes => {
+  //     if (yes){ 
+  //       const { analytics } =  initAnalytics();
+  //       if (pageViewRef.current === false) {
+  //         pageViewRef.current = true;
+  //         logEvent(analytics, 'page_view');
+  //     }}
+  //   });
+  // }, []);
 
   return (
     <>
