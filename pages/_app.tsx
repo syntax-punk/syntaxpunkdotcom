@@ -12,12 +12,11 @@ export default function App({ Component, pageProps }: AppProps) {
   const pageViewRef = useRef<boolean>(false);
   useEffect(function initAnalyticsOnMount() {
     isSupported().then(yes => {
-      console.log('-> supported: ', yes);
       if (yes){ 
         const { analytics } =  initAnalytics();
         if (pageViewRef.current === false) {
           pageViewRef.current = true;
-          logEvent(analytics, 'page_view');
+          // logEvent(analytics, 'page_view');
       }}
     });
   }, []);

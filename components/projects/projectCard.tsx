@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import { CardListItem } from "./cardsList";
+import { fireEvent } from "../../lib/ga";
 
 const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title, logos }) => {
+  const trackClick = useCallback(() => {
+    fireEvent({ action: 'project-click', params: { project: title, url: gotoUrl }});
+  }, [gotoUrl, title])
+
   return (
-    <Container href={gotoUrl}>
+    <Container href={gotoUrl} onClickCapture={trackClick}>
       <Image width="200px" height="200px" src={`/images/projects/${imageUrl}`} alt={altText} />
       <Title>{title}</Title>
       <Sub>
@@ -13,7 +18,7 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
           <Image 
             key={index} 
             width="32px" 
-            height="32px" 
+            height="32px"
             src={`/images/projects/logos/${logo}`} 
             alt={`${logo} image`} />
         ))}
