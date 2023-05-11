@@ -20,5 +20,12 @@ export const cardsList: CardListItem[] = [
     altText: "URL zipper app image",
     title: "URL Zipper",
     logos: ["svelte.png", "netlify.png", "firebase.png"]
+  },
+  {
+    imageUrl: "wordpuff.png",
+    gotoUrl: "https://wordpuff.com",
+    altText: "WordPuff image",
+    title: "WordPuff",
+    logos: ["react.png", "mui.png", "vite.png", "firebase.png"]
   }
 ]

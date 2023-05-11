@@ -13,14 +13,14 @@ const FlipCard = () => {
   useEffect(function setCardSizeOnMount() {
     if (!containerref.current) return;
     const bbox = containerref.current.getBoundingClientRect();
-    setCardSize([bbox.width, bbox.width * 1.25]);
+    setCardSize([bbox.height * 0.8,  bbox.height]);
   }, [])
 
   const [width, height] = cardSize;
   const extraClassName = isMobile ? "mobile" : "desktop";
 
   return (
-    <Container ref={containerref} className="fade-in three">
+    <Container ref={containerref} className="flipcard-container fade-in three">
       <div 
         ref={flipcardref} 
         className={`flipcard ${extraClassName}`}
@@ -163,9 +163,38 @@ const Container = styled.section`
   }
 
   @media only screen and (max-width: 960px) {
+
+    .flipcard {
+      height: 80% !important;
+      width: 80% !important;
+    }
+
+    article {
+      padding: 1rem 0.8rem;
+
+      .info-body {
+        font-size: 1.2rem;
+      }
+
+      .slug {
+        font-size: 1.3rem;
+      }
+    }
   }
 
   @media only screen and (max-width: 700px) {
+
+    article {
+      padding: 1rem 0.8rem;
+
+      .info-body {
+        font-size: 1rem;
+      }
+
+      .slug {
+        font-size: 1.1rem;
+      }
+    }
   }
 `;
 

@@ -136,3 +136,24 @@ img {
 		background-position: 0% 50%;
 	}
 }
+
+@media only screen and (max-width: 960px) {
+  html,
+  body,
+  #__next,
+  body > div:first-child,
+  main {
+    min-width: none !important;
+    min-height: none !important;
+  }
+
+  body {
+    padding: 4px;
+  }
+
+  main {
+    background-color: white !important;
+    border: none !important;
+  }
+}
+

@@ -33,3 +33,9 @@
 .navBar li:hover {
   box-shadow: 0px -1.6rem 0px 0px #86e8ff inset;
 }
+
+@media only screen and (max-width: 960px) {
+  .navBar {
+    min-width: 100% !important;
+  }
+}
