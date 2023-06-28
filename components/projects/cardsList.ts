@@ -27,5 +27,12 @@ export const cardsList: CardListItem[] = [
     altText: "WordPuff image",
     title: "WordPuff",
     logos: ["react.png", "mui.png", "vite.png", "firebase.png"]
+  },
+  {
+    imageUrl: "thehub.png",
+    gotoUrl: "https://thehub.syntaxpunk.com",
+    altText: "the Hub image",
+    title: "theHub",
+    logos: ["react.png", "csharp.png", "netcore.png", "docker.png", "flyio.png"]
   }
 ]

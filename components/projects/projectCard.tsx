@@ -11,7 +11,13 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
 
   return (
     <Container href={gotoUrl} onClickCapture={trackClick}>
-      <Image width="200px" height="200px" src={`/images/projects/${imageUrl}`} alt={altText} />
+      <Image 
+        width="200px" 
+        height="200px" 
+        src={`/images/projects/${imageUrl}`} 
+        alt={altText} 
+        placeholder="blur" 
+        blurDataURL="/images/projects/blurred_shapes.png"/>
       <Title>{title}</Title>
       <Sub>
         {logos.map((logo, index) => (
@@ -20,7 +26,8 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
             width="32px" 
             height="32px"
             src={`/images/projects/logos/${logo}`} 
-            alt={`${logo} image`} />
+            alt={`${logo} image`}
+            />
         ))}
       </Sub>
     </Container>
