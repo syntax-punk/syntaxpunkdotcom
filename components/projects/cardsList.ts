@@ -34,5 +34,12 @@ export const cardsList: CardListItem[] = [
     altText: "the Hub image",
     title: "theHub",
     logos: ["react.png", "csharp.png", "netcore.png", "docker.png", "flyio.png"]
-  }
+  },
+  {
+    imageUrl: "pixelbrush.png",
+    gotoUrl: "https://pixelbrush.syntaxpunk.com",
+    altText: "Pixel Brush app image",
+    title: "pixel brush",
+    logos: ["svelte.png", "netlify.png", "firebase.png"]
+  },
 ]
