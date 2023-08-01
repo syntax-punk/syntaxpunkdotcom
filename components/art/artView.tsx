@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
@@ -5,6 +6,7 @@ const ArtView = () => {
   return (
     <Container>
       ***
+      <Link href="/art/mondrian">Mondrian</Link>
     </Container>
   );
 };
