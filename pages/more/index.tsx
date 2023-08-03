@@ -1,9 +1,16 @@
-const Index = (props) => {
+import Head from "next/head";
+import Layout from "../../components/layout";
+import { MoreView } from "../../components/more/moreView";
 
+const Index = (props) => {
   return (
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-  );
+    <Layout>
+      <Head>
+        <title>more</title>
+      </Head>
+      <MoreView />
+    </Layout>
+  )
 }
+
 export default Index;

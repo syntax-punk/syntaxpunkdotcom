@@ -4,7 +4,7 @@ import styled from "styled-components";
 const SponsorsView = () => {
   return (
     <Container>
-      ***
+      <p style={{ fontSize: "4rem" }}>🏖️</p>
     </Container>
   );
 };

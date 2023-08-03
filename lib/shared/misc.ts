@@ -12,8 +12,18 @@ function createRandomSquare(container: HTMLElement) {
   container.appendChild(square);
 }
 
+function createRandomSquareWithColors(container: HTMLElement, colors: string[]) {
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  const square = document.createElement("div");
+  square.className = "cell";
+  square.style.backgroundColor = color;
+
+  container.appendChild(square);
+}
+
 
 export {
   getRandomColor,
-  createRandomSquare
+  createRandomSquare,
+  createRandomSquareWithColors
 }

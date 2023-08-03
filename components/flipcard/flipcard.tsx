@@ -20,7 +20,7 @@ const FlipCard = () => {
   const extraClassName = isMobile ? "mobile" : "desktop";
 
   return (
-    <Container ref={containerref} className="flipcard-container fade-in three">
+    <Container ref={containerref} className="flipcard-container fade-in one">
       <div 
         ref={flipcardref} 
         className={`flipcard ${extraClassName}`}
