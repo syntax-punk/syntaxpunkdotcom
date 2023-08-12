@@ -1,10 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import Image from "next/image";
 
 const SponsorsView = () => {
   return (
     <Container>
-      <p style={{ fontSize: "4rem" }}>🏖️</p>
+      <Banner>
+        Enjoying  my work?
+        <BuyMeACoffee href="https://www.buymeacoffee.com/syntaxpunk" target="_blank">
+          <Image 
+            src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" 
+            alt="Buy Me A Coffee"
+            height={60}
+            width={217} />
+        </BuyMeACoffee> 
+      </Banner>
     </Container>
   );
 };
@@ -13,12 +23,6 @@ const Container = styled.section`
   position: relative;
   width: 100%;
   height: 100%;
-  display: grid;
-  justify-self: center;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: 270px;
-  grid-gap: 20px;
-  justify-items: center;
   overflow-y: scroll;
   overflow-x: scroll;
 
@@ -30,6 +34,18 @@ const Container = styled.section`
       height: 100%;
     }
   }
+`
+
+const Banner = styled.div`
+  font-size: 2rem;
+  text-align: center;
+  padding: 2.25rem;
+  font-weight: 400;
+`
+
+const BuyMeACoffee = styled.a`
+  margin-top: 1rem;
+  display: block;
 `
 
 export { SponsorsView }
