@@ -6,13 +6,9 @@ const SponsorsView = () => {
   return (
     <Container>
       <Banner>
-        Enjoying  my work?
+        <p>Enjoying  my work?</p>
         <BuyMeACoffee href="https://www.buymeacoffee.com/syntaxpunk" target="_blank">
-          <Image 
-            src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" 
-            alt="Buy Me A Coffee"
-            height={60}
-            width={217} />
+          Buy me a ☕️
         </BuyMeACoffee> 
       </Banner>
     </Container>
@@ -44,8 +40,23 @@ const Banner = styled.div`
 `
 
 const BuyMeACoffee = styled.a`
+  display: inline-block;
   margin-top: 1rem;
-  display: block;
+  padding: 0.1rem 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: #000000cc;
+  background-color: #65e0eb1f;
+  border-radius: 0.5rem;
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.12), 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+
+  &:hover {
+    color: #000000;
+    text-decoration: none;
+    border: 2px groove #a9a9a94c;
+    box-shadow: none;
+  }
 `
 
 export { SponsorsView }
