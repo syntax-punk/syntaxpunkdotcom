@@ -7,7 +7,7 @@ import {GetStaticProps, GetStaticPaths} from 'next'
 import styled from 'styled-components'
 
 export default function Post({ postData }) {
-  debugger
+  
   return (
     <Layout>
       <Head>
