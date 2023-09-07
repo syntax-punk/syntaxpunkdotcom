@@ -42,12 +42,14 @@ const Container = styled.a`
   grid-template-rows: 200px 0.8rem auto;
   border-radius: 4px;
   background-color: #fff;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);
   color: #171515;
   text-decoration: none;
 
   &:hover {
     text-decoration: none;
+    transform: translateY(6px);
+    transition: transform 200ms ease-in-out;
   }
 
   img {

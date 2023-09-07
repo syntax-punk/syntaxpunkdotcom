@@ -78,11 +78,17 @@ const SectionItem = styled.article`
   color: #fefefe;
   background-color: #000;
   background-image:  linear-gradient(135deg, rgb(0, 0, 0), rgba(0, 167, 223, 0.8));
-  box-shadow: 0 0 4px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);
   letter-spacing: 0.1rem;
   border-radius: 8px;
   padding: 0.5rem;
   cursor: pointer;
+  
+  &:hover {
+    text-decoration: none;
+    transform: translateY(6px);
+    transition: transform 200ms ease-in-out;
+  }
 `
 
 export { Section };
