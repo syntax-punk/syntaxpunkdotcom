@@ -42,4 +42,11 @@ export const cardsList: CardListItem[] = [
     title: "pixel brush",
     logos: ["svelte.png", "netlify.png", "firebase.png"]
   },
+  {
+    imageUrl: "labeler.png",
+    gotoUrl: "https://labeler.syntaxpunk.com",
+    altText: "labeler app image",
+    title: "labeler",
+    logos: ["reacr.png", "netlify.png"]
+  },
 ]
