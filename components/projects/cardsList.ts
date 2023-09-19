@@ -1,4 +1,5 @@
 export type CardListItem = {
+  type: "web" | "ios";
   imageUrl: string;
   gotoUrl: string;
   altText: string;
@@ -8,6 +9,7 @@ export type CardListItem = {
 
 export const cardsList: CardListItem[] = [
   {
+    type: "web",
     imageUrl: "todo.png",
     gotoUrl: "https://todoapp.syntaxpunk.com",
     altText: "Todo app image",
@@ -15,6 +17,7 @@ export const cardsList: CardListItem[] = [
     logos: ["react.png", "netlify.png", "firebase.png"]
   },
   {
+    type: "web",
     imageUrl: "urlzipr.png",
     gotoUrl: "https://urlzipr.com",
     altText: "URL zipper app image",
@@ -22,6 +25,7 @@ export const cardsList: CardListItem[] = [
     logos: ["svelte.png", "netlify.png", "firebase.png"]
   },
   {
+    type: "web",
     imageUrl: "wordpuff.png",
     gotoUrl: "https://wordpuff.com",
     altText: "WordPuff image",
@@ -29,6 +33,7 @@ export const cardsList: CardListItem[] = [
     logos: ["react.png", "mui.png", "vite.png", "firebase.png"]
   },
   {
+    type: "web",
     imageUrl: "thehub.png",
     gotoUrl: "https://thehub.syntaxpunk.com",
     altText: "the Hub image",
@@ -36,6 +41,7 @@ export const cardsList: CardListItem[] = [
     logos: ["react.png", "csharp.png", "netcore.png", "docker.png", "flyio.png"]
   },
   {
+    type: "web",
     imageUrl: "pixelbrush.png",
     gotoUrl: "https://pixelbrush.syntaxpunk.com",
     altText: "Pixel Brush app image",
@@ -43,10 +49,19 @@ export const cardsList: CardListItem[] = [
     logos: ["svelte.png", "netlify.png", "firebase.png"]
   },
   {
+    type: "web",
     imageUrl: "labeler.png",
     gotoUrl: "https://labeler.syntaxpunk.com/about",
     altText: "labeler app image",
     title: "labeler",
     logos: ["react.png", "netlify.png"]
+  },
+  {
+    type: "ios",
+    imageUrl: "zenelements.png",
+    gotoUrl: "https://syntaxpunk.com/projects/ios/zen-elements",
+    altText: "labeler app image",
+    title: "zen elements",
+    logos: ["swift.png"]
   },
 ]

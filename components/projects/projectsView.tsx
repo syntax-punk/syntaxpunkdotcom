@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
-import { cardsList } from "./cardsList";
+import { CardListItem, cardsList } from "./cardsList";
 import { ProjectCard } from "./projectCard";
 
 const ProjectsView = () => {
+
+  const seqmentedCards = cardsList.reduce<{[key: string]: CardListItem[]}>((acc, card) => {
+    if (acc[card.type]) {
+      acc[card.type].push(card)
+    } else {
+      acc[card.type] = [card]
+    }
+    return acc;
+  }, {})
+
+  const getProjectCards = useCallback((type: string) => (
+    seqmentedCards[type].map((card, index) => {
+      return (<ProjectCard key={index} {...card} />)
+    })
+  ), [seqmentedCards]);
+
   return (
     <Container>
-      { cardsList.map((card, index) => (<ProjectCard key={index} {...card} />)) }
+      { cardsList.map((card, index) => {
+        return (<ProjectCard key={index} {...card} />)
+      })}
     </Container>
   );
 };

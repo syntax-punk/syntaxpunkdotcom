@@ -10,14 +10,14 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
   }, [gotoUrl, title])
 
   return (
-    <Container href={gotoUrl} onClickCapture={trackClick}>
+    <Container className="project-card" href={gotoUrl} onClickCapture={trackClick}>
       <Image 
         width="200px" 
         height="200px" 
         src={`/images/projects/${imageUrl}`} 
         alt={altText} 
         placeholder="blur" 
-        blurDataURL="/images/projects/blurred_shapes.png"/>
+        blurDataURL="/images/projects/blurred_shapes.png" />
       <Title>{title}</Title>
       <Sub>
         {logos.map((logo, index) => (
