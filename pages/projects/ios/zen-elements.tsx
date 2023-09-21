@@ -4,6 +4,17 @@ import Layout from "../../../components/layout";
 import Image from "next/image";
 
 const ZenElements = () => {
+  
+  const IosAppButton = (
+    <a href="https://apps.apple.com/us/app/zen-elements/id6467126777?itsct=apps_box_badge&amp;itscg=30200" 
+      style={{ display: "inline-block", overflow: "hidden", borderRadius: "13px", width: "250px", height: "83px" }}>
+        { /* eslint-disable-next-line @next/next/no-img-element */ }
+        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1695254400" 
+          alt="Download on the App Store" 
+          style={{ borderRadius: "13px", width: "250px", height: "83px" }} />
+    </a>
+  )
+
   return (
     <Layout>
       <Head>
@@ -22,6 +33,10 @@ const ZenElements = () => {
             alt='zen elementslogo' 
             placeholder="blur" 
             blurDataURL="/images/projects/blurred_shapes.png" />
+        </div>
+
+        <div className="app-button">
+          {IosAppButton}
         </div>
 
         <div className="app-description">
@@ -93,8 +108,8 @@ const Content = styled.div`
     }
   }
 
-  .app-logo {
-
+  .app-logo, 
+  .app-button {
     img {
       border-radius: 18px;
     }
