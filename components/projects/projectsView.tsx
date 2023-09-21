@@ -42,8 +42,10 @@ const Container = styled.div`
   display: grid;
   grid-auto-rows: min-content;
   overflow-y: auto;
+  padding-bottom: 3.2rem;
 
   h2 {
+    color: #00000099;
     font-weight: 300;
     font-size: 2rem;
     padding: 1rem;
