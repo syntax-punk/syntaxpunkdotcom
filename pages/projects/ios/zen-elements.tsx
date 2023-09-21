@@ -156,16 +156,6 @@ const Content = styled.div`
       color: #555;
     }
   }
-
-  /* width */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: transparent; 
-  }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
@@ -175,7 +165,7 @@ const Content = styled.div`
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
+    background: #363838dd;
   }
 `
 

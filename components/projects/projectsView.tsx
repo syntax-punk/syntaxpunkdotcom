@@ -22,29 +22,61 @@ const ProjectsView = () => {
 
   return (
     <Container>
-      { cardsList.map((card, index) => {
-        return (<ProjectCard key={index} {...card} />)
-      })}
+      {
+        Object.keys(seqmentedCards).map((type, index) =>
+          (
+            <React.Fragment key={index}>
+              <h2>{type}</h2>
+              <ProjectSection key={index}>
+                {getProjectCards(type)}
+              </ProjectSection>
+            </React.Fragment>
+          )
+        )
+      }
     </Container>
   );
 };
 
-const Container = styled.section`
+const Container = styled.div`
+  display: grid;
+  grid-auto-rows: min-content;
+  overflow-y: auto;
+
+  h2 {
+    font-weight: 300;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  h2:not(:first-child) {
+    margin-top: 2rem;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #36383884;
+    border-radius: 4px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #363838dd;
+  }
+`
+
+const ProjectSection = styled.section`
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: grid;
   justify-self: center;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-auto-rows: 270px;
   grid-gap: 20px;
   justify-items: center;
-  overflow-y: scroll;
-  overflow-x: scroll;
 
-  
   @media only screen and (max-width: 700px) {
-
     & {
       width: 100%;
       height: 100%;
