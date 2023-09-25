@@ -9,6 +9,14 @@ export type CardListItem = {
 
 export const cardsList: CardListItem[] = [
   {
+    type: "ios",
+    imageUrl: "zenelements.png",
+    gotoUrl: "https://syntaxpunk.com/projects/ios/zen-elements",
+    altText: "labeler app image",
+    title: "zen elements",
+    logos: ["swift.png"]
+  },
+  {
     type: "web",
     imageUrl: "todo.png",
     gotoUrl: "https://todoapp.syntaxpunk.com",
@@ -57,11 +65,11 @@ export const cardsList: CardListItem[] = [
     logos: ["react.png", "netlify.png"]
   },
   {
-    type: "ios",
-    imageUrl: "zenelements.png",
-    gotoUrl: "https://syntaxpunk.com/projects/ios/zen-elements",
-    altText: "labeler app image",
-    title: "zen elements",
-    logos: ["swift.png"]
-  },
+    type: "web",
+    imageUrl: "ipsumshop.png",
+    gotoUrl: "https://ipsumshop.syntaxpunk.com/about",
+    altText: "ipsum web app image",
+    title: "lorem ipsum shop",
+    logos: ["stripe.png", "netlify.png"]
+  }
 ]

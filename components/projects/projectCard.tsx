@@ -37,9 +37,9 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
 const Container = styled.a`
   position: relative;
   width: 200px;
-  height: 270px;
+  height: 280px;
   display: grid;
-  grid-template-rows: 200px 0.8rem auto;
+  grid-template-rows: 200px 1.5rem min-content;
   border-radius: 4px;
   background-color: #fff;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -60,7 +60,7 @@ const Container = styled.a`
 
 const Title = styled.p`
   font-size: 0.8rem;
-  line-height: 0.8rem;
+  line-height: 1.25rem;
   margin: 0.2rem 0;
   text-align:  center;
 `
@@ -72,7 +72,8 @@ const Sub = styled.div`
   grid-gap: 0.2rem;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem;
+  padding: 0.5rem;
+  border-top: 1px solid #00000011;
 `
 
 export { ProjectCard };
