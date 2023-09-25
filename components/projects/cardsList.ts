@@ -67,7 +67,7 @@ export const cardsList: CardListItem[] = [
   {
     type: "web",
     imageUrl: "ipsumshop.png",
-    gotoUrl: "https://ipsumshop.syntaxpunk.com/about",
+    gotoUrl: "https://ipsumshop.syntaxpunk.com",
     altText: "ipsum web app image",
     title: "lorem ipsum shop",
     logos: ["stripe.png", "netlify.png"]
