@@ -45,10 +45,20 @@ const Container = styled.div`
   padding-bottom: 3.2rem;
 
   h2 {
+    display: grid;
+    grid-template-columns: 4rem 4rem;
+    justify-content: left;
+    column-gap: 1rem;
+    align-items: center;
     color: #00000099;
     font-weight: 300;
     font-size: 2rem;
     padding: 1rem;
+  }
+
+  h2:before {
+    content: " ";
+    border-top: 2px solid #36383884;
   }
 
   h2:not(:first-child) {

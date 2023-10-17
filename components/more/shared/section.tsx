@@ -59,14 +59,23 @@ const SectionContainer = styled.div`
   grid-auto-flow: dense;
   position: relative;
 `
+ 
+const SectionTitle = styled.h2`
+  text-transform: lowercase;
+  display: grid;
+  grid-template-columns: 4rem 4rem;
+  justify-content: left;
+  column-gap: 1rem;
+  align-items: center;
+  color: #00000099;
+  font-weight: 300;
+  font-size: 2rem;
+  padding: 1rem;
 
-const SectionTitle = styled.p`
-  margin: 1rem 0 0 1rem;
-  font-size: 2.25rem;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
+  &:before {
+    content: " ";
+    border-top: 2px solid #36383884;
+  }
 `
 
 const SectionItem = styled.article`

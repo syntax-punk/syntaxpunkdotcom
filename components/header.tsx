@@ -1,16 +1,31 @@
 import Link from 'next/link';
 import commonStyles from '../styles/common.module.css'
+import { useRouter } from 'next/router';
+
+const navLinks = [
+  { title: '/about', link: '/' },
+  // { title: '/blog', link: '/blog' },
+  { title: '/projects', link: '/projects' },
+  { title: '/more', link: '/more' },
+  { title: '/thanks', link: '/thanks' },
+]
 
 const Header = () => {
-  
+  const { pathname } = useRouter();
+
   return (
     <header className={commonStyles.header}>
       <ul className={commonStyles.navBar}>
-        <li><Link href="/">/about</Link></li>
-        {/* <li><Link href="/blog">/blog</Link></li> */}
-        <li><Link href="/projects">/projects</Link></li>
-        <li><Link href="/more">/more</Link></li>
-        <li><Link href="/thanks">/thanks</Link></li>
+        {navLinks.map(({ title, link }, idx) => { 
+          const active = pathname === link ? commonStyles.active : '';
+          return (
+            <li className={active} key={idx}>
+              <Link href={link}>
+                {title}
+              </Link>
+            </li>
+          )
+        })}
       </ul>
     </header>
   )
