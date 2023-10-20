@@ -7,6 +7,8 @@ hashtags: "tech,dev"
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
 
+*i want [all of this](/link){target="_blank"} to be italics*
+
 
 Another thing is I like to drink a lot of water
 
@@ -19,7 +21,7 @@ Another thing is I like to drink a lot of water
 
 
 # Headline 1
-## Headline 2 {style="color:yellow;"}
+## Headline 2 {.foobar}
 ### Headline 3
 #### Headline 4
 ##### Headline 5
@@ -75,7 +77,7 @@ This paragraph belongs to item two of the outer list.
 --
 
 
-```javascript
+```js
 function add(a, b)
   return a + b
 end
