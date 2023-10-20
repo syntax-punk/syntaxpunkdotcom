@@ -5,6 +5,7 @@ import matter from 'gray-matter'
 import {remark} from 'remark'
 import gfm from 'remark-gfm'
 import html from 'remark-html'
+import attr from 'remark-attr'
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
@@ -12,6 +13,9 @@ export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames.map(fileName => {
+    // Only process .md files
+    if (!fileName.endsWith('.md')) return null;
+
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '')
 
@@ -21,7 +25,7 @@ export function getSortedPostsData() {
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
-
+    
     //  Get hashtags list
     const hashtags = matterResult
       .data
@@ -37,7 +41,9 @@ export function getSortedPostsData() {
     }
   })
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
+  return allPostsData
+  .filter(Boolean)
+  .sort((a, b) => {
     if (a.date < b.date) {
       return 1
     } else {
@@ -65,13 +71,11 @@ export async function getPostData(id) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents)
 
-  console.log('matter -> ', matterResult)
-
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
-    .use(gfm)
-    .use(html)
-    .process(matterResult.content)
+  .use(gfm)
+  .use(html)
+  .process(matterResult.content)
   const contentHtml = processedContent.toString()
 
   // Combine the data with the id and contentHtml

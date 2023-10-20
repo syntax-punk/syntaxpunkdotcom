@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Date = ({ dateString, size }: { dateString: string, size: string }) => {
   const date = parseISO(dateString)
-
+  
   const sizeValue = size.toLowerCase() === "s"
     ? "0.8"
     : size.toLowerCase() === "l"

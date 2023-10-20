@@ -10,13 +10,21 @@ We recommend using **Static Generation** (with and without data) whenever possib
 
 Another thing is I like to drink a lot of water
 
-![image info](./pictures/image.png)
+![image info width](/images/posts/duck.jpg)
+
+<img src="/path/to/image.jpg" alt="Alt text" width="300" height="200" />
 
 
 .footnote[.red.bold[*] Important footnote]
 
 
-## Footnote
+# Headline 1
+## Headline 2 {style="color:yellow;"}
+### Headline 3
+#### Headline 4
+##### Headline 5
+
+#
 
 A note[^1]
 
@@ -65,6 +73,13 @@ b. List item b.
 
 This paragraph belongs to item two of the outer list.
 --
+
+
+```javascript
+function add(a, b)
+  return a + b
+end
+```
 
 
 ### Catarsis

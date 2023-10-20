@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 
 const navLinks = [
   { title: '/about', link: '/' },
-  // { title: '/blog', link: '/blog' },
   { title: '/projects', link: '/projects' },
+  // { title: '/blog', link: '/blog' },
   { title: '/more', link: '/more' },
   { title: '/thanks', link: '/thanks' },
 ]
