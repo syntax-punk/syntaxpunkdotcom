@@ -15,7 +15,7 @@ export default function Post({ postData }) {
       </Head>
       <Container>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
+        <div className={utilStyles.lightBadge}>
           <Date dateString={postData.date} size="m" />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
@@ -28,6 +28,51 @@ const Container = styled.article`
   position: relative;
   padding: 2rem;
   overflow-y: scroll;
+  max-width: 920px;
+  justify-self: center;
+  
+  p {
+    text-align: justify;  
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #36383884;
+    border-radius: 4px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #363838dd;
+  }
+
+  .margin1 {
+    margin: 1rem 0;
+  }
+
+  .margin2 {
+    margin: 2rem 0;
+  }
+
+  .25size {
+    width: 25%;
+    height: 25%;
+  }
+
+  .50size {
+    width: 50%;
+    height: 50%;
+  }
+
+  .75size {
+    width: 75%;
+    height: 75%;
+  }
+
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
 `
 
 export const getStaticPaths: GetStaticPaths = async () => {

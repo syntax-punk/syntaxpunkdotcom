@@ -5,14 +5,14 @@ short: "This is a short description of some stuff here"
 hashtags: "tech,dev"
 ---
 
-We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
+We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.{.margin1}
 
 *i want [all of this](/link){target="_blank"} to be italics*
 
 
 Another thing is I like to drink a lot of water
 
-![image info width](/images/posts/duck.jpg)
+![image info width](/images/posts/duck.jpg){.halfsize .center}
 
 <img src="/path/to/image.jpg" alt="Alt text" width="300" height="200" />
 
