@@ -54,15 +54,16 @@ const Container = styled.div`
     font-weight: 300;
     font-size: 2rem;
     padding: 1rem;
+    margin-bottom: 0.6rem;
   }
 
   h2:before {
     content: " ";
-    border-top: 2px solid #36383884;
+    border-top: 2px solid #92929288;
   }
 
   h2:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 
   /* Handle */

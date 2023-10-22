@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 const navLinks = [
   { title: '/about', link: '/' },
   { title: '/projects', link: '/projects' },
-  // { title: '/blog', link: '/blog' },
+  { title: '/blog', link: '/blog' },
   { title: '/more', link: '/more' },
   { title: '/thanks', link: '/thanks' },
 ]

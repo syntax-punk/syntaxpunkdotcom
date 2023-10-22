@@ -5,9 +5,10 @@ import { getAllPostIds, getPostData } from '../../lib/posts'
 import utilStyles from '../../styles/utils.module.css'
 import {GetStaticProps, GetStaticPaths} from 'next'
 import styled from 'styled-components'
+import 'highlight.js/styles/github-dark.css'
 
 export default function Post({ postData }) {
-  
+
   return (
     <Layout>
       <Head>
@@ -35,15 +36,38 @@ const Container = styled.article`
     text-align: justify;  
   }
 
+  ul, ol {
+    padding: 1rem 2rem;
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 1rem;
+  } 
+
+  pre {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  pre code {
+    border-radius: 12px;
+  }
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #36383884;
+    background: #76767684;
     border-radius: 4px;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #363838dd;
+    background: #7676762f;
+  }
+
+  .codeword {
+    padding: 0.2rem 0.4rem;
+    background-color: #D0D0D1;
+    border-radius: 6px;
   }
 
   .margin1 {
