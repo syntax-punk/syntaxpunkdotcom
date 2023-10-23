@@ -13,11 +13,21 @@ const navLinks = [
 const Header = () => {
   const { pathname } = useRouter();
 
+  function getActiveClassName(link: string) {
+    if (pathname.length === 1 && link === '/') 
+      return commonStyles.active;
+    else if (pathname.startsWith(link) && link !== '/') 
+      return commonStyles.active;
+    else 
+      return '';
+  }
+
   return (
     <header className={commonStyles.header}>
       <ul className={commonStyles.navBar}>
         {navLinks.map(({ title, link }, idx) => { 
-          const active = pathname === link ? commonStyles.active : '';
+          
+          const active = getActiveClassName(link);
           return (
             <li className={active} key={idx}>
               <Link href={link}>

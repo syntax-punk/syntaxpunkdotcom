@@ -74,7 +74,7 @@ const SectionTitle = styled.h2`
 
   &:before {
     content: " ";
-    border-top: 2px solid #36383884;
+    border-top: 2px solid #92929288;
   }
 `
 
