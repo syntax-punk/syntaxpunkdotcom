@@ -7,11 +7,11 @@ hashtags: "tech,dev,ai,python"
 
 Ever thought about building an AI chatbot? This guide shows you how to build one, step by step. Let's dive right in.
 
-## **Prep Work** {.margin1}
+## **Prep Work** {.hero-margin}
 
 Before anything else, make sure you've got **Python** ready on your machine. And, for installing some tools, ensure you have `pip` up and running.
 
-## **Setting Up Essential Tools and Integrating OpenAI** {.margin1}
+## **Setting Up Essential Tools and Integrating OpenAI** {.hero-margin}
 
 Here's a breakdown of the main tools our chatbot will leverage:
 
@@ -41,7 +41,7 @@ OPENAI_API_KEY=your-api-key
 
 Replace `your-api-key`{.codeword} with your actual key. The `dotenv`{.codeword} package ensures our code reads this key, enabling the `openai`{.codeword} functionalities.
 
-## **Kicking Off the Code** {.margin1}
+## **Kicking Off the Code** {.hero-margin}
 
 Time to roll up our sleeves and start coding. First, we'll import the modules we need:
 
@@ -56,7 +56,7 @@ from langchain.chat_models import ChatOpenAI
 
 These are the building blocks. Each one has its role, helping us load data, manage chat models, and more.
 
-## **Environment Setup** {.margin1}
+## **Environment Setup** {.hero-margin}
 
 We'll use a `.env`{.codeword} file to store any config or sensitive data. It's a neat way to keep things organized.
 So after we've placed your OpenAI API key in the `.env`{.codeword} file. Now, you might be wondering how exactly our Python script knows to look there and fetch the key. Here is the piece of code that does the magic:
@@ -73,15 +73,15 @@ load_dotenv()
 
 By using this approach, sensitive information like API keys stays out of the main codebase, reducing risks and making configuration management simpler. If you're using a version control system like Git, you can also add the `.env`{.codeword} file to the `.gitignore`{.codeword} file, ensuring it doesn't get pushed to the remote repository.
 
-## **Data Loaders** {.margin1}
+## **Data Loaders** {margin1}
 
-Our bot needs some knowledge. For this, we'll pull in documents as its base. Could be a single file or a whole folder:
+Our bot needs some knowledge. For this, we'll pull in documents as its base. Could be a single file or a whole folder as in the example below:
 
 ```python
 loader = DirectoryLoader('./collection', glob='*.txt')
 ``` 
 
-## **Setting Up the Index** {.margin1}
+## **Setting Up the Index** {.hero-margin}
 
 Once our data's in, we need a way to quickly sift through it. That's where indexing comes in:
 
@@ -89,13 +89,13 @@ Once our data's in, we need a way to quickly sift through it. That's where index
 index = VectorstoreIndexCreator().from_loaders([loader])
 ```
 
-## **The Chat Loop** {.margin1}
+## **The Chat Loop** {.hero-margin}
 
 Now the fun part! Let's set up a loop where you can chat with the AI:
 
 ```python
 def start_chattin():
-  print("Hey there! This is your AI buddy. Type 'exit' to leave.")
+  print("-> Yo this is your AI companion. Type 'exit' to quit.")
 
   while True:
     query = input("[you]: ").lower()
@@ -106,7 +106,7 @@ def start_chattin():
   print("[ai]: " + response)
 ```
 
-## **Let's Chat!** {.margin1}
+## **Let's Chat!** {.hero-margin}
 
 Everything's set. Let's fire it up:
 
@@ -115,6 +115,43 @@ if __name__ == '__main__':
     start_chattin()
 ```
 
-## **Wrap Up** {.margin1}
+## **Wrap Up** {.hero-margin}
 
-And there you have it! Your very own AI chat companion. This is a basic setup, so feel free to add more features, integrate it with other systems, or just play around. Happy coding!
+And there you have it! Your very own AI chat companion. 
+
+
+You can find the project in the [Github repo here](https://github.com/syntax-punk/ai-companion) or get the full version of the code below:
+
+```python
+  import sys
+
+  from dotenv import load_dotenv
+  from langchain.document_loaders import TextLoader
+  from langchain.document_loaders import DirectoryLoader
+  from langchain.indexes import VectorstoreIndexCreator
+  from langchain.llms import OpenAI
+  from langchain.chat_models import ChatOpenAI
+
+  load_dotenv()
+
+  loader = DirectoryLoader('./collection', glob='*.txt')
+  index = VectorstoreIndexCreator().from_loaders([loader])
+
+  def start_chattin():
+    print("-> Yo this is your AI companion. Type 'exit' to quit.")
+    while True:
+      query = input("[you]: ").lower()
+      if query == 'exit':
+        break
+
+      response = index.query(query, llm=ChatOpenAI())
+      print("[ai]: " + response)
+
+
+  if __name__ == '__main__':
+      start_chattin()
+```
+
+Keep in mind, this is a basic setup, so feel free to add more features, integrate it with other systems, or just play around.
+
+Happy coding! {.margin2}

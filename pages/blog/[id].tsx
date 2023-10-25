@@ -78,6 +78,11 @@ const Container = styled.article`
     margin: 2rem 0;
   }
 
+  .hero-margin {
+    margin-top: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
   .25size {
     width: 25%;
     height: 25%;
