@@ -7,6 +7,8 @@ hashtags: "tech,dev,ai,python"
 
 Ever thought about building an AI chatbot? This guide shows you how to build one, step by step. Let's dive right in.
 
+**TLDR:** [Check the Github repo](https://github.com/syntax-punk/ai-companion) {.margin1}
+
 ## **Prep Work** {.hero-margin}
 
 Before anything else, make sure you've got **Python** ready on your machine. And, for installing some tools, ensure you have `pip` up and running.
@@ -81,6 +83,14 @@ Our bot needs some knowledge. For this, we'll pull in documents as its base. Cou
 loader = DirectoryLoader('./collection', glob='*.txt')
 ``` 
 
+In this example we are loading all the `.txt`{.codeword} files in the `collection`{.codeword} folder. In my case the folder contains 2 files; one of them is contacts list and another is just a list of fruits and our goal is to make a chatbot that can answer questions about these two topics.
+
+_Note: You can also load a single file like this_: {.margin1}
+```python
+loader = TextLoader('./collection/file.txt')
+```
+
+
 ## **Setting Up the Index** {.hero-margin}
 
 Once our data's in, we need a way to quickly sift through it. That's where indexing comes in:
@@ -117,7 +127,24 @@ if __name__ == '__main__':
 
 ## **Wrap Up** {.hero-margin}
 
-And there you have it! Your very own AI chat companion. 
+Now you can run your app in the terminal:
+```bash
+  python app.py
+```
+
+and now you can chat with your AI companion, asking questions about the data you loaded. Here's a sample conversation:
+
+```text
+-> Yo this is your AI companion. Type 'exit' to quit.
+
+[you]: how many apples do I have?
+[ai]: 3
+[you]: what's the name of the first person on my contacts list?
+[ai]: Erik Olsen
+[you]: exit
+```
+
+ And there you have it! Your very own AI chat companion. 
 
 
 You can find the project in the [Github repo here](https://github.com/syntax-punk/ai-companion) or get the full version of the code below:
