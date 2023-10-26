@@ -6,6 +6,7 @@ import utilStyles from '../../styles/utils.module.css'
 import {GetStaticProps, GetStaticPaths} from 'next'
 import styled from 'styled-components'
 import 'highlight.js/styles/github-dark.css'
+import Link from 'next/link'
 
 export default function Post({ postData }) {
 
@@ -15,10 +16,15 @@ export default function Post({ postData }) {
         <title>{postData.title}</title>
       </Head>
       <Container>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightBadge}>
-          <Date dateString={postData.date} size="m" />
+        <div className='container-cap'>
+          <div className={utilStyles.lightBadge}>
+            <Link href="/blog">⬅︎ blog</Link>
+          </div>
+          <div className={utilStyles.lightBadge}>
+            <Date dateString={postData.date} size="m" />
+          </div>
         </div>
+        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </Container>
     </Layout>
@@ -31,7 +37,17 @@ const Container = styled.article`
   overflow-y: scroll;
   max-width: 920px;
   justify-self: center;
+
+  .container-cap {
+    display: flex;
+    justify-content: space-between;
+  }
   
+  a {
+    color: #0070f3;
+    text-decoration: underline;
+  }
+
   p {
     text-align: justify;  
   }
