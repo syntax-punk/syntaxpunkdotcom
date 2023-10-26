@@ -7,7 +7,7 @@ const navLinks = [
   { title: '/projects', link: '/projects' },
   { title: '/blog', link: '/blog' },
   { title: '/more', link: '/more' },
-  { title: '/thanks', link: '/thanks' },
+  // { title: '/thanks', link: '/thanks' },
 ]
 
 const Header = () => {
