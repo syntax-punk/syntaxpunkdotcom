@@ -1,13 +1,13 @@
 ---
-title: 'A Matching position priority'
+title: 'A Match position priority'
 date: '2023-10-24'
 short: "A quick guide to sorting based on position of the input match"
-hashtags: "tech,dev,javascript,coding"
+hashtags: "javascript,sorting,dev"
 ---
 
 ## **Problem** {.margin1}
 
-When creating an input suggestion feature for any kind of names (locations, brands, etc.), you might want to prioritize those names that start with the user's input over those that contain the user's input elsewhere and have them listed higher in the suggestions list. Let's look into a practical way of doing that.
+When creating an input suggestion feature for any kind of locations, names, brands, you name it; a user expects us to prioritize those values which **"start"** with the user's input over those items that simply contain the keyword elsewhere and thus have them listed higher in the suggestions list. Let's look into a practical way of achieving that.
 
 ```javascript
 // Consider given list of city names:
@@ -25,7 +25,7 @@ const cityNames = [
 ];
 ```
 
-Now, imagine a user starts typing `py`{.codeword} in a search box. They are likely looking for cities that start with "py". However, with a simple matching finding technique, based on the presence of the keyword `py`{.codeword }, we might get the following results:
+Now, imagine a user starts typing `py`{.codeword} in a search box. They are likely looking for cities that start with "py". However, with a simple match finding technique, based on the presence of the keyword `py`{.codeword }, we might get the following results:
 
 ```bash
   Happytown
@@ -39,7 +39,7 @@ Now, imagine a user starts typing `py`{.codeword} in a search box. They are like
   Empyreal Heights
 ```
 
-You can see that **"Happytown"** and **"Sleepy Hollow"** are at the top, even though the "py" `keyword` is in the middle of these city names. Intuitively, users would expect cities starting with "py" to be prioritized over others.
+You can see that **"Happytown"** and **"Sleepy Hollow"** are at the top, even though the `keyword` ("py") is in the middle of these city names. Intuitively, users would expect cities starting with "py" to be prioritized over others.
 
 Hence, the aim is to refine the search logic to give priority to city names that start with the user's input (like "Pylontropolis", "Pylonville", "Pyongyang" and so on) over city names where the user's input appears later in the string (like "Happytown" or "Sleepy Hollow").
 
