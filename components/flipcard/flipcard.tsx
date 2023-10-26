@@ -51,6 +51,10 @@ const Container = styled.section`
     perspective: 2500px;
     background: transparent;
     cursor: pointer;
+
+    &.desktop {
+      min-width: 720px;
+    }
   }
 
   .flipcard-content {

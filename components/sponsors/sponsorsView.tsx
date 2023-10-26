@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 
 const SponsorsView = () => {
   return (
     <Container>
       <Banner>
-        <p>Enjoying  my work?</p>
+        <p>Enjoying  my stuff?</p>
         <BuyMeACoffee href="https://www.buymeacoffee.com/syntaxpunk" target="_blank">
           Buy me a ☕️
         </BuyMeACoffee> 
@@ -22,7 +21,6 @@ const Container = styled.section`
   overflow-y: scroll;
   overflow-x: scroll;
 
-  
   @media only screen and (max-width: 700px) {
 
     & {
