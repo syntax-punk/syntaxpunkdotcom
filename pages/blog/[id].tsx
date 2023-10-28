@@ -7,6 +7,7 @@ import {GetStaticProps, GetStaticPaths} from 'next'
 import styled from 'styled-components'
 import 'highlight.js/styles/github-dark.css'
 import Link from 'next/link'
+import { device } from '../../lib/shared/toolbox'
 
 export default function Post({ postData }) {
 
@@ -25,7 +26,7 @@ export default function Post({ postData }) {
           </div>
         </div>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div className="md-container" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </Container>
     </Layout>
   )
@@ -33,14 +34,32 @@ export default function Post({ postData }) {
 
 const Container = styled.article`
   position: relative;
-  padding: 2rem;
-  overflow-y: scroll;
+  width: 100%;
   max-width: 920px;
   justify-self: center;
+  overflow-y: auto;
+  padding: 2rem;
+
+  @media ${device.tablet} {
+    padding: 2rem 1rem;
+
+    > h1 {
+      text-align: center;
+    }
+  }
 
   .container-cap {
     display: flex;
     justify-content: space-between;
+  }
+
+  .md-container {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 90%;
+    justify-content: center;
+    margin: 0 auto;
   }
   
   a {
@@ -68,7 +87,7 @@ const Container = styled.article`
   pre code {
     border-radius: 12px;
   }
-  
+
   .codeword {
     padding: 0.2rem 0.4rem;
     background-color: #D0D0D1;

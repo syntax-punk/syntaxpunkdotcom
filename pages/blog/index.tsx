@@ -7,10 +7,10 @@ import Date from "../../components/date"
 import { device } from "../../lib/shared/toolbox";
 
 const Index = (props) => {
-  const uberposts = [...props.posts, ...props.posts, ...props.posts, ...props.posts, ...props.posts, ...props.posts]
+  
   return (<Layout>
             <Container>
-              { uberposts.map(({ id, date, title, short, hashtags }, index) => 
+              { props.posts.map(({ id, date, title, short, hashtags }, index) => 
                 <Link href={`/blog/${id}`} key={index}>
                   <Item>
                     <span className="info-body">
