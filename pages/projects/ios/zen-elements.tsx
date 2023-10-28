@@ -156,17 +156,6 @@ const Content = styled.div`
       color: #555;
     }
   }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #36383884;
-    border-radius: 4px;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #363838dd;
-  }
 `
 
 

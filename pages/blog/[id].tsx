@@ -68,18 +68,7 @@ const Container = styled.article`
   pre code {
     border-radius: 12px;
   }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #76767684;
-    border-radius: 4px;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #7676762f;
-  }
-
+  
   .codeword {
     padding: 0.2rem 0.4rem;
     background-color: #D0D0D1;

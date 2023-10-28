@@ -14,7 +14,7 @@ body > div:first-child,
 main {
   height: 100%;
   width: 100%;
-  min-width: 412px;
+  min-width: 396px;
   min-height: 700px;
 }
 
@@ -69,7 +69,7 @@ img {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 /* Track */
@@ -79,13 +79,13 @@ img {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #65e0eb;
-  border-radius: 4px;
+  background: rgba(19, 7, 34, 0.91);
+  border-radius: 2px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #4ba5ad;
+  background: rgba(19, 7, 34, 0.91);
 }
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }

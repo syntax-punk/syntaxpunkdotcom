@@ -4,11 +4,13 @@ import styled from "styled-components"
 import Layout from "../../components/layout"
 import { getSortedPostsData } from "../../lib/posts"
 import Date from "../../components/date"
+import { device } from "../../lib/shared/toolbox";
 
 const Index = (props) => {
+  const uberposts = [...props.posts, ...props.posts, ...props.posts, ...props.posts, ...props.posts, ...props.posts]
   return (<Layout>
             <Container>
-              { props.posts.map(({ id, date, title, short, hashtags }, index) => 
+              { uberposts.map(({ id, date, title, short, hashtags }, index) => 
                 <Link href={`/blog/${id}`} key={index}>
                   <Item>
                     <span className="info-body">
@@ -26,19 +28,28 @@ const Index = (props) => {
 }
 
 const Container = styled.section`
+  position: relative;
   display: grid;
+  grid-template-columns: 32rem;
   grid-auto-rows: 14rem;
   justify-content: center;
   padding: 2rem;
   row-gap: 1.2rem;
+  overflow-y: auto;
+
+  @media ${device.tablet} {
+    padding: 1.2rem 2rem;
+    row-gap: 1.6rem;
+    grid-template-columns: auto;
+    grid-auto-rows: 18rem;
+  }
 `
 
 const Item = styled.article`
+  position: relative
   border-radius: 4px;
   border: 1px solid #dedede;
-  width: 90%;
-  min-width: 32rem;
-  max-height: 16rem;
+  width: 100%;
   padding: 0.6rem;
   cursor: pointer;
   transition: box-shadow linear 100ms;

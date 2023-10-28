@@ -65,17 +65,6 @@ const Container = styled.div`
   h2:not(:first-child) {
     margin-top: 4rem;
   }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #36383884;
-    border-radius: 4px;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #363838dd;
-  }
 `
 
 const ProjectSection = styled.section`
