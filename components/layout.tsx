@@ -11,7 +11,9 @@ export default function Layout({ children }: {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" href="/icons/sp-logo48.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000000" />
         <meta
           name="description"
           content="Welcome to syntaxpunk.com."
