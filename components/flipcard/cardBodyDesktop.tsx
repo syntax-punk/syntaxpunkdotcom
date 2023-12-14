@@ -2,7 +2,12 @@ import React from "react";
 import Image from 'next/image'; 
 import { CardArticle } from "./cardArticle";
 
-const FlipCardBodyDesktop: React.FC = () => {
+interface Props {
+  width: number;
+  height: number;
+}
+
+const FlipCardBodyDesktop: React.FC<Props> = ({ width, height }) => {
   return (
     <>
       <figure className="flipcard-face">
@@ -11,9 +16,10 @@ const FlipCardBodyDesktop: React.FC = () => {
           className="mephoto" 
           src="/images/syntaxpnk.png" 
           alt="Photo of me" 
-          layout="fill"
           placeholder="blur"
           blurDataURL="/images/syntaxpnk_blurred.png"
+          width={width}
+          height={height}
           />
       </figure>
       <div className="flipcard-back">

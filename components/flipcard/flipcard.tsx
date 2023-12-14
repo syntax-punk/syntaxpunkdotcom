@@ -13,7 +13,13 @@ const FlipCard = () => {
   useEffect(function setCardSizeOnMount() {
     if (!containerref.current) return;
     const bbox = containerref.current.getBoundingClientRect();
-    setCardSize([bbox.height * 0.8,  bbox.height]);
+    const heightMargin = 0.95;
+    const widthMargin = 0.8;
+    
+    const cardHeight = bbox.height * heightMargin;
+    const cardWidth = cardHeight * widthMargin;
+
+    setCardSize([cardWidth,  cardHeight]);
   }, [])
 
   const [width, height] = cardSize;
@@ -27,7 +33,10 @@ const FlipCard = () => {
         style={{ width: `${width}px`, height: `${height}px`}}
       >
         <div className={`flipcard-content ${extraClassName}`}>
-          { isMobile ? <FlipCardBodyMobile /> : <FlipCardBodyDesktop />}
+          { isMobile 
+            ? <FlipCardBodyMobile /> 
+            : <FlipCardBodyDesktop width={width} height={height} />
+          }
         </div>
       </div>
     </Container>
@@ -51,9 +60,10 @@ const Container = styled.section`
     perspective: 2500px;
     background: transparent;
     cursor: pointer;
-
+    
     &.desktop {
-      min-width: 720px;
+      min-width: 500px;
+      min-height: 625px;
     }
   }
 
@@ -77,9 +87,9 @@ const Container = styled.section`
   }
 
   .flipcard-face, .flipcard-back {
+    position: absolute;
     height: 100%;
     width: 100%;
-    position: absolute;
     bottom: 0;
     left: 0;
     border-radius: 2px;
@@ -167,11 +177,6 @@ const Container = styled.section`
   }
 
   @media only screen and (max-width: 960px) {
-
-    .flipcard {
-      height: 80% !important;
-      width: 80% !important;
-    }
 
     article {
       padding: 1rem 0.8rem;
