@@ -46,6 +46,15 @@ main {
   background-color: #F7F7F7;
 }
 
+main.dark {
+  border-color: #373636;
+  background-color: #000000;
+}
+
+body:has(main.dark) {
+  background-color: #000000;
+}
+
 header{
   width: 100%;
 }
