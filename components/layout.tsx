@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Header from './header'
-import { useParaply } from 'paraply'
 import { store } from '../lib/store'
 
 export const name = 'syntaxpunk.com'
@@ -10,11 +9,6 @@ export default function Layout({ children }: {
   children: React.ReactNode,
   home?: boolean
 }) {
-  const [state, setState] = useParaply(store);
-
-  function toggleTheme() {
-    setState(prev => prev.theme === 'light' ? { theme: 'dark' } : { theme: 'light' });
-  }
 
   return (
     <>
@@ -30,7 +24,7 @@ export default function Layout({ children }: {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <main className={state.theme}>
+      <main>
         <Header />
         {children}
       </main>

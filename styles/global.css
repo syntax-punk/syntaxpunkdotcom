@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+:root {
+  --primary-color: #302AE6;
+  --secondary-color: #536390;
+  --font-color: #424242;
+  --bg-color: #fff;
+  --heading-color: #292922;
+
+  --main-background-color: #F7F7F7;
+  --border-color: #FBFBFB;
+}
+
+[data-theme="dark"] {
+  --primary-color: #9A97F3;
+  --secondary-color: #818cab;
+  --font-color: #e1e1ff;
+  --bg-color: #000000;
+  --heading-color: #818cab;
+  
+  --main-background-color: #000000;
+  --border-color: #373636;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -24,6 +46,7 @@ body {
   font-family: Poppins, sans-serif;
   line-height: 1.6;
   font-size: 18px;
+  background-color: var(--bg-color);
 }
 
 body {
@@ -40,19 +63,10 @@ main {
   display: grid;
   grid-template-rows: 2.8rem calc(100% - 2.8rem);
   grid-gap: 0.5rem;
-  border: 20px solid #fbfbfb;
+  border: 20px solid var(--border-color);
   border-radius: 4px;
   max-width: 1280px;
-  background-color: #F7F7F7;
-}
-
-main.dark {
-  border-color: #373636;
-  background-color: #000000;
-}
-
-body:has(main.dark) {
-  background-color: #000000;
+  background-color: var(--main-background-color);
 }
 
 header{
