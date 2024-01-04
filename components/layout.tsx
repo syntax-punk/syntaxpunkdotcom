@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Header from './header'
-import { store } from '../lib/store'
 
 export const name = 'syntaxpunk.com'
 export const siteTitle = 'Howdy!'

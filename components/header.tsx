@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import commonStyles from '../styles/common.module.css'
 import { useRouter } from 'next/router';
-import { ToggleSwitch } from './toggleSwitch/ToggleSwitch';
+import { ToggleSwitch } from './toggleSwitch/toggleSwitch';
 
 const navLinks = [
   { title: '/about', link: '/' },
