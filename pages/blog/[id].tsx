@@ -51,6 +51,7 @@ const Container = styled.article`
   .container-cap {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 4.2rem;
   }
 
   .md-container {
@@ -60,6 +61,7 @@ const Container = styled.article`
     grid-template-columns: 90%;
     justify-content: center;
     margin: 0 auto;
+    color: var(--font-color);
   }
   
   a {
@@ -92,6 +94,7 @@ const Container = styled.article`
     padding: 0.2rem 0.4rem;
     background-color: #D0D0D1;
     border-radius: 6px;
+    color: #000000;
   }
 
   .margin1 {

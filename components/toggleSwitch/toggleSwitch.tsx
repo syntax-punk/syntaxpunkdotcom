@@ -1,7 +1,11 @@
 import { memo, useCallback, useEffect } from "react";
 import styled from "styled-components"
 
-const ToggleSwitch = memo(function ToggleSwitch() {
+interface Props {
+  className?: string;
+}
+
+const ToggleSwitch = memo(function ToggleSwitch({ className }: Props) {
 
   useEffect(function onMount() {
     const theme = localStorage.getItem('theme');
@@ -23,7 +27,7 @@ const ToggleSwitch = memo(function ToggleSwitch() {
   }, [])
 
   return (
-    <SwitchContainer>
+    <SwitchContainer aria-label="mode-switch">
       <label className="theme-switch" htmlFor="checkbox">
         <input type="checkbox" id="checkbox" onChange={switchTheme} />
         <div className="slider round"></div>
@@ -50,7 +54,7 @@ const SwitchContainer = styled.div`
   }
 
   .slider {
-    background-color: #ccc;
+    background-color: #CCCCCC;
     bottom: 0;
     cursor: pointer;
     left: 0;

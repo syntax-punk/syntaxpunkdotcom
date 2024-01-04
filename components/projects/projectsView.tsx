@@ -50,7 +50,7 @@ const Container = styled.div`
     justify-content: left;
     column-gap: 1rem;
     align-items: center;
-    color: #00000099;
+    color: var(--font-color);
     font-weight: 300;
     font-size: 2rem;
     padding: 1rem;

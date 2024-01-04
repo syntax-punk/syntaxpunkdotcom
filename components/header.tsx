@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import commonStyles from '../styles/common.module.css'
 import { useRouter } from 'next/router';
+import { ToggleSwitch } from './toggleSwitch/ToggleSwitch';
 
 const navLinks = [
   { title: '/about', link: '/' },
@@ -37,6 +38,7 @@ const Header = () => {
           )
         })}
       </ul>
+      <ToggleSwitch />
     </header>
   )
 }
