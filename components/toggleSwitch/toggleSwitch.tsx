@@ -1,11 +1,7 @@
 import { memo, useCallback, useEffect } from "react";
-import styled from "styled-components"
+import styled from "styled-components";
 
-interface Props {
-  className?: string;
-}
-
-const ToggleSwitch = memo(function ToggleSwitch({ className }: Props) {
+const ToggleSwitch = memo(function ToggleSwitch() {
 
   useEffect(function onMount() {
     const theme = localStorage.getItem('theme');
@@ -54,7 +50,7 @@ const SwitchContainer = styled.div`
   }
 
   .slider {
-    background-color: #CCCCCC;
+    background-color: var(--slider-bg-color);
     bottom: 0;
     cursor: pointer;
     left: 0;
@@ -65,7 +61,7 @@ const SwitchContainer = styled.div`
   }
 
   .slider:before {
-    background-color: #fff;
+    background-color: var(--bg-color);
     bottom: 4px;
     content: "";
     height: 26px;
@@ -73,14 +69,6 @@ const SwitchContainer = styled.div`
     position: absolute;
     transition: .4s;
     width: 26px;
-  }
-
-  input:checked + .slider {
-    background-color: #535353;
-  }
-
-  input:checked + .slider:before {
-    background-color: #000000;
   }
 
   input:checked + .slider:before {

@@ -5,14 +5,15 @@
   --primary-color: #302AE6;
   --secondary-color: #536390;
   --font-color: #424242;
-  --bg-color: #fff;
   --heading-color: #292922;
-
+  
+  --bg-color: #fff;
   --main-background-color: #F7F7F7;
   --border-color: #FBFBFB;
   --link-color: #0000005d;
   --link-hover: #86e9ff;
   --link-active: #86e9ff80;
+  --slider-bg-color: #1a1a1a;
   --project-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --project-card-border: 2px solid #00000011;
   --scrollbar-color: rgba(19, 7, 34, 0.91);
@@ -22,14 +23,15 @@
   --primary-color: #9A97F3;
   --secondary-color: #818cab;
   --font-color: #e1e1ff;
-  --bg-color: #000000;
   --heading-color: #818cab;
   
+  --bg-color: #000000;
   --main-background-color: #000000;
   --border-color: #373636;
   --link-color: #FBFBFBAA;
   --link-hover: #5c12be;
   --link-active: #5d12be80;
+  --slider-bg-color: #dedede;
   --project-card-shadow: none;
   --project-card-border: 2px solid #00000011;
   --scrollbar-color: rgba(217, 195, 244, 0.91);
