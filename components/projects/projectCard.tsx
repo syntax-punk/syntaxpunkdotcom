@@ -41,7 +41,7 @@ const Container = styled.a`
   display: grid;
   grid-template-rows: 200px 1.5rem min-content;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: var(--project-card-bg-color);
   box-shadow: var(--project-card-shadow);
   border: var(--project-card-border);
   color: #171515;
@@ -74,7 +74,7 @@ const Sub = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
-  border-top: 1px solid #00000011;
+  border-top: var(--project-card-sub-border);
 `
 
 export { ProjectCard };

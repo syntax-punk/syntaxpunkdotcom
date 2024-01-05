@@ -1,5 +1,5 @@
 export type CardListItem = {
-  type: "web" | "ios";
+  type: "web" | "ios" | "other";
   imageUrl: string;
   gotoUrl: string;
   altText: string;
@@ -71,5 +71,13 @@ export const cardsList: CardListItem[] = [
     altText: "ipsum web app image",
     title: "lorem ipsum shop",
     logos: ["stripe.png", "netlify.png"]
-  }
+  },
+  {
+    type: "other",
+    imageUrl: "rddt.png",
+    gotoUrl: "https://marketplace.visualstudio.com/items?itemName=syntax-punk.reddot",
+    altText: "VS Code theme image",
+    title: "Red Dot theme",
+    logos: ["ts.png"]
+  },
 ]

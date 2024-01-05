@@ -16,6 +16,8 @@
   --slider-bg-color: #1a1a1a;
   --project-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --project-card-border: 2px solid #00000011;
+  --project-card-bg-color: #FFFFFF;
+  --project-card-sub-border: 1px dashed #0000004a;
   --scrollbar-color: rgba(19, 7, 34, 0.91);
 }
 
@@ -34,6 +36,8 @@
   --slider-bg-color: #dedede;
   --project-card-shadow: none;
   --project-card-border: 2px solid #00000011;
+  --project-card-bg-color: #F7F7F7;
+  --project-card-sub-border: 1px dashed #000000c3;
   --scrollbar-color: rgba(217, 195, 244, 0.91);
 }
 
