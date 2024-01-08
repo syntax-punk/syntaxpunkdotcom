@@ -5,7 +5,7 @@ short: "A quick guide to creating a virtual environment in Python"
 hashtags: "python,venv,dev"
 ---
 
-## **Project Isolation** {.hero-margin}
+## **Let's dive right in** {.hero-margin}
 
 As a Python developer, you might have come across the term 'virtual environment', especially the **venv** module. But what exactly is it, and why is it such a big deal?
 
@@ -18,10 +18,12 @@ Python `venv`{.codeword} is for the rescue! It creates a virtual environment —
 To create an environment, first, open your **terminal**, navigate to the project directory and run the following command:
 
 ```bash
-  python3 -m venv my_venv
+  python3 -m venv myenv
 ```
 
-After creating the virtual environment, you can activate it with:
+{.marginHalf}
+
+As soon as the command is executed, a new folder named `myenv`{.codeword} is created in the project directory. This folder contains all the necessary files for the virtual environment. You can name the folder anything you want; However, it's a good practice to name it after your project. Next, you need to activate the environment:
 
 ```bash
   # On Unix or MacOS
