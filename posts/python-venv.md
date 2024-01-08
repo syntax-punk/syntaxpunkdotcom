@@ -9,13 +9,13 @@ hashtags: "python,venv,dev"
 
 As a Python developer, you might have come across the term 'virtual environment', especially the **venv** module. But what exactly is it, and why is it such a big deal?
 
-Imagine yourself coding a complex application that requires a range of libraries. However, your development environment is shared among various projects, each with its unique dependencies. This situation parallels working on several Python projects on the same machine. Each project may need different library versions. Without careful management, these varying requirements can lead to conflicts and compatibility issues, disrupting the smooth functioning of your applications.{.marginTop1}
+Imagine yourself coding a complex application that requires a range of libraries. However, your development environment is shared among various projects, each with its unique dependencies. This situation parallels working on several Python projects on the same machine. Each project may need different library versions. Without careful management, these varying requirements can lead to conflicts and compatibility issues, disrupting the smooth functioning of your applications.{.margin1}
 
-The `venv`{.codeword } module was introduced in Python 3.3. Therefore, the minimal Python version required to use venv is Python 3.3. This means that if you're using any version of Python older than 3.3, you're all set.{.marginTop1}
+Python `venv`{.codeword} is for the rescue! It creates a virtual environment — a self-contained directory that houses all the necessary libraries and versions needed for a specific project.`venv`{.codeword } was introduced in Python 3.3. Therefore, the minimal Python version required to use venv is Python 3.3. This means that if you're using any version of Python older than 3.3, you're all set.{.marginTop1}
 
 {.marginHalf}
 
-_Navigate to the project directory and run the following command:_
+To create an environment, first, open your **terminal**, navigate to the project directory and run the following command:
 
 ```bash
   python3 -m venv my_venv
@@ -31,7 +31,21 @@ After creating the virtual environment, you can activate it with:
   myenv\Scripts\activate
 ```
 
-`venv`{.codeword} creates a virtual environment — a self-contained directory that houses all the necessary libraries and versions needed for a specific project. Here're the benefits you get from using it:
+Once the environment is activated, you can install the required libraries using `pip`{.codeword} without worrying about affecting other projects:
+
+```bash
+  pip install <package-name>
+```
+
+Further, when environment is no longer needed, you can deactivate it with:
+
+```bash
+  deactivate
+```
+
+{.marginHalf}
+
+Here is a list of main benefits of using venv in your next Python project:
 
 - Harmony in Dependency Management: With venv, each project gets its own set of libraries, so there’s no risk of one project's requirements interfering with another's. It's like having separate pantries for each chef.
 
@@ -44,17 +58,5 @@ After creating the virtual environment, you can activate it with:
 - Streamlined Deployment: If your project works in the virtual environment, it’s more likely to work seamlessly in other environments too. This reduces deployment headaches significantly.
 
 - A Safe Playground for Experimentation: Want to try out a new library or update a package? venv lets you do this without the fear of affecting your other projects.
-
-Once the environment is activated, you can install the required libraries using `pip`{.codeword} without worrying about affecting other projects:
-
-```bash
-  pip install <package-name>
-```
-
-Further, when environment is no longer needed, you can deactivate it with:
-
-```bash
-  deactivate
-```
 
 Happy coding! {.margin2}
