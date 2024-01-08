@@ -97,8 +97,24 @@ const Container = styled.article`
     color: #000000;
   }
 
+  .marginHalf {
+    margin: 0.5rem 0;
+  }
+
+  .marginTopHalf {
+    margin-top: 0.5rem;
+  }
+
   .margin1 {
     margin: 1rem 0;
+  }
+
+  .marginTop1 {
+    margin-top: 1rem;
+  }
+
+  .marginBottom1 {
+    margin-bottom: 1rem;
   }
 
   .margin2 {

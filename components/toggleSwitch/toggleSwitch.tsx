@@ -41,7 +41,7 @@ const SwitchContainer = styled.div`
     display: inline-block;
     height: 34px;
     position: relative;
-    width: 60px;    
+    width: 60px;
   }
 
   .theme-switch input {
