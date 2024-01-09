@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { useIsMobile } from "../../hooks/useIsMobile";
-import { FlipCardBodyMobile } from "./cardBodyMobile";
-import { FlipCardBodyDesktop } from "./cardBodyDesktop";
+import { CardArticle } from "./cardArticle";
 
 const FlipCard = () => {
   const [cardSize, setCardSize] = useState<[number, number]>([0, 0]);
@@ -33,10 +32,9 @@ const FlipCard = () => {
         style={{ width: `${width}px`, height: `${height}px`}}
       >
         <div className={`flipcard-content ${extraClassName}`}>
-          { isMobile 
-            ? <FlipCardBodyMobile /> 
-            : <FlipCardBodyDesktop width={width} height={height} />
-          }
+          <figure className="flipcard-face">
+            <CardArticle />
+          </figure>
         </div>
       </div>
     </Container>
@@ -80,40 +78,13 @@ const Container = styled.section`
 	  animation: gradient 15s ease-in-out infinite;
   }
 
-  .flipcard.desktop:hover .flipcard-content.desktop {
-    height: 100%;
-    width: 100%;
-    transform: rotateX(180deg);
-  }
-
-  .flipcard-face, .flipcard-back {
+  .flipcard-face {
     position: absolute;
     height: 100%;
     width: 100%;
     bottom: 0;
     left: 0;
     border-radius: 2px;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-  .flipcard-back {
-    transform: rotateX(180deg);
-  }
-
-  .flipcard-content.mobile .photo-badge{
-    position: absolute;
-    top: -40px;
-    right: -16px;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    background-color: hotpink;
-    background-image: url('/images/syntaxpnk.png');
-    background-size:480px 600px;
-    background-position: -280px -300px;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 4px 4px rgba(35, 6, 141, 0.2);
   }
 
   article {
