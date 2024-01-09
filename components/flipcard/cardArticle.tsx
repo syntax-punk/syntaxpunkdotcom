@@ -5,6 +5,7 @@ const CardArticle: React.FC = () => {
   return (
     <article>
       <span className='info-body'>
+        <div className="pic" />
         <p>
           <span role="img" aria-label="wave">👋</span> I&apos;m David, a software developer based in Norway. I have a strong passion for building great solutions and I love to take on new challenges that can help me grow my skillset. 
         </p>

@@ -98,6 +98,7 @@ const Container = styled.section`
     text-align: left;
     
     .info-body {
+      position: relative;
       padding: 2rem;
       width: 100%;
       height: 100%;
@@ -109,6 +110,21 @@ const Container = styled.section`
       text-shadow: 0 0 12px #000;
       background-color: #13072261;
       overflow-y: auto;
+
+      .pic {
+        display: inline-block;
+        width: 25%;
+        height: 25%;
+        float: left;
+        margin: 0 1rem 1rem 0;
+        background-image: url("/images/mehjemma.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        shape-outside: circle();
+        border: 2px solid rgba(255, 255, 255, 0.75);;
+      }
     }
 
     .icons-row {
