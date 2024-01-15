@@ -7,7 +7,11 @@ const sectionsList: Sections[] = [
       {
         title: "Endless Mondrian",
         link: "/more/mondrian"
-      }
+      },
+      // {
+      //   title: "Game of Life",
+      //   link: "/more/gameoflife"
+      // }
     ]
   }
 ]
