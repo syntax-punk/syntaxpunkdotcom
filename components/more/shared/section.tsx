@@ -52,7 +52,7 @@ const SectionContainer = styled.div`
   width: 100%;
   height: auto;
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
   grid-template-columns: repeat(auto-fit, 380px);
   grid-auto-rows: 72px;
   padding: 1rem;

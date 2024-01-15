@@ -1,15 +1,20 @@
 import { useEffect, useState, useRef } from 'react'
 import { Griddy } from './Griddy';
 import styled from 'styled-components';
+import { useIsMobile } from '../../../hooks/useIsMobile';
 
-const options = {
-  speed: 250,
-  rows: 30,
-  cols: 50,
-}
+
 
 function GolView() {
   const [generation, setGeneration] = useState(0);
+  const isMobile = useIsMobile();
+
+  const options = {
+    speed: 250,
+    rows: isMobile ? 20 : 30,
+    cols: isMobile ? 20 : 50,
+  }
+  
   const [gridMap, setGridMap] = useState(Array(options.rows).fill(undefined).map(() => Array(options.cols).fill(false)));
   const intervalRef = useRef<NodeJS.Timer | undefined>(undefined);
 
