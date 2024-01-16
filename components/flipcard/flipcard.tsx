@@ -1,11 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { useIsMobile } from "../../hooks/useIsMobile";
 import { CardArticle } from "./cardArticle";
 
 const FlipCard = () => {
   const [cardSize, setCardSize] = useState<[number, number]>([0, 0]);
-  const isMobile = useIsMobile()
   const containerref = useRef<HTMLDivElement>(null);
   const flipcardref = useRef<HTMLDivElement>(null);
   
@@ -22,16 +20,15 @@ const FlipCard = () => {
   }, [])
 
   const [width, height] = cardSize;
-  const extraClassName = isMobile ? "mobile" : "desktop";
 
   return (
     <Container ref={containerref} className="flipcard-container fade-in one">
       <div 
         ref={flipcardref} 
-        className={`flipcard ${extraClassName}`}
+        className="flipcard desktop"
         style={{ width: `${width}px`, height: `${height}px`}}
       >
-        <div className={`flipcard-content ${extraClassName}`}>
+        <div className="flipcard-content desktop">
           <figure className="flipcard-face">
             <CardArticle />
           </figure>

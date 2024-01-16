@@ -1,21 +1,15 @@
 import { useEffect, useState, useRef } from 'react'
 import { Griddy } from './Griddy';
 import styled from 'styled-components';
-import { useIsMobile } from '../../../hooks/useIsMobile';
+import { GolOptions } from '../../../lib/definitions';
 
+interface Props {
+  options: GolOptions
+}
 
-
-function GolView() {
-  const [generation, setGeneration] = useState(0);
-  const isMobile = useIsMobile();
-
-  const options = {
-    speed: 250,
-    rows: isMobile ? 20 : 30,
-    cols: isMobile ? 20 : 50,
-  }
-  
+export default function GolView({ options }: Props) {
   const [gridMap, setGridMap] = useState(Array(options.rows).fill(undefined).map(() => Array(options.cols).fill(false)));
+  const [generation, setGeneration] = useState(0);
   const intervalRef = useRef<NodeJS.Timer | undefined>(undefined);
 
   useEffect(function seedOnMount() {
@@ -72,20 +66,10 @@ function GolView() {
       clearInterval(intervalRef.current);
   }
 
-  function seedGame() {
-    stopGame();
-    setTimeout(() => {
-      setGeneration(0);
-      seedBox();
-      startGame();
-    }, options.speed * 1.5);
-  }
-
   function handleBoxClick (row, col) {
     const gridCopy = [...gridMap];
-
     gridCopy[row][col] = !gridCopy[row][col];
-
+    console.log(`--> clicked on: ${row}, ${col}`);
     setGridMap(gridCopy);
   }
 
