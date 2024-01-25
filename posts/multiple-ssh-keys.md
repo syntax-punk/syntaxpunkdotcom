@@ -102,6 +102,18 @@ If you're on Mac and have entered a passphrase in the previous step, you might w
 $ ssh-add --apple-use-keychain ~/.ssh/your_key_name
 ```
 
-And now we are all set to navigate to each Github account and add relevant **public** key to the account. I assume you know how to do that, but if not, here is a [link](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) to the Github docs.  
+And now we are all set to navigate to each Github account and add relevant **public** key to the account. I assume you know how to do that, but if not, here is a [link](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) to the Github docs.
 
-Happy coding! {.margin2}
+
+{.margin2}
+
+**P.S.** When you restart your machine you might want to start `ssh-agent`{.codeword} again, you can either run the 
+
+```bash
+$ eval "$(ssh-agent -s)"
+```
+
+command again or add the command to your `~/.bashrc`{.codeword}, `~/.bash_profile`{.codeword} or `~/.zshrc`{.codeword} file _(depends on the bash you're using)_.
+
+
+Cheers! {.margin2}
