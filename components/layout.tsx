@@ -22,7 +22,6 @@ export default function Layout({ children }: {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
-        <script defer data-domain="syntaxpunk.com" src="https://plausible.io/js/script.js"></script>
       </Head>
       <main>
         <Header />
