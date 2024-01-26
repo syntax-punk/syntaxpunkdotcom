@@ -15,6 +15,7 @@ export default function GolView({ options }: Props) {
   useEffect(function seedOnMount() {
     seedBox();
     startGame();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function seedBox() {
