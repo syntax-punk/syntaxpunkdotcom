@@ -73,9 +73,9 @@ const ProjectSection = styled.section`
   height: auto;
   display: grid;
   justify-self: center;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: 280px;
-  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 1.2rem 0.6rem;
   justify-items: center;
 
   @media only screen and (max-width: 700px) {

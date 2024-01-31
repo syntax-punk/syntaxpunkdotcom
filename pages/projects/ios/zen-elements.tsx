@@ -27,8 +27,8 @@ const ZenElements = () => {
 
         <div className="app-logo">
           <Image
-            width="200px" 
-            height="200px"
+            width={200} 
+            height={200}
             src={`/images/projects/zenelements.png`} 
             alt='zen elementslogo' 
             placeholder="blur" 

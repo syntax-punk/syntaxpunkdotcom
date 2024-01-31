@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { ProjectsView } from "../../components/projects/projectsView";
 
-const Index = (props) => {
+export default function Index(props) {
   return (
     <Layout>
       <Head>
@@ -12,5 +12,3 @@ const Index = (props) => {
     </Layout>
   )
 }
-
-export default Index;

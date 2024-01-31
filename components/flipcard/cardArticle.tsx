@@ -18,13 +18,13 @@ const CardArticle: React.FC = () => {
       </span>
       <div className="icons-row">
         <a href="mailto:david.jaeren@gmail.com" target="_blank" rel="noreferrer">
-          <Image loading="eager" src="/images/email.svg" alt="Email logo" width="64" height="64px"/>
+          <Image loading="eager" src="/images/email.svg" alt="Email logo" width="64" height="64"/>
         </a>
         <a href="https://github.com/syntax-punk" target="_blank" rel="noreferrer">
-          <Image loading="eager" src="/images/github.svg" alt="Github logo" width="64px" height="64px"/>
+          <Image loading="eager" src="/images/github.svg" alt="Github logo" width="64" height="64"/>
         </a>
         <a href="https://twitter.com/syntax_punk" target="_blank" rel="noreferrer">
-          <Image loading="eager" src="/images/twitter.svg" alt="Twitter logo" width="64px" height="64px"/>
+          <Image loading="eager" src="/images/twitter.svg" alt="Twitter logo" width="64" height="64"/>
         </a>
       </div>
     </article>

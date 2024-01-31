@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useCallback } from "react";
 import styled from "styled-components";
 import Image from "next/image";
@@ -12,8 +14,8 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
   return (
     <Container className="project-card" href={gotoUrl} onClickCapture={trackClick}>
       <Image 
-        width="200px" 
-        height="200px" 
+        width={240} 
+        height={240} 
         src={`/images/projects/${imageUrl}`} 
         alt={altText} 
         placeholder="blur" 
@@ -23,8 +25,8 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
         {logos.map((logo, index) => (
           <Image 
             key={index} 
-            width="32px" 
-            height="32px"
+            width={32}
+            height={32}
             src={`/images/projects/logos/${logo}`} 
             alt={`${logo} image`}
             />
@@ -36,10 +38,12 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
 
 const Container = styled.a`
   position: relative;
-  width: 200px;
-  height: 280px;
+  width: 240px;
+  height: fit-content;
   display: grid;
-  grid-template-rows: 200px 1.5rem min-content;
+  align-items: center;
+  grid-template-rows: 240px 2rem min-content;
+  gap: 0.5rem;
   border-radius: 4px;
   background-color: var(--project-card-bg-color);
   box-shadow: var(--project-card-shadow);
@@ -60,19 +64,19 @@ const Container = styled.a`
 `;
 
 const Title = styled.p`
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.25rem;
   margin: 0.2rem 0;
   text-align:  center;
 `
 
 const Sub = styled.div`
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-template-columns: repeat(auto-fill, 32px);
   grid-auto-rows: 32px;
   grid-gap: 0.2rem;
-  align-items: center;
-  justify-content: center;
   padding: 0.5rem;
   border-top: var(--project-card-sub-border);
 `

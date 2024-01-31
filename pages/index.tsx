@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { FlipCard } from '../components/flipcard/flipcard';
 import Layout, { name } from '../components/layout'
 
-const Home = () => {
+export default function Home() {
   return (
     <Layout>
       <Head>
@@ -12,5 +12,3 @@ const Home = () => {
     </Layout>
   )
 }
-
-export default Home;
