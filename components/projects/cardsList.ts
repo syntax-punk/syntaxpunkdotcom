@@ -73,6 +73,14 @@ export const cardsList: CardListItem[] = [
     logos: ["stripe.png", "netlify.png"]
   },
   {
+    type: "web",
+    imageUrl: "www2pdf.png",
+    gotoUrl: "https://www2pdf.syntaxpunk.com",
+    altText: "convert web page to pdf",
+    title: "convert web page to pdf",
+    logos: ["docker.png", "flyio.png", "react.png", "netlify.png"]
+  },
+  {
     type: "other",
     imageUrl: "rddt.png",
     gotoUrl: "https://marketplace.visualstudio.com/items?itemName=syntax-punk.reddot",
