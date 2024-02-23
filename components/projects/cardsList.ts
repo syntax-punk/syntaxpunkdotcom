@@ -18,27 +18,11 @@ export const cardsList: CardListItem[] = [
   },
   {
     type: "web",
-    imageUrl: "todo.png",
-    gotoUrl: "https://todoapp.syntaxpunk.com",
-    altText: "Todo app image",
-    title: "Yet another Todo app",
-    logos: ["react.png", "netlify.png", "firebase.png"]
-  },
-  {
-    type: "web",
-    imageUrl: "urlzipr.png",
-    gotoUrl: "https://urlzipr.com",
-    altText: "URL zipper app image",
-    title: "URL Zipper",
-    logos: ["svelte.png", "netlify.png", "firebase.png"]
-  },
-  {
-    type: "web",
-    imageUrl: "wordpuff.png",
-    gotoUrl: "https://wordpuff.com",
-    altText: "WordPuff image",
-    title: "WordPuff",
-    logos: ["react.png", "mui.png", "vite.png", "firebase.png"]
+    imageUrl: "www2pdf.png",
+    gotoUrl: "https://www2pdf.syntaxpunk.com",
+    altText: "convert web page to pdf",
+    title: "convert web page to pdf",
+    logos: ["docker.png", "flyio.png", "react.png", "netlify.png"]
   },
   {
     type: "web",
@@ -58,11 +42,19 @@ export const cardsList: CardListItem[] = [
   },
   {
     type: "web",
-    imageUrl: "labeler.png",
-    gotoUrl: "https://labeler.syntaxpunk.com/about",
-    altText: "labeler app image",
-    title: "labeler",
-    logos: ["react.png", "netlify.png"]
+    imageUrl: "urlzipr.png",
+    gotoUrl: "https://urlzipr.com",
+    altText: "URL zipper app image",
+    title: "URL Zipper",
+    logos: ["svelte.png", "netlify.png", "firebase.png"]
+  },
+  {
+    type: "web",
+    imageUrl: "wordpuff.png",
+    gotoUrl: "https://wordpuff.com",
+    altText: "WordPuff image",
+    title: "WordPuff",
+    logos: ["react.png", "mui.png", "vite.png", "firebase.png"]
   },
   {
     type: "web",
@@ -74,11 +66,19 @@ export const cardsList: CardListItem[] = [
   },
   {
     type: "web",
-    imageUrl: "www2pdf.png",
-    gotoUrl: "https://www2pdf.syntaxpunk.com",
-    altText: "convert web page to pdf",
-    title: "convert web page to pdf",
-    logos: ["docker.png", "flyio.png", "react.png", "netlify.png"]
+    imageUrl: "labeler.png",
+    gotoUrl: "https://labeler.syntaxpunk.com/about",
+    altText: "labeler app image",
+    title: "labeler",
+    logos: ["react.png", "netlify.png"]
+  },
+  {
+    type: "web",
+    imageUrl: "todo.png",
+    gotoUrl: "https://todoapp.syntaxpunk.com",
+    altText: "Todo app image",
+    title: "Yet another Todo app",
+    logos: ["react.png", "netlify.png", "firebase.png"]
   },
   {
     type: "other",
