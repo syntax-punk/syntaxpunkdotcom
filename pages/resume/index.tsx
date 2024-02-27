@@ -48,11 +48,6 @@ function Index() {
               https://syntaxpunk.com/projects
             </a>
           </span>
-          <span>
-            <h4>Språk:</h4>
-            <p>Norsk</p>
-            <p>Engelsk</p>
-          </span>
         </Box>
       </Ribbon>
       <Information>
