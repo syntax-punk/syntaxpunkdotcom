@@ -126,7 +126,7 @@ const Container = styled.section`
 
     .icons-row {
       display: grid;
-      grid-template-columns: 2.4rem 2rem 2rem;
+      grid-template-columns: 2rem 2.4rem 2rem 2rem;
       grid-gap: 1rem;
       justify-content: end;
       align-items: center;

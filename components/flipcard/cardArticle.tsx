@@ -17,6 +17,9 @@ const CardArticle: React.FC = () => {
         If you&apos;re interested in my work, please feel free to check out my projects and get in touch with via means listed below.
       </span>
       <div className="icons-row">
+        <a href="https://syntaxpunk.com/resume" rel="noreferrer">
+          <Image loading="eager" src="/images/doc.svg" alt="Resume logo" width="64" height="64"/>
+        </a>
         <a href="mailto:david.jaeren@gmail.com" target="_blank" rel="noreferrer">
           <Image loading="eager" src="/images/email.svg" alt="Email logo" width="64" height="64"/>
         </a>

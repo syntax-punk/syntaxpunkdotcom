@@ -31,15 +31,21 @@ function Index() {
             <p>david.jaeren@gmail.com</p>
           </span>
           <span>
-            <h4>LinkedIn:</h4>
-            <a className="evensmaller" href="https://www.linkedin.com/in/mrjaeren/">
-              https://www.linkedin.com/in/mrjaeren/
-            </a>
-          </span>
-          <span>
             <h4>Om meg:</h4>
             <a href="https://syntaxpunk.com/">
               https://syntaxpunk.com/
+            </a>
+          </span>
+          <span>
+            <h4>Github:</h4>
+            <a className="smaller" href="https://github.com/syntax-punk">
+              https://github.com/syntax-punk
+            </a>
+          </span>
+          <span>
+            <h4>LinkedIn:</h4>
+            <a className="evensmaller" href="https://www.linkedin.com/in/mrjaeren/">
+              https://www.linkedin.com/in/mrjaeren/
             </a>
           </span>
           <span>
