@@ -1,7 +1,18 @@
+'use client';
 import Image from "next/image";
+import { useEffect } from "react";
 import styled from "styled-components";
 
 function Index() {
+  useEffect(function onMount() {
+    document.documentElement.style.setProperty('--body-overflow', "scroll");
+    
+    const cleanup = function onUnmount() {
+      document.documentElement.style.setProperty('--body-overflow', "hidden");
+    }
+    return cleanup;
+  }, []);
+
   return (
     <Container>
       <Ribbon>
@@ -90,8 +101,6 @@ const Container = styled.div`
   grid-template-columns: auto 1fr;
   height: 100%;
   width: 100%;
-  border: 1px solid #d3d3d3;
-  overflow: auto;
 `
 
 const Ribbon = styled.div`

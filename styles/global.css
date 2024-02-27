@@ -7,6 +7,7 @@
   --font-color: #424242;
   --heading-color: #292922;
   
+  --body-padding: 1rem;
   --bg-color: #fff;
   --secondary-bg-color: #d2d2d2dd;
   --main-background-color: #F7F7F7;
@@ -20,6 +21,7 @@
   --project-card-bg-color: #FFFFFF;
   --project-card-sub-border: 1px dashed #0000004a;
   --scrollbar-color: rgba(19, 7, 34, 0.91);
+  --body-overflow: hidden;
 }
 
 [data-theme="dark"] {
@@ -28,6 +30,7 @@
   --font-color: #e1e1ff;
   --heading-color: #818cab;
   
+  --body-padding: 1rem;
   --bg-color: #000000;
   --secondary-bg-color: #252525dd;
   --main-background-color: #000000;
@@ -41,6 +44,7 @@
   --project-card-bg-color: #F7F7F7;
   --project-card-sub-border: 1px dashed #000000c3;
   --scrollbar-color: rgba(217, 195, 244, 0.91);
+  --body-overflow: hidden;
 }
 
 * {
@@ -62,7 +66,7 @@ main {
 
 html,
 body {
-  padding: 16px;
+  padding: var(--body-padding);
   font-family: Poppins, sans-serif;
   line-height: 1.6;
   font-size: 18px;
@@ -70,7 +74,7 @@ body {
 }
 
 body {
-  overflow-y: hidden;
+  overflow-y: var(--body-overflow);
 }
 
 #__next {
