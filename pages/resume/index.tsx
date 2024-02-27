@@ -21,7 +21,6 @@ function Index() {
           <h1>David Jæren</h1>
           <h4>Fullstack System Utvikler</h4>
           <span>
-            <h4>📍Stavanger</h4>
           </span>
           <span>
             <h4>Tel:</h4>
@@ -32,15 +31,21 @@ function Index() {
             <p>david.jaeren@gmail.com</p>
           </span>
           <span>
-            <h4>Nettside:</h4>
+            <h4>LinkedIn:</h4>
+            <a className="evensmaller" href="https://www.linkedin.com/in/mrjaeren/">
+              https://www.linkedin.com/in/mrjaeren/
+            </a>
+          </span>
+          <span>
+            <h4>Om meg:</h4>
             <a href="https://syntaxpunk.com/">
               https://syntaxpunk.com/
             </a>
           </span>
           <span>
-            <h4>LinkedIn:</h4>
-            <a className="smaller" href="https://www.linkedin.com/in/mrjaeren/">
-              https://www.linkedin.com/in/mrjaeren/
+            <h4>Personlige prosjekter:</h4>
+            <a className="smaller" href="https://syntaxpunk.com/">
+              https://syntaxpunk.com/projects
             </a>
           </span>
         </Box>
@@ -54,14 +59,16 @@ function Index() {
           </span>
           <span>
             <h4>Sertifiseringer</h4>
-            <p>AZ-400 Designing and Implementing DevOps kurs Microsoft</p>
-            <p>AZ-204 Developing Solutions for Microsoft Azure Microsoft</p>
-            <p>AZ-304: Microsoft Azure Architect Design Microsoft</p>
-            <p>AZ-303: Microsoft Azure Architect Technologies Microsoft</p>
-            <p>Professional Scrum Product OwnerTM I (PSPO I) Scrum Alliance</p>
-            <p>Programming in Microsoft C# 70-483 Microsoft</p>
-            <p>Oracle Certified Professional Java EE Oracle</p>
-            <p>Oracle Certified Professional Java SE Programmer Oracle</p>
+            <ul>
+              <li>AZ-400 Designing and Implementing DevOps kurs Microsoft</li>
+              <li>AZ-204 Developing Solutions for Microsoft Azure Microsoft</li>
+              <li>AZ-304: Microsoft Azure Architect Design Microsoft</li>
+              <li>AZ-303: Microsoft Azure Architect Technologies Microsoft</li>
+              <li>Professional Scrum Product OwnerTM I (PSPO I) Scrum Alliance</li>
+              <li>Programming in Microsoft C# 70-483 Microsoft</li>
+              <li>Oracle Certified Professional Java EE Oracle</li>
+              <li>Oracle Certified Professional Java SE Programmer Oracle</li>
+            </ul>
           </span>
         </Box>
         <Box>
@@ -84,11 +91,11 @@ function Index() {
           </span>
           <span>
             <h5>04.2014 - 08.2016</h5>
-            <p>Simbrella: Utvikler</p>
+            <p>Simbrella LLC: Utvikler</p>
           </span>
           <span>
             <h5>10.2009 - 04.2014</h5>
-            <p>Bakcell: Utvikler</p>
+            <p>Bakcell LLC: Utvikler</p>
           </span>
         </Box>
       </Information>
@@ -133,8 +140,21 @@ const Box = styled.div`
     border-bottom: 1px solid #d3d3d3;
   }
 
-  .smaller {
+  ul {
+    padding-left: 1.25rem;
+  }
+
+  a {
+    color: #135aab;
+    text-decoration: underline;
+  }
+
+  .evensmaller {
     font-size: 0.75rem;
+  }
+
+  .smaller {
+    font-size: 0.9rem;
   }
 `
 
