@@ -48,6 +48,11 @@ function Index() {
               https://syntaxpunk.com/projects
             </a>
           </span>
+          <span>
+            <h4>Språk:</h4>
+            <p>Norsk</p>
+            <p>Engelsk</p>
+          </span>
         </Box>
       </Ribbon>
       <Information>
@@ -56,19 +61,6 @@ function Index() {
           <span>
             <h4>Universitet i Stavanger</h4>
             <p>Master i Computer Science</p>
-          </span>
-          <span>
-            <h4>Sertifiseringer</h4>
-            <ul>
-              <li>AZ-400 Designing and Implementing DevOps kurs Microsoft</li>
-              <li>AZ-204 Developing Solutions for Microsoft Azure Microsoft</li>
-              <li>AZ-304: Microsoft Azure Architect Design Microsoft</li>
-              <li>AZ-303: Microsoft Azure Architect Technologies Microsoft</li>
-              <li>Professional Scrum Product OwnerTM I (PSPO I) Scrum Alliance</li>
-              <li>Programming in Microsoft C# 70-483 Microsoft</li>
-              <li>Oracle Certified Professional Java EE Oracle</li>
-              <li>Oracle Certified Professional Java SE Programmer Oracle</li>
-            </ul>
           </span>
         </Box>
         <Box>
@@ -97,6 +89,19 @@ function Index() {
             <h5>10.2009 - 04.2014</h5>
             <p>Bakcell LLC: Utvikler</p>
           </span>
+        </Box>
+        <Box>
+          <h4>Sertifiseringer</h4>
+          <ul>
+            <li>AZ-400 Designing and Implementing DevOps kurs Microsoft</li>
+            <li>AZ-204 Developing Solutions for Microsoft Azure Microsoft</li>
+            <li>AZ-304: Microsoft Azure Architect Design Microsoft</li>
+            <li>AZ-303: Microsoft Azure Architect Technologies Microsoft</li>
+            <li>Professional Scrum Product OwnerTM I (PSPO I) Scrum Alliance</li>
+            <li>Programming in Microsoft C# 70-483 Microsoft</li>
+            <li>Oracle Certified Professional Java EE Oracle</li>
+            <li>Oracle Certified Professional Java SE Programmer Oracle</li>
+          </ul>
         </Box>
       </Information>
     </Container>
@@ -156,6 +161,11 @@ const Box = styled.div`
   .smaller {
     font-size: 0.9rem;
   }
+
+  .underlined {
+    text-decoration: underline;
+  }
+    
 `
 
 export default Index;
