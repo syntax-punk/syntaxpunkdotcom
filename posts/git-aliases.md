@@ -7,6 +7,8 @@ hashtags: "tech,git,productivity"
 
 Git is a powerful tool, but it can be a bit verbose at times. So let me share some handy aliases that I use to speed up my workflow.
 
+**TLDR:** Aliases list in my public gist [here](https://gist.github.com/syntax-punk/eca9711b073a6f28d262cb9b6ce87e44#file-syntax-punk-git-aliases) {.margin1}
+
 ## **How to set em up** {.hero-margin}
 
 An alias can be setup either globally (`--global`{.codeword}) or locally (`--local`{.codeword}). Global aliases are available across all your repositories, while local aliases are specific to a single repository.
@@ -56,9 +58,9 @@ And as you can see, the `st`{.codeword} alias sits under the "`[alias]`" declara
   
 - **hdr**: ` "!f(){ git checkout main && git pull && git checkout - && git rebase main; };f" `{.codeword} - `hdr` stands for "hydrate", so while you're on a feature branch, this command switches to your main branch, pulls latest changes from repository, switches back and then rebases your feature branch on top of main. Usage: `git hdr`{.codeword}
 
-- **rimbr**: ` branch | grep -v "main" | xargs git branch -D `{.codeword} - `rimbr` stands for "remove branch", it removes all branches except the main branch. Usage: `git rimbr`{.codeword}
+- **rimbr**: ` "!git checkout main && git branch | grep -v "main" | xargs git branch -D" `{.codeword} - `rimbr` stands for "remove branch", it removes all branches except the main branch. Usage: `git rimbr`{.codeword}
   
 
-Have a look at these aliases, use them responsibly and I hope I could save you a some keystrokes.
+That's it for now, give these aliases a go, but use them responsibly and I hope I could save you a some keystrokes.
 
 Have a great one! {.margin2}
