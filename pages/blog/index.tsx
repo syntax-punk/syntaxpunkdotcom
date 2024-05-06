@@ -31,7 +31,7 @@ const Container = styled.section`
   position: relative;
   display: grid;
   grid-template-columns: 32rem;
-  grid-auto-rows: 14rem;
+  grid-auto-rows: 16rem;
   justify-content: center;
   padding: 2rem;
   row-gap: 1.2rem;
@@ -50,6 +50,7 @@ const Item = styled.article`
   border-radius: 4px;
   border: 1px solid #dedede;
   width: 100%;
+  height: 100%;
   padding: 0.6rem;
   cursor: pointer;
   transition: box-shadow linear 100ms;
@@ -92,7 +93,7 @@ const Item = styled.article`
 
   .short-desc {
     font-size: 1rem;
-    line-height: 1rem;
+    line-height: 1.5rem;
     color: #F1E9FB;
   }
 
