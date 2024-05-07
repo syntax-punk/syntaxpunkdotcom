@@ -79,7 +79,7 @@ const Settings = styled.div`
       padding: 0.25rem;
       line-height: 1rem;
       color: #fafafa;
-      font-family: Roboto, sans-serif;
+      font-family: "Space Mono", sans-serif;
       font-weight: 400;
       background-color: transparent;
       border-radius: 0.5rem;

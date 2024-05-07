@@ -15,6 +15,7 @@ const Date = ({ dateString, size }: { dateString: string, size: string }) => {
 
 const DateContainer = styled.time<{ size: string }>`
   font-size: ${({ size }) => size}rem;
+  font-family: "Space Mono", monospace;
 `
 
 export default Date;

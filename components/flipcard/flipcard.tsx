@@ -148,7 +148,7 @@ const Container = styled.section`
       text-decoration: none;
       color: #f7f7f7;
       font-size: 1.6rem;
-      font-family: 'Roboto Mono', monospace;
+      font-family: "Space Mono", monospace;
       font-weight: 400;
       transition: color 250ms ease-in-out;
 

@@ -106,7 +106,7 @@ const Item = styled.article`
 
     span {
       color: #adadad;
-      font-family: monospace;
+      font-family: "Space Mono";
       font-size: 1rem;
 
       &:hover {

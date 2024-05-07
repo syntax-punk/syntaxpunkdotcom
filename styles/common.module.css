@@ -24,7 +24,7 @@
 
 .navBar li {
   display: inline;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Space Mono', monospace;
   font-weight: 300;
   color: var(--link-color);
   cursor: pointer;
