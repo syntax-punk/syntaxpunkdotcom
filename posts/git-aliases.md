@@ -7,31 +7,31 @@ hashtags: "tech,git,productivity"
 
 Git is a powerful tool, but it can be a bit verbose at times. So let me share some handy aliases that I use to speed up my workflow.
 
-**TLDR:** Aliases list in my public gist [here](https://gist.github.com/syntax-punk/eca9711b073a6f28d262cb9b6ce87e44#file-syntax-punk-git-aliases) {.margin1}
+**TLDR:** Check the aliases list in my [public gist](https://gist.github.com/syntax-punk/eca9711b073a6f28d262cb9b6ce87e44#file-syntax-punk-git-aliases) {.margin1}
 
 ## **How to set em up** {.hero-margin}
 
-An alias can be setup either globally (`--global`{.codeword}) or locally (`--local`{.codeword}). Global aliases are available across all your repositories, while local aliases are specific to a single repository.
+An alias can be setup either globally (`--global`{.codeword}) or locally (`--local`{.codeword}). Global aliases are available across all your repositories, while local aliases are specific to a single repository.:
 
 ```bash
 git config --global alias.st status
 ```
 
-After running this command, you can use `git st`{.codeword} instead of `git status`{.codeword} to check the status of your repository, dead simple.
+The command above creates an alias `st` for `status` keyword so that you can use a shorhand version of the command: `git st`{.codeword} instead of `git status`{.codeword}, dead simple.
 
-This alias is added globally as a key-value pair in the `.gitconfig`{.codeword} file and to view the config settings, you can run:
+The created alias is added globally as a key-value pair in the `.gitconfig`{.codeword} file and to view the file, you can run:
 
 ```bash
 git config --global --list
 ```
 
-Moreover you can also set up aliases directly in the `.gitconfig`{.codeword} file by running:
+You can also manually type in aliases directly into the `.gitconfig`{.codeword} file. Run the command below to open the file in your terminal:
 
 ```bash
 git config --global --edit
 ```
 
-And it should see something like this:
+The output will look something like this:
 
 ```text
 [user]
@@ -44,9 +44,9 @@ And it should see something like this:
   st = status
 ```
 
-And as you can see, the `st`{.codeword} alias sits under the "`[alias]`" declaration and you can basically add aliases manually into the file directly.
+And as you can see, the previously added `st`{.codeword} alias sits under the "`[alias]`" declaration, so if you want to add more aliases, you can just add them below the existing ones.
 
-## **Here are my fav aliases** {.hero-margin}
+## **My aliases** {.hero-margin}
 
 - **adog**: ` log --all --decorate --oneline --graph `{.codeword} - Displays your commit history in a nice and compact way. Usage: `git adog`{.codeword}
 
@@ -56,11 +56,11 @@ And as you can see, the `st`{.codeword} alias sits under the "`[alias]`" declara
   
 - **undo**: ` reset --soft HEAD~1 `{.codeword} - Undo the last commit and keep the changes staged. Usage: `git undo`{.codeword}
   
-- **hdr**: ` "!f(){ git checkout main && git pull && git checkout - && git rebase main; };f" `{.codeword} - `hdr` stands for "hydrate", so while you're on a feature branch, this command switches to your main branch, pulls latest changes from repository, switches back and then rebases your feature branch on top of main. Usage: `git hdr`{.codeword}
+- **hdr**: ` "!f(){ git checkout main && git pull && git checkout - && git rebase main; };f" `{.codeword} - `hdr` aka "hydrate", hydrates the feature branch that you're currently working on with changes in the main branch in remote repository. The command switches to your main branch, pulls latest changes from repository, switches back and then rebases your feature branch on top of main. Usage: `git hdr`{.codeword}
 
-- **rimbr**: ` "!git checkout main && git branch | grep -v "main" | xargs git branch -D" `{.codeword} - `rimbr` stands for "remove branch", it removes all branches except the main branch. Usage: `git rimbr`{.codeword}
+- **rimbr**: ` "!git checkout main && git branch | grep -v "main" | xargs git branch -D" `{.codeword} - `rimbr` aka "remove branch", it deletes all branches except the main branch. Usage: `git rimbr`{.codeword}
   
 
-That's it for now, give these aliases a go, but use them responsibly and I hope I could save you a some keystrokes.
+And that's about it, give these guys a go, but use them responsibly and I hope I could save you a some keystrokes.
 
 Have a great one! {.margin2}
