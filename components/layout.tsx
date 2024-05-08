@@ -20,7 +20,7 @@ export default function Layout({ children }: {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="og:image"
-          content="https://syntaxpunk.com/icons/sp-logo256.png" />
+          content="https://syntaxpunk.com/icons/sp-logo512.png" />
         <meta property="og:site_name" content="syntaxpunk.com" />
         <meta property="article:author" content="David"></meta>
       </Head>

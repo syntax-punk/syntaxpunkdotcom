@@ -24,7 +24,7 @@ function Index() {
         <meta property="article:author" content="David"></meta>
         <meta
           property="og:image"
-          content="https://syntaxpunk.com/icons/sp-logo256.png" />
+          content="https://syntaxpunk.com/icons/sp-logo512.png" />
         <meta name="og:title" content={makePageName("resume")} />
         <title>resume</title>
       </Head>
