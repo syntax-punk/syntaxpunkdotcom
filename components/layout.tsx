@@ -1,9 +1,6 @@
 import Head from 'next/head'
 import Header from './header'
 
-export const name = 'syntaxpunk.com'
-export const siteTitle = 'Howdy!'
-
 export default function Layout({ children }: {
   children: React.ReactNode,
   home?: boolean
@@ -20,8 +17,12 @@ export default function Layout({ children }: {
           name="description"
           content="Welcome to syntaxpunk.com."
         />
-        <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="og:image"
+          content="https://syntaxpunk.com/icons/sp-logo256.png" />
+        <meta property="og:site_name" content="syntaxpunk.com" />
+        <meta property="article:author" content="David"></meta>
       </Head>
       <main>
         <Header />

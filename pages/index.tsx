@@ -1,12 +1,14 @@
 import Head from 'next/head'
 import { FlipCard } from '../components/flipcard/flipcard';
-import Layout, { name } from '../components/layout'
+import Layout from '../components/layout'
+import { wwwName } from '../lib/shared/toolbox';
 
 export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>{name}</title>
+        <meta name="og:title" content={wwwName} />
+        <title>{wwwName}</title>
       </Head>
       <FlipCard />
     </Layout>

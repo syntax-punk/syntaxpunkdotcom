@@ -4,27 +4,36 @@ import styled from "styled-components"
 import Layout from "../../components/layout"
 import { getSortedPostsData } from "../../lib/posts"
 import Date from "../../components/date"
-import { device } from "../../lib/shared/toolbox";
+import { device, makePageName } from "../../lib/shared/toolbox";
+import Head from "next/head";
 
 const Index = (props) => {
   
-  return (<Layout>
-            <Container>
-              { props.posts.map(({ id, date, title, short, hashtags }, index) => 
-                <Link href={`/blog/${id}`} key={index}>
-                  <Item>
-                    <span className="info-body">
-                      <DateBadge dateString={date} size="s" />
-                      <p className="title">{title}</p>
-                      <p className="short-desc">{short}</p>
-                      <span className="hashtags">{hashtags.map((tag, i) => <span key={i}>{tag}</span>)}</span>
-                    </span>
-                  </Item>
-                </Link>
-              ) }
-            </Container>
-          </Layout>
-      );
+  return (
+    <>
+      <Head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="og:title" content={makePageName("blog")} />
+        <title>blog</title>
+      </Head>
+      <Layout>
+        <Container>
+          { props.posts.map(({ id, date, title, short, hashtags }, index) => 
+            <Link href={`/blog/${id}`} key={index}>
+              <Item>
+                <span className="info-body">
+                  <DateBadge dateString={date} size="s" />
+                  <p className="title">{title}</p>
+                  <p className="short-desc">{short}</p>
+                  <span className="hashtags">{hashtags.map((tag, i) => <span key={i}>{tag}</span>)}</span>
+                </span>
+              </Item>
+            </Link>
+          ) }
+        </Container>
+      </Layout>
+    </>
+  );
 }
 
 const Container = styled.section`
