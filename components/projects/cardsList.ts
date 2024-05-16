@@ -43,7 +43,7 @@ export const cardsList: CardListItem[] = [
   {
     type: "web",
     imageUrl: "urlzipr.png",
-    gotoUrl: "https://urlzipr.com",
+    gotoUrl: "https://urlzipr.syntaxpunk.com",
     altText: "URL zipper app image",
     title: "URL Zipper",
     logos: ["svelte.png", "netlify.png", "firebase.png"]
