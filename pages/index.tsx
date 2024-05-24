@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
+        <meta name="google-adsense-account" content="ca-pub-2755211066257720" />
         <meta name="og:title" content={wwwName} />
         <title>{wwwName}</title>
       </Head>
