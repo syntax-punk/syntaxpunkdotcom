@@ -8,8 +8,10 @@ import styled from 'styled-components'
 import 'highlight.js/styles/github-dark.css'
 import Link from 'next/link'
 import { device } from '../../lib/shared/toolbox'
+import { useStatistics } from '../../lib/hooks'
 
 export default function Post({ postData }) {
+  const count = useStatistics();
 
   return (
     <Layout>
@@ -29,6 +31,7 @@ export default function Post({ postData }) {
         </div>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className="md-container" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <Visits className={utilStyles.lightBadge}>🌍 {count}</Visits>
       </Container>
     </Layout>
   )
@@ -147,6 +150,19 @@ const Container = styled.article`
     margin-left: auto;
     margin-right: auto;
   }
+`
+
+// const AdContainer = styled.div`
+//   position: relative;
+//   height: auto;
+//   width: 100%;
+//   margin: 0 auto;
+//   padding: 2rem;
+// `
+
+const Visits = styled.span`
+  float: right;
+  font-family: 'Space Mono', monospace;
 `
 
 export const getStaticPaths: GetStaticPaths = async () => {
