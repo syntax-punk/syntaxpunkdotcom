@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { CardArticle } from "./cardArticle";
+import { useStatistics } from "../../lib/hooks";
 
 const FlipCard = () => {
   const [cardSize, setCardSize] = useState<[number, number]>([0, 0]);
+  const count = useStatistics();
+
   const containerref = useRef<HTMLDivElement>(null);
   const flipcardref = useRef<HTMLDivElement>(null);
   
@@ -34,6 +37,7 @@ const FlipCard = () => {
           </figure>
         </div>
       </div>
+      <Visits>{count}</Visits>
     </Container>
   );
 };
@@ -191,5 +195,18 @@ const Container = styled.section`
   }
 `;
 
+const Visits = styled.span`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 0.25rem;
+  padding-bottom: 0.25rem;
+  float: right;
+  align-items: end;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: #cecece;
+  max-width: 192px;
+`
 
 export { FlipCard };
