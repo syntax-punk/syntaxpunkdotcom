@@ -113,7 +113,6 @@ const Container = styled.section`
       overflow-y: auto;
 
       .pic {
-        display: inline-block;
         width: 25%;
         height: 25%;
         float: left;
@@ -124,7 +123,7 @@ const Container = styled.section`
         background-repeat: no-repeat;
         border-radius: 50%;
         shape-outside: circle();
-        border: 2px solid rgba(255, 255, 255, 0.75);;
+        border: 2px solid rgba(182, 220, 255, 0.75);;
       }
     }
 

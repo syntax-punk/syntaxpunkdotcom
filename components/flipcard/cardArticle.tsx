@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image'; 
+import Link from 'next/link';
 
 const CardArticle: React.FC = () => {
   return (
@@ -7,14 +8,14 @@ const CardArticle: React.FC = () => {
       <span className='info-body'>
         <div className="pic" />
         <p>
-          <span role="img" aria-label="wave">👋</span> I&apos;m David, a software developer based in Norway. I have a strong passion for building great solutions and I love to take on new challenges that can help me grow my skillset. 
+          <span role="img" aria-label="wave">👋</span> I&apos;m David! I&apos;m a software developer based in Norway with a strong passion for creating great solutions. I love to take on new challenges that help me expand my skillset. 
         </p>
         <br />
         <p>
-          Currently, I work as a software developer at <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">WEBSTEP</a> and during my free time, I enjoy tinkering with latest technology.                 
+          Currently, I work at <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">WEBSTEP</a> and in my free time, you&apos;ll find me exploring new tech trends and tinkering with cutting-edge tools.
         </p>
         <br />
-        If you&apos;re interested in my work, please feel free to check out my projects and get in touch with via means listed below.
+        Feel free to explore my <Link href="/projects" className='slug' style={{ textDecoration: 'underline' }}>projects</Link> and get in touch with me through the contact options listed below. I look forward to connecting with you!
       </span>
       <div className="icons-row">
         <a href="https://syntaxpunk.com/resume" rel="noreferrer">

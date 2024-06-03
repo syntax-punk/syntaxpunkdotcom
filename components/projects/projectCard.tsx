@@ -13,7 +13,8 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
     <Container className="project-card" href={gotoUrl} onClickCapture={trackClick}>
       <Image 
         width={240} 
-        height={240} 
+        height={240}
+        priority
         src={`/images/projects/${imageUrl}`} 
         alt={altText} 
         placeholder="blur" 
@@ -25,6 +26,7 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
             key={index} 
             width={32}
             height={32}
+            priority
             src={`/images/projects/logos/${logo}`} 
             alt={`${logo} image`}
             />

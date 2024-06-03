@@ -20,7 +20,9 @@ export function useStatistics() {
       headers: {
         'Content-Type': 'application/json',
       },
-    }).then((res) => res.json());
+    })
+      .then((res) => res.json())
+      .catch((err) => console.error("[track err]: ", err));
 
     return result;
   }, [hostName, path])
