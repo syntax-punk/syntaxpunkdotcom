@@ -8,14 +8,21 @@ const CardArticle: React.FC = () => {
       <span className='info-body'>
         <div className="pic" />
         <p>
-          <span role="img" aria-label="wave">👋</span> I&apos;m David! I&apos;m a software developer based in Norway with a strong passion for creating great solutions. I love to take on new challenges that help me expand my skillset. 
+          <span role="img" aria-label="wave">👋</span> I&apos;m David! I&apos;m a software developer based in Norway.
+        </p>
+        <p>
+          I love technology and creating cool solutions is my biggest passion. I&apos;m a life-long learner and I&apos;m always taking on new challenges that can help me expand my skillset.
         </p>
         <br />
         <p>
-          Currently, I work at <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">WEBSTEP</a> and in my free time, you&apos;ll find me exploring new tech trends and tinkering with cutting-edge tools.
+          Currently, I work at <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">WEBSTEP</a> and in my free time, you&apos;ll find me spending time with my family, training, hiking or exploring new tech trends and tinkering with cutting-edge tools.
         </p>
         <br />
-        Feel free to explore my <Link href="/projects" className='slug' style={{ textDecoration: 'underline' }}>projects</Link> and get in touch with me through the contact options listed below. I look forward to connecting with you!
+        <p>
+          Feel free to check out my <Link href="/projects" className='slug' style={{ textDecoration: 'underline' }}>projects</Link> and get in touch with me through the means listed below.
+        </p>
+        <br />
+        <p>Cheers!</p>
       </span>
       <div className="icons-row">
         <a href="https://syntaxpunk.com/resume" rel="noreferrer">
