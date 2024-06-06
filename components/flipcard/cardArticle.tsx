@@ -15,7 +15,7 @@ const CardArticle: React.FC = () => {
         </p>
         <br />
         <p>
-          Currently, I work at <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">WEBSTEP</a> and in my free time, you&apos;ll find me spending time with my family, training, hiking or exploring new tech trends and tinkering with cutting-edge tools.
+          Currently, I work at <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">WEBSTEP</a> and in my free time, you&apos;ll find me hanging out with my family, lifting weights, hiking or exploring new tech trends and tinkering with cutting-edge tools.
         </p>
         <br />
         <p>
