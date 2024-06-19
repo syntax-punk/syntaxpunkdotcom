@@ -19,7 +19,7 @@ export const cardsList: CardListItem[] = [
   {
     type: "ios",
     imageUrl: "moory.png",
-    gotoUrl: "https://syntaxpunk.com/projects/ios/zen-elements",
+    gotoUrl: "https://syntaxpunk.com/projects/ios/moory",
     altText: "moory app image",
     title: "moory",
     logos: ["swift.png"]
