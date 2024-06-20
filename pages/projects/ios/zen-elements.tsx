@@ -27,6 +27,7 @@ const ZenElements = () => {
 
         <div className="app-logo">
           <Image
+            className="logo-img"
             width={200} 
             height={200}
             src={`/images/projects/zenelements.png`} 
@@ -115,6 +116,10 @@ const Content = styled.div`
     }
     text-align: center;
     margin: 1rem auto;
+  }
+
+  .logo-img {
+    margin: 0 auto;
   }
 
   .app-description {

@@ -5,15 +5,15 @@ import Image from "next/image";
 
 const ZenElements = () => {
   
-  // const IosAppButton = (
-  //   <a href="https://apps.apple.com/us/app/zen-elements/id6467126777?itsct=apps_box_badge&amp;itscg=30200" 
-  //     style={{ display: "inline-block", overflow: "hidden", borderRadius: "13px", width: "250px", height: "83px" }}>
-  //       { /* eslint-disable-next-line @next/next/no-img-element */ }
-  //       <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1695254400" 
-  //         alt="Download on the App Store" 
-  //         style={{ borderRadius: "13px", width: "250px", height: "83px" }} />
-  //   </a>
-  // )
+  const IosAppButton = (
+    <a href="https://apps.apple.com/us/app/moory/id6504568315?platform=iphone" 
+      style={{ display: "inline-block", overflow: "hidden", borderRadius: "13px", width: "250px", height: "83px" }}>
+        { /* eslint-disable-next-line @next/next/no-img-element */ }
+        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1695254400" 
+          alt="Download on the App Store" 
+          style={{ borderRadius: "13px", width: "250px", height: "83px" }} />
+    </a>
+  )
 
   return (
     <Layout>
@@ -27,6 +27,7 @@ const ZenElements = () => {
 
         <div className="app-logo">
           <Image
+            className="logo-img"
             width={200} 
             height={200}
             src={`/images/projects/moory.png`} 
@@ -35,9 +36,9 @@ const ZenElements = () => {
             blurDataURL="/images/projects/blurred_shapes.png" />
         </div>
 
-        {/* <div className="app-button">
+        <div className="app-button">
           {IosAppButton}
-        </div> */}
+        </div>
 
         <div className="app-description">
             <blockquote>
@@ -115,6 +116,10 @@ const Content = styled.div`
     }
     text-align: center;
     margin: 1rem auto;
+  }
+
+  .logo-img {
+    margin: 0 auto;
   }
 
   .app-description {
