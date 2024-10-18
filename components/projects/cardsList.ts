@@ -26,6 +26,14 @@ export const cardsList: CardListItem[] = [
   },
   {
     type: "web",
+    imageUrl: "spraak.png",
+    gotoUrl: "https://spraak.syntaxpunk.com",
+    altText: "spraak app image",
+    title: "learn languages with us",
+    logos: ["nextjs.png", "tw.png", "postgres.png", "vercel.png"]
+  },
+  {
+    type: "web",
     imageUrl: "www2pdf.png",
     gotoUrl: "https://www2pdf.syntaxpunk.com",
     altText: "convert web page to pdf",
