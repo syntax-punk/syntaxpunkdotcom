@@ -29,15 +29,23 @@ export const cardsList: CardListItem[] = [
     imageUrl: "spraak.png",
     gotoUrl: "https://spraak.syntaxpunk.com",
     altText: "spraak app image",
-    title: "learn languages with us",
+    title: "Språk",
     logos: ["nextjs.png", "tw.png", "postgres.png", "vercel.png"]
+  },
+  {
+    type: "web",
+    imageUrl: "mega.png",
+    gotoUrl: "https://mega.syntaxpunk.com",
+    altText: "mega app image",
+    title: "mega (demoshop)",
+    logos: ["react.png", "csharp.png", "netcore.png", "docker.png", "flyio.png"]
   },
   {
     type: "web",
     imageUrl: "www2pdf.png",
     gotoUrl: "https://www2pdf.syntaxpunk.com",
     altText: "convert web page to pdf",
-    title: "convert web page to pdf",
+    title: "web to pdf",
     logos: ["docker.png", "flyio.png", "react.png", "netlify.png"]
   },
   {

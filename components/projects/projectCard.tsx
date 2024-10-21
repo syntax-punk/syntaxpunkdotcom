@@ -11,9 +11,10 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
 
   return (
     <Container className="project-card" href={gotoUrl} onClickCapture={trackClick}>
-      <Image 
-        width={240} 
-        height={240}
+      <Image
+        className="project-avatar" 
+        width={200} 
+        height={200}
         priority
         src={`/images/projects/${imageUrl}`} 
         alt={altText} 
@@ -38,12 +39,12 @@ const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title
 
 const Container = styled.a`
   position: relative;
-  width: 240px;
+  width: 220px;
   height: fit-content;
   display: grid;
   align-items: center;
-  grid-template-rows: 240px 2rem min-content;
-  gap: 0.5rem;
+  grid-template-rows: 200px 2rem min-content;
+  gap: 1rem;
   border-radius: 4px;
   background-color: var(--project-card-bg-color);
   box-shadow: var(--project-card-shadow);
@@ -57,7 +58,8 @@ const Container = styled.a`
     transition: transform 200ms ease-in-out;
   }
 
-  img {
+  .project-avatar {
+    margin: 0 auto;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
@@ -67,6 +69,7 @@ const Title = styled.p`
   font-size: 1rem;
   line-height: 1.25rem;
   margin: 0.2rem 0;
+  padding: 0 0.5rem;
   text-align:  center;
 `
 
