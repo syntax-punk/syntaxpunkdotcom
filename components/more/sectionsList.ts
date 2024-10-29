@@ -5,6 +5,10 @@ const sectionsList: Sections[] = [
     title: "Art",
     items: [
       {
+        title: "Flapper game",
+        link: "https://flapper.syntaxpunk.com/"
+      },
+      {
         title: "Endless Mondrian",
         link: "/more/mondrian"
       },
