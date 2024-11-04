@@ -8,14 +8,12 @@ const CardArticle: React.FC = () => {
       <span className='info-body'>
         <div className="pic" />
         <p>
-          <span role="img" aria-label="wave">👋</span> I&apos;m David! I&apos;m a software developer based in Norway.
-        </p>
-        <p>
+          <span role="img" aria-label="wave">👋</span> I&apos;m David! I&apos;m a software developer based in Jæren, Norway.
           I love technology and creating cool solutions is my biggest passion. I&apos;m a life-long learner and I&apos;m always taking on new challenges that can help me expand my skillset.
         </p>
         <br />
         <p>
-          Currently, I work at <a href="https://www.webstep.no/" className='slug' target="_blank" rel="noreferrer">WEBSTEP</a> and in my free time, you&apos;ll find me hanging out with my family, lifting weights, hiking or exploring new tech trends and tinkering with cutting-edge tools.
+          In my free time, you&apos;ll find me hanging out with my family, lifting weights, hiking, exploring new tech trends or mastering <Link href="https://en.wikipedia.org/wiki/Hangul" className='slug' style={{ textDecoration: 'underline' }}>&ldquo;Hangul&rdquo;</Link>.
         </p>
         <br />
         <p>
