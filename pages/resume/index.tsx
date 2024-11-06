@@ -57,15 +57,21 @@ function Index() {
               </a>
             </span>
             <span>
-              <h4>LinkedIn:</h4>
-              <a className="evensmaller" href="https://www.linkedin.com/in/mrjaeren/">
-                https://www.linkedin.com/in/mrjaeren/
-              </a>
-            </span>
-            <span>
               <h4>Personlige prosjekter:</h4>
               <a className="smaller" href="https://syntaxpunk.com/">
                 https://syntaxpunk.com/projects
+              </a>
+            </span>
+            <span>
+              <h4>Stackoverflow:</h4>
+              <a className="smaller" href="https://stackoverflow.com/users/4336575/syntax-punk?tab=profile">
+                Trykk her
+              </a>
+            </span>
+            <span>
+              <h4>LinkedIn:</h4>
+              <a className="evensmaller" href="https://www.linkedin.com/in/mrjaeren/">
+                https://www.linkedin.com/in/mrjaeren/
               </a>
             </span>
           </Box>
@@ -90,7 +96,7 @@ function Index() {
             </span>
             <span>
               <h5>06.2017 - 10.2019</h5>
-              <p>Origin AS: Senior utvikler</p>
+              <p>Origin AS: System utvikler</p>
             </span>
             <span>
               <h5>01.2018 - 06.2018</h5>
