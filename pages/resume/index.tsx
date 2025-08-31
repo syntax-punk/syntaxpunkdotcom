@@ -87,7 +87,11 @@ function Index() {
           <Box>
             <h4>Arbeidserfaring</h4>
             <span>
-              <h5>03.2021 - nå</h5>
+              <h5>02.2025 - nå</h5>
+              <p>Origin AS: Seniorkonsulent / Tech Lead</p>
+            </span>
+            <span>
+              <h5>03.2021 - 02.2025</h5>
               <p>Webstep AS: Seniorkonsulent</p>
             </span>
             <span>
