@@ -4,14 +4,14 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 
 export type Item = {
-  title: string, 
-  link: string
-}
+  title: string;
+  link: string;
+};
 
 export type Sections = {
-  title: string,
-  items: Item[]
-}
+  title: string;
+  items: Item[];
+};
 
 interface Props {
   sections: Sections[];
@@ -21,24 +21,26 @@ const Section: React.FC<Props> = ({ sections }) => {
   const router = useRouter();
   return (
     <Wrapper>
-      { sections.map(({ title, items }, idx) => (
+      {sections.map(({ title, items }, idx) => (
         <Fragment key={idx}>
           <SectionTitle>{title}</SectionTitle>
           <SectionContainer>
-            { items.map(({ title, link }, index) => (
-              <SectionItem key={index} onClick={() => {
-                router.push(link);
-              }}>
+            {items.map(({ title, link }, index) => (
+              <SectionItem
+                key={index}
+                onClick={() => {
+                  router.push(link);
+                }}
+              >
                 {title}
               </SectionItem>
             ))}
           </SectionContainer>
         </Fragment>
-      ))
-      }
+      ))}
     </Wrapper>
   );
-}
+};
 
 const Wrapper = styled.div`
   width: 100%;
@@ -46,7 +48,7 @@ const Wrapper = styled.div`
   grid-auto-rows: 1fr;
   overflow-x: hidden;
   overflow-y: auto;
-`
+`;
 
 const SectionContainer = styled.div`
   width: 100%;
@@ -58,8 +60,8 @@ const SectionContainer = styled.div`
   padding: 1rem;
   grid-auto-flow: dense;
   position: relative;
-`
- 
+`;
+
 const SectionTitle = styled.h2`
   text-transform: lowercase;
   display: grid;
@@ -76,7 +78,7 @@ const SectionTitle = styled.h2`
     content: " ";
     border-top: 2px solid #92929288;
   }
-`
+`;
 
 const SectionItem = styled.article`
   width: 100%;
@@ -86,18 +88,24 @@ const SectionItem = styled.article`
   font-weight: 600;
   color: #fefefe;
   background-color: #000;
-  background-image:  linear-gradient(135deg, rgb(0, 0, 0), rgba(73, 0, 162, 0.88));
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-image: linear-gradient(
+    135deg,
+    rgb(0, 0, 0),
+    rgba(73, 0, 162, 0.88)
+  );
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   letter-spacing: 0.1rem;
   border-radius: 8px;
   padding: 0.5rem;
   cursor: pointer;
-  
+
   &:hover {
     text-decoration: none;
     transform: translateY(6px);
     transition: transform 200ms ease-in-out;
   }
-`
+`;
 
 export { Section };

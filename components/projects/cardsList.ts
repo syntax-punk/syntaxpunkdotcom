@@ -5,7 +5,7 @@ export type CardListItem = {
   altText: string;
   title: string;
   logos: string[];
-}
+};
 
 export const cardsList: CardListItem[] = [
   {
@@ -14,7 +14,7 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://syntaxpunk.com/projects/ios/zen-elements",
     altText: "zen elements app image",
     title: "zen elements",
-    logos: ["swift.png"]
+    logos: ["swift.png"],
   },
   {
     type: "ios",
@@ -22,7 +22,7 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://syntaxpunk.com/projects/ios/moory",
     altText: "moory app image",
     title: "moory",
-    logos: ["swift.png"]
+    logos: ["swift.png"],
   },
   {
     type: "web",
@@ -30,7 +30,7 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://spraak.syntaxpunk.com",
     altText: "spraak app image",
     title: "Språk",
-    logos: ["nextjs.png", "tw.png", "postgres.png", "vercel.png"]
+    logos: ["nextjs.png", "tw.png", "postgres.png", "vercel.png"],
   },
   {
     type: "web",
@@ -38,7 +38,13 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://mega.syntaxpunk.com",
     altText: "mega app image",
     title: "mega (demoshop)",
-    logos: ["react.png", "csharp.png", "netcore.png", "docker.png", "flyio.png"]
+    logos: [
+      "react.png",
+      "csharp.png",
+      "netcore.png",
+      "docker.png",
+      "flyio.png",
+    ],
   },
   {
     type: "web",
@@ -46,7 +52,7 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://www2pdf.syntaxpunk.com",
     altText: "convert web page to pdf",
     title: "web to pdf",
-    logos: ["docker.png", "flyio.png", "react.png", "netlify.png"]
+    logos: ["docker.png", "flyio.png", "react.png", "netlify.png"],
   },
   {
     type: "web",
@@ -54,7 +60,13 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://thehub.syntaxpunk.com",
     altText: "the Hub image",
     title: "theHub",
-    logos: ["react.png", "csharp.png", "netcore.png", "docker.png", "flyio.png"]
+    logos: [
+      "react.png",
+      "csharp.png",
+      "netcore.png",
+      "docker.png",
+      "flyio.png",
+    ],
   },
   {
     type: "web",
@@ -62,7 +74,7 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://pixelbrush.syntaxpunk.com",
     altText: "Pixel Brush app image",
     title: "pixel brush",
-    logos: ["svelte.png", "netlify.png", "firebase.png"]
+    logos: ["svelte.png", "netlify.png", "firebase.png"],
   },
   {
     type: "web",
@@ -70,7 +82,7 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://urlzipr.syntaxpunk.com",
     altText: "URL zipper app image",
     title: "URL Zipper",
-    logos: ["svelte.png", "netlify.png", "firebase.png"]
+    logos: ["svelte.png", "netlify.png", "firebase.png"],
   },
   {
     type: "web",
@@ -78,7 +90,7 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://wordpuff.com",
     altText: "WordPuff image",
     title: "WordPuff",
-    logos: ["react.png", "mui.png", "vite.png", "firebase.png"]
+    logos: ["react.png", "mui.png", "vite.png", "firebase.png"],
   },
   {
     type: "web",
@@ -86,7 +98,7 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://ipsumshop.syntaxpunk.com",
     altText: "ipsum web app image",
     title: "lorem ipsum shop",
-    logos: ["stripe.png", "netlify.png"]
+    logos: ["stripe.png", "netlify.png"],
   },
   {
     type: "web",
@@ -94,7 +106,7 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://labeler.syntaxpunk.com/about",
     altText: "labeler app image",
     title: "labeler",
-    logos: ["react.png", "netlify.png"]
+    logos: ["react.png", "netlify.png"],
   },
   {
     type: "web",
@@ -102,14 +114,15 @@ export const cardsList: CardListItem[] = [
     gotoUrl: "https://todoapp.syntaxpunk.com",
     altText: "Todo app image",
     title: "Yet another Todo app",
-    logos: ["react.png", "netlify.png", "firebase.png"]
+    logos: ["react.png", "netlify.png", "firebase.png"],
   },
   {
     type: "other",
     imageUrl: "rddt.png",
-    gotoUrl: "https://marketplace.visualstudio.com/items?itemName=syntax-punk.reddot",
+    gotoUrl:
+      "https://marketplace.visualstudio.com/items?itemName=syntax-punk.reddot",
     altText: "VS Code theme image",
     title: "Red Dot theme",
-    logos: ["ts.png"]
+    logos: ["ts.png"],
   },
-]
+];

@@ -6,7 +6,7 @@ import { sectionsList } from "./sectionsList";
 const MoreView = () => {
   return (
     <Container>
-      <Section sections={sectionsList}/>
+      <Section sections={sectionsList} />
     </Container>
   );
 };
@@ -15,6 +15,6 @@ const Container = styled.section`
   position: relative;
   width: 100%;
   height: 100%;
-`
+`;
 
-export { MoreView }
+export { MoreView };

@@ -9,7 +9,7 @@ const sectionsList: Sections[] = [
         link: 'https://flapper.syntaxpunk.com/',
       },
       {
-        title: 'Endless Mondrian',
+        title: '(almost) Endless Mondrian',
         link: '/more/mondrian',
       },
       {

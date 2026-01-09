@@ -9,27 +9,27 @@ const FlipCard = () => {
 
   const containerref = useRef<HTMLDivElement>(null);
   const flipcardref = useRef<HTMLDivElement>(null);
-  
+
   useEffect(function setCardSizeOnMount() {
     if (!containerref.current) return;
     const bbox = containerref.current.getBoundingClientRect();
     const heightMargin = 0.95;
     const widthMargin = 0.8;
-    
+
     const cardHeight = bbox.height * heightMargin;
     const cardWidth = cardHeight * widthMargin;
 
-    setCardSize([cardWidth,  cardHeight]);
-  }, [])
+    setCardSize([cardWidth, cardHeight]);
+  }, []);
 
   const [width, height] = cardSize;
 
   return (
     <Container ref={containerref} className="flipcard-container fade-in one">
-      <div 
-        ref={flipcardref} 
+      <div
+        ref={flipcardref}
         className="flipcard desktop"
-        style={{ width: `${width}px`, height: `${height}px`}}
+        style={{ width: `${width}px`, height: `${height}px` }}
       >
         <div className="flipcard-content desktop">
           <figure className="flipcard-face">
@@ -41,7 +41,6 @@ const FlipCard = () => {
     </Container>
   );
 };
-
 
 const Container = styled.section`
   position: relative;
@@ -59,7 +58,7 @@ const Container = styled.section`
     perspective: 2500px;
     background: transparent;
     cursor: pointer;
-    
+
     &.desktop {
       min-width: 500px;
       min-height: 625px;
@@ -74,9 +73,41 @@ const Container = styled.section`
     transition: transform 650ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transform-style: preserve-3d;
     box-shadow: 0 0 16px 10px rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(135deg, rgba(29, 29, 29, 0.05) 0%, rgba(29, 29, 29, 0.05) 17%, rgba(27, 27, 27, 0.05) 17%, rgba(27, 27, 27, 0.05) 34%, rgba(31, 31, 31, 0.05) 34%, rgba(31, 31, 31, 0.05) 93%, rgba(242, 242, 242, 0.05) 93%, rgba(242, 242, 242, 0.05) 100%), linear-gradient(135deg, rgba(129, 129, 129, 0.05) 0%, rgba(129, 129, 129, 0.05) 66%, rgba(117, 117, 117, 0.05) 66%, rgba(117, 117, 117, 0.05) 91%, rgba(199, 199, 199, 0.05) 91%, rgba(199, 199, 199, 0.05) 100%), linear-gradient(135deg, rgba(31, 31, 31, 0.07) 0%, rgba(31, 31, 31, 0.07) 15%, rgba(139, 139, 139, 0.07) 15%, rgba(139, 139, 139, 0.07) 23%, rgba(200, 200, 200, 0.07) 23%, rgba(200, 200, 200, 0.07) 29%, rgba(102, 102, 102, 0.07) 29%, rgba(102, 102, 102, 0.07) 100%), linear-gradient(90deg, rgb(19, 196, 228), rgb(126, 8, 222));
+    background-image:
+      linear-gradient(
+        135deg,
+        rgba(29, 29, 29, 0.05) 0%,
+        rgba(29, 29, 29, 0.05) 17%,
+        rgba(27, 27, 27, 0.05) 17%,
+        rgba(27, 27, 27, 0.05) 34%,
+        rgba(31, 31, 31, 0.05) 34%,
+        rgba(31, 31, 31, 0.05) 93%,
+        rgba(242, 242, 242, 0.05) 93%,
+        rgba(242, 242, 242, 0.05) 100%
+      ),
+      linear-gradient(
+        135deg,
+        rgba(129, 129, 129, 0.05) 0%,
+        rgba(129, 129, 129, 0.05) 66%,
+        rgba(117, 117, 117, 0.05) 66%,
+        rgba(117, 117, 117, 0.05) 91%,
+        rgba(199, 199, 199, 0.05) 91%,
+        rgba(199, 199, 199, 0.05) 100%
+      ),
+      linear-gradient(
+        135deg,
+        rgba(31, 31, 31, 0.07) 0%,
+        rgba(31, 31, 31, 0.07) 15%,
+        rgba(139, 139, 139, 0.07) 15%,
+        rgba(139, 139, 139, 0.07) 23%,
+        rgba(200, 200, 200, 0.07) 23%,
+        rgba(200, 200, 200, 0.07) 29%,
+        rgba(102, 102, 102, 0.07) 29%,
+        rgba(102, 102, 102, 0.07) 100%
+      ),
+      linear-gradient(90deg, rgb(19, 196, 228), rgb(126, 8, 222));
     background-size: 200% 200%;
-	  animation: gradient 15s ease-in-out infinite;
+    animation: gradient 15s ease-in-out infinite;
   }
 
   .flipcard-face {
@@ -95,9 +126,9 @@ const Container = styled.section`
     grid-row-gap: 2rem;
     height: 100%;
     width: 100%;
-    color: #F1E9FB;
+    color: #f1e9fb;
     text-align: left;
-    
+
     .info-body {
       position: relative;
       padding: 2rem;
@@ -123,7 +154,7 @@ const Container = styled.section`
         background-repeat: no-repeat;
         border-radius: 50%;
         shape-outside: circle();
-        border: 2px solid rgba(182, 220, 255, 0.75);;
+        border: 2px solid rgba(182, 220, 255, 0.75);
       }
     }
 
@@ -164,7 +195,6 @@ const Container = styled.section`
   }
 
   @media only screen and (max-width: 960px) {
-
     article {
       padding: 1rem 0.8rem;
 
@@ -179,7 +209,6 @@ const Container = styled.section`
   }
 
   @media only screen and (max-width: 700px) {
-
     article {
       padding: 1rem 0.8rem;
 
@@ -202,10 +231,10 @@ const Visits = styled.span`
   padding-bottom: 0.25rem;
   float: right;
   align-items: end;
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
   font-size: 0.65rem;
   color: #cecece;
   max-width: 192px;
-`
+`;
 
 export { FlipCard };

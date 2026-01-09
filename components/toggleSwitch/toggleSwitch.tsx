@@ -2,25 +2,23 @@ import { memo, useCallback, useEffect } from "react";
 import styled from "styled-components";
 
 const ToggleSwitch = memo(function ToggleSwitch() {
-
   useEffect(function onMount() {
-    const theme = localStorage.getItem('theme');
-    if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      (document.getElementById('checkbox') as HTMLInputElement).checked = true;
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      (document.getElementById("checkbox") as HTMLInputElement).checked = true;
     }
-  }, [])
+  }, []);
 
   const switchTheme = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
     }
-    else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      localStorage.setItem('theme', 'light');
-    }    
-  }, [])
+  }, []);
 
   return (
     <SwitchContainer aria-label="mode-switch">
@@ -29,9 +27,8 @@ const ToggleSwitch = memo(function ToggleSwitch() {
         <div className="slider round"></div>
       </label>
     </SwitchContainer>
-  )
+  );
 });
-
 
 const SwitchContainer = styled.div`
   display: flex;
@@ -45,8 +42,7 @@ const SwitchContainer = styled.div`
   }
 
   .theme-switch input {
-    display:none;
-    
+    display: none;
   }
 
   .slider {
@@ -57,7 +53,7 @@ const SwitchContainer = styled.div`
     position: absolute;
     right: 0;
     top: 0;
-    transition: .4s;
+    transition: 0.4s;
   }
 
   .slider:before {
@@ -67,7 +63,7 @@ const SwitchContainer = styled.div`
     height: 26px;
     left: 4px;
     position: absolute;
-    transition: .4s;
+    transition: 0.4s;
     width: 26px;
   }
 
@@ -84,4 +80,4 @@ const SwitchContainer = styled.div`
   }
 `;
 
-export { ToggleSwitch }
+export { ToggleSwitch };

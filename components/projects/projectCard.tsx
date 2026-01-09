@@ -4,33 +4,47 @@ import Image from "next/image";
 import { CardListItem } from "./cardsList";
 import { fireEvent } from "../../lib/ga";
 
-const ProjectCard: React.FC<CardListItem> = ({ imageUrl, gotoUrl, altText, title, logos }) => {
+const ProjectCard: React.FC<CardListItem> = ({
+  imageUrl,
+  gotoUrl,
+  altText,
+  title,
+  logos,
+}) => {
   const trackClick = useCallback(() => {
-    fireEvent({ action: 'project-click', params: { project: title, url: gotoUrl }});
-  }, [gotoUrl, title])
+    fireEvent({
+      action: "project-click",
+      params: { project: title, url: gotoUrl },
+    });
+  }, [gotoUrl, title]);
 
   return (
-    <Container className="project-card" href={gotoUrl} onClickCapture={trackClick}>
+    <Container
+      className="project-card"
+      href={gotoUrl}
+      onClickCapture={trackClick}
+    >
       <Image
-        className="project-avatar" 
-        width={200} 
+        className="project-avatar"
+        width={200}
         height={200}
         priority
-        src={`/images/projects/${imageUrl}`} 
-        alt={altText} 
-        placeholder="blur" 
-        blurDataURL="/images/projects/blurred_shapes.png" />
+        src={`/images/projects/${imageUrl}`}
+        alt={altText}
+        placeholder="blur"
+        blurDataURL="/images/projects/blurred_shapes.png"
+      />
       <Title>{title}</Title>
       <Sub>
         {logos.map((logo, index) => (
-          <Image 
-            key={index} 
+          <Image
+            key={index}
             width={32}
             height={32}
             priority
-            src={`/images/projects/logos/${logo}`} 
+            src={`/images/projects/logos/${logo}`}
             alt={`${logo} image`}
-            />
+          />
         ))}
       </Sub>
     </Container>
@@ -70,8 +84,8 @@ const Title = styled.p`
   line-height: 1.25rem;
   margin: 0.2rem 0;
   padding: 0 0.5rem;
-  text-align:  center;
-`
+  text-align: center;
+`;
 
 const Sub = styled.div`
   display: flex;
@@ -82,6 +96,6 @@ const Sub = styled.div`
   grid-gap: 0.2rem;
   padding: 0.5rem;
   border-top: var(--project-card-sub-border);
-`
+`;
 
 export { ProjectCard };

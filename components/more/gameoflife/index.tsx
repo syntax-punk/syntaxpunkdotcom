@@ -1,21 +1,25 @@
-import { useEffect, useState, useRef } from 'react'
-import { Griddy } from './Griddy';
-import styled from 'styled-components';
-import { GolOptions } from '../../../lib/definitions';
+import { useEffect, useState, useRef } from "react";
+import { Griddy } from "./Griddy";
+import styled from "styled-components";
+import { GolOptions } from "../../../lib/definitions";
 
 interface Props {
-  options: GolOptions
+  options: GolOptions;
 }
 
 export default function GolView({ options }: Props) {
-  const [gridMap, setGridMap] = useState(Array(options.rows).fill(undefined).map(() => Array(options.cols).fill(false)));
+  const [gridMap, setGridMap] = useState(
+    Array(options.rows)
+      .fill(undefined)
+      .map(() => Array(options.cols).fill(false)),
+  );
   const [generation, setGeneration] = useState(0);
   const intervalRef = useRef<NodeJS.Timer | undefined>(undefined);
 
   useEffect(function seedOnMount() {
     seedBox();
     startGame();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function seedBox() {
@@ -26,7 +30,7 @@ export default function GolView({ options }: Props) {
         if (Math.floor(Math.random() * 5) === 1) {
           gridCopy[i][j] = true;
         }
-      })
+      });
     });
 
     setGridMap(gridCopy);
@@ -46,7 +50,8 @@ export default function GolView({ options }: Props) {
         if (j > 0) if (gridMap[i][j - 1]) count++;
         if (i < options.rows - 1) if (gridMap[i + 1][j]) count++;
         if (i < options.rows - 1 && j > 0) if (gridMap[i + 1][j - 1]) count++;
-        if (i < options.rows - 1 && options.cols - 1) if (gridMap[i + 1][j + 1]) count++;
+        if (i < options.rows - 1 && options.cols - 1)
+          if (gridMap[i + 1][j + 1]) count++;
 
         if (gridMap[i][j] && (count < 2 || count > 3)) gridCopy[i][j] = false;
         if (!gridMap[i][j] && count === 3) gridCopy[i][j] = true;
@@ -63,11 +68,10 @@ export default function GolView({ options }: Props) {
   }
 
   function stopGame() {
-    if (intervalRef.current)
-      clearInterval(intervalRef.current);
+    if (intervalRef.current) clearInterval(intervalRef.current);
   }
 
-  function handleBoxClick (row, col) {
+  function handleBoxClick(row, col) {
     const gridCopy = [...gridMap];
     gridCopy[row][col] = !gridCopy[row][col];
     console.log(`--> clicked on: ${row}, ${col}`);
@@ -77,15 +81,23 @@ export default function GolView({ options }: Props) {
   return (
     <Wrapper>
       <h3 className="title">Generation: {generation}</h3>
-      <Griddy rows={options.rows} cols={options.cols} gridMap={gridMap} onBoxClick={handleBoxClick} />
+      <Griddy
+        rows={options.rows}
+        cols={options.cols}
+        gridMap={gridMap}
+        onBoxClick={handleBoxClick}
+      />
       <div className="buttons">
-        <button className='button-60' onClick={startGame}>Start</button>
-        <button className='button-60' onClick={stopGame}>Stop</button>
+        <button className="button-60" onClick={startGame}>
+          Start
+        </button>
+        <button className="button-60" onClick={stopGame}>
+          Stop
+        </button>
       </div>
     </Wrapper>
-  )
+  );
 }
-
 
 const Wrapper = styled.div`
   overflow-x: hidden;
@@ -127,7 +139,7 @@ const Wrapper = styled.div`
   }
 
   .box:hover {
-    background-color: #00CCFF;
+    background-color: #00ccff;
   }
 
   .buttons {
@@ -145,18 +157,31 @@ const Wrapper = styled.div`
     appearance: none;
     background-color: #fff;
     border: 1px solid #dbdbdb;
-    border-radius: .375em;
+    border-radius: 0.375em;
     box-shadow: none;
     box-sizing: border-box;
     color: #363636;
     cursor: pointer;
     display: inline-flex;
-    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family:
+      BlinkMacSystemFont,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Fira Sans",
+      "Droid Sans",
+      "Helvetica Neue",
+      Helvetica,
+      Arial,
+      sans-serif;
     font-size: 1rem;
     height: 2.5em;
     justify-content: center;
     line-height: 1.5;
-    padding: calc(.5em - 1px) 1em;
+    padding: calc(0.5em - 1px) 1em;
     position: relative;
     text-align: center;
     user-select: none;
@@ -183,8 +208,8 @@ const Wrapper = styled.div`
   }
 
   .button-60:focus:not(:active) {
-    box-shadow: rgba(72, 95, 199, .25) 0 0 0 .125em;
+    box-shadow: rgba(72, 95, 199, 0.25) 0 0 0 0.125em;
   }
-`
+`;
 
-export { GolView }
+export { GolView };

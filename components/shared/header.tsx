@@ -1,46 +1,41 @@
-import Link from 'next/link';
-import commonStyles from '../../styles/common.module.css'
-import { useRouter } from 'next/router';
-import { ToggleSwitch } from '../toggleSwitch/toggleSwitch';
+import Link from "next/link";
+import commonStyles from "../../styles/common.module.css";
+import { useRouter } from "next/router";
+import { ToggleSwitch } from "../toggleSwitch/toggleSwitch";
 
 const navLinks = [
-  { title: '/about', link: '/' },
-  { title: '/projects', link: '/projects' },
-  { title: '/blog', link: '/blog' },
-  { title: '/more', link: '/more' },
+  { title: "/about", link: "/" },
+  { title: "/projects", link: "/projects" },
+  { title: "/blog", link: "/blog" },
+  { title: "/more", link: "/more" },
   // { title: '/thanks', link: '/thanks' },
-]
+];
 
 const Header = () => {
   const { pathname } = useRouter();
 
   function getActiveClassName(link: string) {
-    if (pathname.length === 1 && link === '/') 
+    if (pathname.length === 1 && link === "/") return commonStyles.active;
+    else if (pathname.startsWith(link) && link !== "/")
       return commonStyles.active;
-    else if (pathname.startsWith(link) && link !== '/') 
-      return commonStyles.active;
-    else 
-      return '';
+    else return "";
   }
 
   return (
     <header className={commonStyles.header}>
       <ul className={commonStyles.navBar}>
-        {navLinks.map(({ title, link }, idx) => { 
-          
+        {navLinks.map(({ title, link }, idx) => {
           const active = getActiveClassName(link);
           return (
             <li className={active} key={idx}>
-              <Link href={link}>
-                {title}
-              </Link>
+              <Link href={link}>{title}</Link>
             </li>
-          )
+          );
         })}
       </ul>
       <ToggleSwitch />
     </header>
-  )
-}
+  );
+};
 
 export default Header;
