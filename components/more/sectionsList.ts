@@ -1,23 +1,23 @@
-import { Sections } from "./shared/section";
+import { Sections } from './shared/section';
 
 const sectionsList: Sections[] = [
   {
-    title: "Art",
+    title: 'misc',
     items: [
       {
-        title: "Flapper game",
-        link: "https://flapper.syntaxpunk.com/"
+        title: 'Flapper game',
+        link: 'https://flapper.syntaxpunk.com/',
       },
       {
-        title: "Endless Mondrian",
-        link: "/more/mondrian"
+        title: 'Endless Mondrian',
+        link: '/more/mondrian',
       },
       {
-        title: "Game of Life",
-        link: "/more/gameoflife"
-      }
-    ]
-  }
-]
+        title: 'Game of Life',
+        link: '/more/gameoflife',
+      },
+    ],
+  },
+];
 
-export { sectionsList }
+export { sectionsList };
