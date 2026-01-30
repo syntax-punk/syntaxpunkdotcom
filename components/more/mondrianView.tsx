@@ -18,7 +18,6 @@ const MondrianView = () => {
       if (previousCountRef.current === tilesCount) return;
       const container = containerRef.current;
 
-      // Initial loading of 300 random squares
       for (let i = 0; i < tilesCount; i++) {
         createRandomSquareWithColors(container, colors);
       }
@@ -27,6 +26,30 @@ const MondrianView = () => {
     },
     [colors, tilesCount],
   );
+
+useEffect(function scrollHandler() {
+  const handleScroll = () => {
+    if (!containerRef.current) return;
+    
+    const parent = containerRef.current.parentElement;
+    if (!parent) return;
+    
+    const scrollPosition = parent.scrollTop + parent.clientHeight;
+    const scrollHeight = parent.scrollHeight;
+    
+    if (scrollPosition >= scrollHeight - 500) {
+      for (let i = 0; i < 50; i++) {
+        createRandomSquareWithColors(containerRef.current, colors);
+      }
+    }
+  };
+
+  const parent = containerRef.current?.parentElement;
+  if (parent) {
+    parent.addEventListener('scroll', handleScroll);
+    return () => parent.removeEventListener('scroll', handleScroll);
+  }
+}, [colors]);
 
   function handleRefreshClick() {
     if (!containerRef.current) return;
