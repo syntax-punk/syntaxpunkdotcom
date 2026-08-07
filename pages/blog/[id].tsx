@@ -61,9 +61,10 @@ const Container = styled.article`
 
   .md-container {
     position: relative;
+    padding: 0 1rem;
     width: 100%;
     display: grid;
-    grid-template-columns: 90%;
+    grid-template-columns: 1fr;
     justify-content: center;
     margin: 0 auto;
     color: var(--font-color);
