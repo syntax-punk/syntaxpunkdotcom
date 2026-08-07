@@ -43,6 +43,7 @@ const Container = styled.article`
   max-width: 920px;
   justify-self: center;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 2rem;
 
   @media ${device.tablet} {
@@ -64,7 +65,7 @@ const Container = styled.article`
     padding: 0 1rem;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     justify-content: center;
     margin: 0 auto;
     color: var(--font-color);
@@ -90,6 +91,8 @@ const Container = styled.article`
   pre {
     padding: 1rem;
     margin: 1rem 0;
+    max-width: 100%;
+    overflow-x: auto;
   }
 
   pre code {
@@ -132,17 +135,17 @@ const Container = styled.article`
     margin-bottom: 1rem;
   }
 
-  .25size {
+  .size25 {
     width: 25%;
     height: 25%;
   }
 
-  .50size {
+  .size50 {
     width: 50%;
     height: 50%;
   }
 
-  .75size {
+  .size75 {
     width: 75%;
     height: 75%;
   }

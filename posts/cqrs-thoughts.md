@@ -17,4 +17,4 @@ That's CQRS — Command Query Responsibility Segregation. Separate the model tha
 
 Why does this matter architecturally? Because now you can scale, shape, and even choose completely different storage technology for reads versus writes, independently. Maybe writes go to a relational store because you need transactional guarantees. Maybe reads go to a search index, or a cache, or three different projections for three different dashboards: order history, supplies storage and a JSON blob for the mobile app. Same events, three completely different "menu boards", each optimized for to solve its specific task. {.margin1}
 
-Cheers! {.margin2}
+Cheers! 🍻 {.margin2}

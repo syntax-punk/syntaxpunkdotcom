@@ -129,7 +129,7 @@ const Settings = styled.div`
     padding: 0.25rem;
     line-height: 1rem;
     color: #fafafa;
-    font-family: "Space Mono", sans-serif;
+    font-family: "Space Mono", monospace;
     font-weight: 400;
     background-color: transparent;
     border-radius: 0.5rem;
