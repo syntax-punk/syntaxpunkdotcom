@@ -99,6 +99,13 @@ const Container = styled.article`
     border-radius: 12px;
   }
 
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
+  }
+
   .codeword {
     padding: 0.2rem 0.4rem;
     background-color: #D0D0D1;
@@ -155,14 +162,6 @@ const Container = styled.article`
     margin-right: auto;
   }
 `
-
-// const AdContainer = styled.div`
-//   position: relative;
-//   height: auto;
-//   width: 100%;
-//   margin: 0 auto;
-//   padding: 2rem;
-// `
 
 const Visits = styled.span`
   float: right;
