@@ -50,7 +50,7 @@ And as you can see, the previously added `st`{.codeword} alias sits under the "`
 
 - **adog**: ` log --all --decorate --oneline --graph `{.codeword} - Displays your commit history in a nice and compact way. Usage: `git adog`{.codeword}
 
-- **cob**: ` checkout -b `{.codeword} - Create a new branch and switch to it. Usage: `git cob my-new-branch`{.codeword}
+- **cob**: ` checkout -b `{.codeword} - Create a new branch and switch to it. Usage: `git cob <new-branch-name-here>`{.codeword}
   
 - **wip**: ` commit -am "WIP" `{.codeword} - Add all changes and commit with a "WIP" message. Usage: `git wip`{.codeword}
   
@@ -59,6 +59,8 @@ And as you can see, the previously added `st`{.codeword} alias sits under the "`
 - **hdr**: ` "!f(){ git checkout main && git pull && git checkout - && git rebase main; };f" `{.codeword} - `hdr` aka "hydrate", hydrates the feature branch that you're currently working on with changes in the main branch in remote repository. The command switches to your main branch, pulls latest changes from repository, switches back and then rebases your feature branch on top of main. Usage: `git hdr`{.codeword}
 
 - **rimbr**: ` "!git checkout main && git branch | grep -v "main" | xargs git branch -D" `{.codeword} - `rimbr` aka "remove branch", it deletes all branches except the main branch. Usage: `git rimbr`{.codeword}
+
+- **boff**: ` "!f() { git branch "$1" && git reset --hard @{u} && git checkout "$1"; }; f" `{.codeword} - `boff` aka "branch off", for when you've committed changes directly onto a branch (e.g. `main`{.codeword}) instead of a separate branch. It creates a new branch. Resets your current branch back to the state of its remote-tracked counterpart, and switches you onto the new branch, which keeps the commits. Only use this when those commits haven't been pushed yet — otherwise the reset has nothing to undo Usage: `git boff <new-branch-name-here>`{.codeword}
   
 
 And that's about it, give these guys a go, but use them responsibly and I hope I could save you a some keystrokes.
