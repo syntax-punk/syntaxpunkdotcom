@@ -1,33 +1,59 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
+import { useToast, ToastVariant } from './toast'
 
-type Status = 'idle' | 'loading' | 'subscribed' | 'already_subscribed' | 'invalid_email' | 'error'
+type Status = 'subscribed' | 'already_subscribed' | 'invalid_email' | 'error'
 
-const MESSAGES: Record<Exclude<Status, 'idle' | 'loading'>, string> = {
+const MESSAGES: Record<Status, string> = {
   subscribed: "You're in! Thanks for subscribing.",
   already_subscribed: "You're already subscribed — thanks!",
   invalid_email: 'Please enter a valid email address.',
   error: 'Something went wrong. Please try again later.'
 }
 
+const TOAST_VARIANT: Record<Status, ToastVariant> = {
+  subscribed: 'success',
+  already_subscribed: 'success',
+  invalid_email: 'warning',
+  error: 'error'
+}
+
 export default function NewsletterSignup({ source }: { source: string }) {
   const [isOpen, setIsOpen] = useState(false)
   const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<Status>('idle')
+  const [submitting, setSubmitting] = useState(false)
+  const emailInputRef = useRef<HTMLInputElement>(null)
+  const showToast = useToast()
 
   useEffect(() => {
     if (!isOpen) return
+
+    emailInputRef.current?.focus()
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setIsOpen(false)
     }
     document.addEventListener('keydown', onKeyDown)
-    return () => document.removeEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.body.style.overflow = previousOverflow
+    }
   }, [isOpen])
+
+  const finish = (status: Status) => {
+    setIsOpen(false)
+    setSubmitting(false)
+    setEmail('')
+    showToast(MESSAGES[status], TOAST_VARIANT[status])
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setStatus('loading')
+    setSubmitting(true)
 
     try {
       const res = await fetch('/api/subscribe', {
@@ -36,9 +62,9 @@ export default function NewsletterSignup({ source }: { source: string }) {
         body: JSON.stringify({ email, source })
       })
       const data = await res.json()
-      setStatus(data.status as Status)
+      finish((data.status as Status) ?? 'error')
     } catch {
-      setStatus('error')
+      finish('error')
     }
   }
 
@@ -47,24 +73,28 @@ export default function NewsletterSignup({ source }: { source: string }) {
       <TriggerButton onClick={() => setIsOpen(true)}>📧 Subscribe</TriggerButton>
       {isOpen && (
         <Overlay onClick={() => setIsOpen(false)}>
-          <Dialog onClick={(e) => e.stopPropagation()}>
+          <Dialog
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="newsletter-heading"
+          >
             <CloseButton onClick={() => setIsOpen(false)} aria-label="Close">✕</CloseButton>
-            <p className="heading">Sign up for new posts</p>
+            <p className="heading" id="newsletter-heading">Sign up for new posts</p>
             <form onSubmit={handleSubmit}>
               <input
+                ref={emailInputRef}
                 type="email"
                 placeholder="you@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                disabled={submitting}
                 required
               />
-              <button type="submit" disabled={status === 'loading'}>
-                {status === 'loading' ? '...' : 'Subscribe'}
+              <button type="submit" disabled={submitting}>
+                {submitting ? '...' : 'Subscribe'}
               </button>
             </form>
-            {status !== 'idle' && status !== 'loading' && (
-              <p className="message">{MESSAGES[status]}</p>
-            )}
           </Dialog>
         </Overlay>
       )}
@@ -80,14 +110,14 @@ const TriggerButton = styled.button`
   padding: 0.8rem 1.4rem;
   border-radius: 999px;
   border: none;
-  background-color: #025fc9;
-  color: #fefefe;
+  background-color: var(--primary-color);
+  color: var(--bg-color);
   font-size: 1rem;
   cursor: pointer;
   box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.35);
 
   &:hover {
-    background-color: #0270e6;
+    filter: brightness(1.1);
   }
 `
 
@@ -108,13 +138,14 @@ const Dialog = styled.div`
   max-width: 480px;
   padding: 2rem 1.6rem 1.6rem;
   border-radius: 4px;
-  border: 1px solid #dedede;
-  color: #fefefe;
-  background-image: linear-gradient(125deg, rgba(19, 7, 34, 0.96), rgba(92, 18, 190, 0.94));
+  border: 1px solid var(--border-color);
+  color: var(--font-color);
+  background-color: var(--bg-color);
 
   .heading {
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    color: var(--heading-color);
   }
 
   form {
@@ -127,16 +158,22 @@ const Dialog = styled.div`
     flex: 1 1 200px;
     padding: 0.6rem 0.8rem;
     border-radius: 4px;
-    border: 1px solid #dedede;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--font-color);
     font-size: 1rem;
+
+    &:disabled {
+      opacity: 0.6;
+    }
   }
 
-  button {
+  form button {
     padding: 0.6rem 1.2rem;
     border-radius: 4px;
     border: none;
-    background-color: #025fc9;
-    color: #fefefe;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
     font-size: 1rem;
     cursor: pointer;
 
@@ -144,12 +181,6 @@ const Dialog = styled.div`
       opacity: 0.6;
       cursor: default;
     }
-  }
-
-  .message {
-    margin-top: 0.8rem;
-    font-size: 0.9rem;
-    color: #F1E9FB;
   }
 `
 
@@ -159,7 +190,7 @@ const CloseButton = styled.button`
   right: 0.8rem;
   border: none;
   background: transparent;
-  color: #fefefe;
+  color: var(--font-color);
   font-size: 1.2rem;
   cursor: pointer;
   line-height: 1;
