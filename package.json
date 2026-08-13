@@ -34,6 +34,8 @@
     "eslint": "^9.39.2",
     "eslint-config-next": "^16.1.1",
     "prettier": "^3.7.4",
+    "resend": "^6.19.0",
+    "tsx": "^4.23.12",
     "typescript": "^4.5.4"
   }
 }

@@ -1,10 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { Client } from '@notionhq/client';
-
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
-const databaseId = process.env.NOTION_DATABASE_ID;
+import { EMAIL_REGEX, databaseId, getNotionClient, findSubscriberPageId } from '../../lib/notion';
 
 export default async function handler(
   req: NextApiRequest,
@@ -22,29 +17,13 @@ export default async function handler(
   }
 
   try {
-    const database = await notion.databases.retrieve({
-      database_id: databaseId,
-    });
-    if (!('data_sources' in database)) {
-      throw new Error('Notion database has no data sources');
-    }
-    const dataSourceId = database.data_sources[0].id;
+    const existingPageId = await findSubscriberPageId(email);
 
-    const existing = await notion.dataSources.query({
-      data_source_id: dataSourceId,
-      filter: {
-        property: 'Email',
-        rich_text: {
-          equals: email,
-        },
-      },
-    });
-
-    if (existing.results.length > 0) {
+    if (existingPageId) {
       return res.status(200).json({ status: 'already_subscribed' });
     }
 
-    await notion.pages.create({
+    await getNotionClient().pages.create({
       parent: { database_id: databaseId },
       properties: {
         Email: {
@@ -61,6 +40,9 @@ export default async function handler(
               },
             },
           ],
+        },
+        Unsubscribed: {
+          checkbox: false,
         },
       },
     });
