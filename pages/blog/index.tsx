@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Layout from "../../components/layout"
 import { getSortedPostsData } from "../../lib/posts"
 import Date from "../../components/shared/date"
+import NewsletterSignup from "../../components/shared/newsletterSignup"
 import { device, makePageName } from "../../lib/shared/toolbox";
 import Head from "next/head";
 
@@ -31,6 +32,7 @@ const Index = (props) => {
             </Link>
           ) }
         </Container>
+        <NewsletterSignup source="blog-index" />
       </Layout>
     </>
   );
