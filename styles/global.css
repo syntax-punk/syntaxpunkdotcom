@@ -2,46 +2,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-  --primary-color: #302AE6;
+  --primary-color: #302ae6;
   --secondary-color: #536390;
+  --tertiary-color: #5c12be;
   --font-color: #424242;
   --heading-color: #292922;
-  
+
   --body-padding: 1rem;
   --bg-color: #fff;
   --secondary-bg-color: #d2d2d2dd;
-  --main-background-color: #F7F7F7;
-  --border-color: #FBFBFB;
+  --main-background-color: #f7f7f7;
+  --border-color: #fbfbfb;
   --link-color: #0000005d;
   --link-hover: #86e9ff;
   --link-active: #86e9ff80;
   --slider-bg-color: #1a1a1a;
-  --project-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --project-card-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --project-card-border: 2px solid #d8d9db;
-  --project-card-bg-color: #FFFFFF;
+  --project-card-bg-color: #ffffff;
   --project-card-sub-border: 1px dashed #0000004a;
   --scrollbar-color: rgba(19, 7, 34, 0.91);
   --body-overflow: hidden;
 }
 
-[data-theme="dark"] {
-  --primary-color: #9A97F3;
+[data-theme='dark'] {
+  --primary-color: #9a97f3;
   --secondary-color: #818cab;
+  --tertiary-color: #5c12be;
   --font-color: #e1e1ff;
   --heading-color: #818cab;
-  
+
   --body-padding: 1rem;
   --bg-color: #000000;
   --secondary-bg-color: #252525dd;
   --main-background-color: #000000;
   --border-color: #373636;
-  --link-color: #FBFBFBAA;
+  --link-color: #fbfbfbaa;
   --link-hover: #5c12be;
   --link-active: #5d12be80;
   --slider-bg-color: #dedede;
   --project-card-shadow: none;
   --project-card-border: 2px solid #00000011;
-  --project-card-bg-color: #F7F7F7;
+  --project-card-bg-color: #f7f7f7;
   --project-card-sub-border: 1px dashed #000000c3;
   --scrollbar-color: rgba(217, 195, 244, 0.91);
   --body-overflow: hidden;
@@ -92,7 +95,7 @@ main {
   background-color: var(--main-background-color);
 }
 
-header{
+header {
   width: 100%;
   height: 4rem;
   border-bottom: 2px solid var(--border-color);
@@ -123,9 +126,9 @@ img {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-color);
@@ -134,22 +137,43 @@ img {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-color)
+  background: var(--scrollbar-color);
 }
 
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .fade-in {
-  opacity:0;  /* make things invisible upon start */
-  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
+  opacity: 0; /* make things invisible upon start */
+  -webkit-animation: fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
 
-  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
+  -webkit-animation-fill-mode: forwards; /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 
   -webkit-animation-duration: 0.25s;
   -moz-animation-duration: 0.25s;
@@ -175,19 +199,18 @@ img {
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @media only screen and (max-width: 960px) {
-  
   html,
   body,
   #__next,
@@ -205,4 +228,3 @@ img {
     border: none !important;
   }
 }
-

@@ -9,6 +9,7 @@ import 'highlight.js/styles/github-dark.css'
 import Link from 'next/link'
 import { device } from '../../lib/shared/toolbox'
 import { useStatistics } from '../../lib/hooks'
+import NewsletterSignup from '../../components/shared/newsletterSignup'
 
 export default function Post({ postData }) {
   const count = useStatistics();
@@ -33,6 +34,7 @@ export default function Post({ postData }) {
         <div className="md-container" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         <Visits className={utilStyles.lightBadge}>🌍 {count}</Visits>
       </Container>
+      <NewsletterSignup source={`blog-post:${postData.id}`} />
     </Layout>
   )
 }
