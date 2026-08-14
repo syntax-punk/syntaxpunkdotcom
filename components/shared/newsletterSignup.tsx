@@ -70,7 +70,9 @@ export default function NewsletterSignup({ source }: { source: string }) {
 
   return (
     <>
-      <TriggerButton onClick={() => setIsOpen(true)}>📧 Subscribe</TriggerButton>
+      <TriggerButton onClick={() => setIsOpen(true)}>
+        <p>📧 Newsletter</p>
+      </TriggerButton>
       {isOpen && (
         <Overlay onClick={() => setIsOpen(false)}>
           <Dialog
@@ -92,7 +94,7 @@ export default function NewsletterSignup({ source }: { source: string }) {
                 required
               />
               <button type="submit" disabled={submitting}>
-                {submitting ? '...' : 'Subscribe'}
+                {submitting ? '🚀🚀🚀' : 'Sign up'}
               </button>
             </form>
           </Dialog>
@@ -104,13 +106,15 @@ export default function NewsletterSignup({ source }: { source: string }) {
 
 const TriggerButton = styled.button`
   position: fixed;
-  right: 1.6rem;
-  bottom: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 2rem;
+  bottom: 2rem;
   z-index: 40;
   padding: 0.8rem 1.4rem;
-  border-radius: 999px;
-  border: none;
-  background-color: var(--primary-color);
+  border-radius: 9999px;
+  background-color: var(--tertiary-color);
   color: var(--bg-color);
   font-size: 1rem;
   cursor: pointer;

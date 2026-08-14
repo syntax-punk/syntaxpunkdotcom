@@ -69,8 +69,8 @@ const slideIn = keyframes`
 
 const Wrapper = styled.div<{ $accent: string }>`
   position: fixed;
-  left: 1.6rem;
-  bottom: 1.6rem;
+  right: 1.6rem;
+  top: 1.6rem;
   z-index: 60;
   display: flex;
   align-items: center;
