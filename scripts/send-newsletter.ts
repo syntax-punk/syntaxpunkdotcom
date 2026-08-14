@@ -37,11 +37,11 @@ function buildEmailHtml(posts: Post[], recipient: string): string {
 }
 
 async function main() {
-  const today = new Date().toISOString().slice(0, 10);
-  const newPosts = getSortedPostsData().filter((post) => post.date === today);
+  const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  const newPosts = getSortedPostsData().filter((post) => post.date === yesterday);
 
   if (newPosts.length === 0) {
-    console.log('No new posts today — nothing to send.');
+    console.log('No new posts from yesterday — nothing to send.');
     return;
   }
 
