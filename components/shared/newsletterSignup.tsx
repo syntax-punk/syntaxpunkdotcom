@@ -141,7 +141,6 @@ const Dialog = styled.div`
   width: 100%;
   max-width: 480px;
   padding: 2rem 1.6rem 1.6rem;
-  border-radius: 4px;
   border: 1px solid var(--border-color);
   color: var(--font-color);
   background-color: var(--bg-color);
@@ -161,7 +160,7 @@ const Dialog = styled.div`
   input {
     flex: 1 1 200px;
     padding: 0.6rem 0.8rem;
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid var(--border-color);
     background-color: var(--bg-color);
     color: var(--font-color);
@@ -174,7 +173,6 @@ const Dialog = styled.div`
 
   form button {
     padding: 0.6rem 1.2rem;
-    border-radius: 4px;
     border: none;
     background-color: var(--primary-color);
     color: var(--bg-color);
